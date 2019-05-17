@@ -186,8 +186,9 @@ th {
   text-align: inherit; }
 
 label {
-  display: inline-block;
-  margin-bottom: 0.5rem; }
+  display: inline-block; }
+
+
 
 button {
   border-radius: 0; }
@@ -2063,6 +2064,11 @@ textarea.form-control {
     opacity: 0.65; }
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer; }
+.btn-alter {
+    display: flex;
+    align-items: center;
+    margin-top: 22px;
+}
 
 a.btn.disabled,
 fieldset:disabled a.btn {
