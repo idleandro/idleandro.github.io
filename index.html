@@ -34,9 +34,9 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Início</span></a></li>
+	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Serviços</span></a></li>
+	          <li class="nav-item"><a href="#budget-section" class="nav-link"><span>Orçamento Online</span></a></li>
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 	          <li class="nav-item"><a href="#testimony-section" class="nav-link"><span>Testimony</span></a></li>
 	          <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li>
@@ -286,7 +286,43 @@
     	</div>
     </section>
 
-    <section class="ftco-section ftco-project bg-light" id="projects-section">
+    <section class="ftco-section ftco-project bg-light" id="budget-section">
+      <div class="container px-md-5">
+        <div class="row justify-content-center pb-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <span class="subheading">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            </span>
+            <h2 class="mb-4">Orçamento</h2>
+
+            <div class=" order-md-last d-flex">
+                <form action="#">
+                    <div class="d-flex flex-row">
+                      <div class="p-2 text-left">
+                        <label for="from">De</label>
+                        <input name="from" type="text" class="form-control" placeholder="De" id="from"  value="Inglês" readonly>
+                      </div>
+                      <div class="p-2">
+                        <input type="button" class="align-bottom" value="trocar" onclick="trocar('from','for')"/>
+                      </div>
+                      <div class="p-2 text-left">
+                        <label for="for">Para</label>
+                        <input name="for" type="text" class="form-control" placeholder="Para" id="for" value="Português" readonly></div>
+                    </div>
+                    <div class="d-flex flex-row">
+                      <div class="p-2 text-left">
+                        <label for="qtdPalavras">Qtd de Palavras</label>
+                        <input name="qtdPalavras" id="qtdPalavras" type="text" class="form-control" placeholder="Qtd de Palavras" id="">
+                      </div>
+                    </div>
+                </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+<!--     <section class="ftco-section ftco-project bg-light" id="projects-section">
     	<div class="container px-md-5">
     		<div class="row justify-content-center pb-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
@@ -368,7 +404,7 @@
           </div>
     		</div>
     	</div>
-    </section>
+    </section> -->
 		
 
 		<section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
@@ -745,7 +781,6 @@
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
             </form>
-          
           </div>
 
           <div class="col-md-6 d-flex">
@@ -838,8 +873,9 @@
   <script src="js/scrollax.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
-  
   <script src="js/main.js"></script>
-    
+  <script type="text/javascript" src="js/base.js"></script>
+  
+      
   </body>
 </html>
