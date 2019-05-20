@@ -4,6 +4,8 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ 
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -188,8 +190,6 @@ th {
 label {
   display: inline-block; }
 
-
-
 button {
   border-radius: 0; }
 
@@ -347,6 +347,12 @@ hr {
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  
+  .alter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 small,
 .small {
@@ -474,7 +480,7 @@ pre {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
-
+  
 .no-gutters {
   margin-right: 0;
   margin-left: 0; }
@@ -1595,6 +1601,7 @@ pre {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  margin-bottom: 20px;
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
@@ -9052,6 +9059,9 @@ h1, h2, h3, h4, h5,
   .form-control:focus, .form-control:active {
     border-color: #000000; }
 
+    input#url {
+  height: 37px !important;
+}
 textarea.form-control {
   height: inherit !important; }
 
