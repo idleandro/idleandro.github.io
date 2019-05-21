@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/step.css">
+      <link rel="stylesheet" href="fonts/themify-icons/themify-icons.css">
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -341,7 +344,7 @@
 
   <section class="ftco-section ftco-project bg-light" id="budget-section">
     <div class="container px-md-5">
-      <div class="row justify-content-center pb-5">
+<!--       <div class="row justify-content-center pb-5">
         <div class="col-md-12 heading-section text-center ftco-animate">
           <span class="subheading">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -407,9 +410,185 @@
               </div>
           </form>
         </div>
-      </div>
+      </div> -->
+            <h2>SIGN UP OFFICE EMPLYEE ACCOUNT</h2>
+            <form method="POST" id="signup-form" class="signup-form">
+                    <h3>
+                        <span class="icon"><i class="ti-user"></i></span>
+                        <span class="title_text">Personal</span>
+                    </h3>
+                    <fieldset>
+                        <legend>
+                            <span class="step-heading">Personal Informaltion: </span>
+                            <span class="step-number">Step 1 / 4</span>
+                        </legend>
+                        <div class="form-group">
+                            <label for="first_name" class="form-label required">First name</label>
+                            <input type="text" name="first_name" id="first_name" />
+                        </div>
+                            <div class="form-date">
+    
+                         <div class="form-group">
+                            <label for="email" class="form-label required">Email</label>
+                            <input type="email" name="email" id="email" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label required">Telefone</label>
+                            <input type="number" name="phone" id="phone" />
+                        </div>
+<!--                         <div class="form-select">
+                            <label for="gender" class="form-label">Gênero</label>
+                            <div class="select-list">
+                                <select name="gender" id="gender">
+                                    <option value="">Male</option>
+                                    <option value="Male">Masculino</option>
+                                    <option value="Female">Feminino</option>
+                                    <option value="others">Outros</option>
+                                </select>
+                            </div>
+                        </div> -->
+
+                    </fieldset>
+
+                    <h3>
+                        <span class="icon"><i class="ti-email"></i></span>
+                        <span class="title_text">Contact</span>
+                    </h3>
+                    <fieldset>
+                        <legend>
+                            <span class="step-heading">Contact Informaltion: </span>
+                            <span class="step-number">Step 2 / 4</span>
+                        </legend>
+
+
+                        <div class="form-select">
+                            <label for="typeTranslation" class="form-label required">Tipo de Tradução</label>
+                            <div class="select-list">
+                                <select name="typeTranslation" id="typeTranslation">
+                                  <option value=""></option>
+                                  <option value="Tradução simples">Tradução simples</option>
+                                  <option value="Traduçao juramentada">Traduçao juramentada</option>
+                                  <option value="Tradução simultânea">Tradução simultânea</option>
+                                  <option value="Tradução consecutiva">Tradução consecutiva</option>
+                                  <option value="Tradução sussurrada">Tradução sussurrada</option>
+                                  <option value="Outras">Outras</option>
+                                </select>
+                            </div>
+                        </div>
+
+                          <div class="row ">
+                            <div class="col-6 col-md-4">
+                              <input name="from" type="text" class="form-control" placeholder="De" id="from" value="Inglês" readonly="">
+                            </div>
+                            <div class="col-6 col-md-4 justify-content-md-center">
+                              <button type="button" class="btn btn-outline-danger" onclick="trocar('from','for')">
+                                Alterar
+                              </button>
+                            </div>
+                            <div class="col-6 col-md-4">
+                              <input name="for" type="text" class="form-control" placeholder="Para" id="for" value="Português" readonly="">
+                            </div>
+                          </div>
+                    </fieldset>
+
+                    <h3>
+                        <span class="icon"><i class="ti-star"></i></span>
+                        <span class="title_text">Offical</span>
+                    </h3>
+                    <fieldset>
+                        <legend>
+                            <span class="step-heading">Offical Informaltion: </span>
+                            <span class="step-number">Step 3 / 4</span>
+                        </legend>
+                        <div class="form-group">
+                            <label for="qtdWords" class="form-label required">Quantidade de palavras</label>
+                            <input name="qtdWords" name=" type="text" class="form-control" placeholder="Qtd de Palavras">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date" class="form-label required">Prazo para Recebimento</label>
+                            <input id="date" class="form-control" type="date">
+                        </div>
+                         <div class="form-group">
+                          <div class="col">
+                  <input type="file" class="custom-file-input" id="validatedCustomFile" required="" multiple="">
+                  <label class="custom-file-label" for="validatedCustomFile"> Selecione o(s) arquivo(s)</label>
+                </div>
+                        </div>
+                        
+                        <div class="form-group">
+                        <input type="url" class="form-control" id="url" name="url" aria-describedby="basic-addon3 " placeholder="URL Ex: Dropbox, WeTransfer e Google Drive.">
+                      </div>
+                    </fieldset>
+
+                    <h3>
+<!--                         <span class="icon"><i class="ti-credit-card"></i></span>
+                        <span class="title_text">Payment</span> -->
+                    </h3>
+                    <fieldset>
+                        <legend>
+                            <span class="step-heading">Payment Informaltion: </span>
+                            <span class="step-number">Step 4 / 4</span>
+                        </legend>
+                        <div class="form-group">
+                            <label for="bank_name" class="form-label required">Bank Name</label>
+                            <input type="text" name="bank_name" id="bank_name" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="holder_name" class="form-label required">Holder Name</label>
+                            <input type="text" name="holder_name" id="holder_name" />
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-date">
+                                <label for="expiry_date" class="form-label">Expiry Date</label>
+                                <div class="form-date-group">
+                                    <div class="form-date-item">
+                                        <select id="expiry_date" name="expiry_date"></select>
+                                        <span class="select-icon"><i class="ti-angle-down"></i></span>
+                                    </div>
+                                    <div class="form-date-item">
+                                        <select id="expiry_month" name="expiry_month"></select>
+                                        <span class="select-icon"><i class="ti-angle-down"></i></span>
+                                    </div>
+                                    <div class="form-date-item">
+                                        <select id="expiry_year" name="expiry_year"></select>
+                                        <span class="select-icon"><i class="ti-angle-down"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-select">
+                                <label for="payment_type" class="form-label">Payment type</label>
+                                <div class="select-list">
+                                    <select name="payment_type" id="payment_type">
+                                        <option value="">Master Card</option>
+                                        <option value="Master Card">Master Card</option>
+                                        <option value="Visa Card">Visa Card</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="card_number" class="form-label required">Card Number</label>
+                                <input type="number" name="card_number" id="card_number" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cvc" class="form-label required">CVC</label>
+                                <input type="text" name="cvc" id="cvc" />
+                            </div>
+                        </div>
+                    </fieldset>
+            </form>
+        </div>
     </div>
-    </div>
+
+    
   </section>
   <!--     <section class="ftco-section ftco-project bg-light" id="projects-section">
     	<div class="container px-md-5">
@@ -982,6 +1161,13 @@
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
   <script type="text/javascript" src="js/base.js"></script>
+
+    <script src="js/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="js/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="js/jquery-steps/jquery.steps.min.js"></script>
+    <script src="js/minimalist-picker/dobpicker.js"></script>
+    <script src="js/step.js"></script>
+<script>
 </body>
 
 </html>
