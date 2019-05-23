@@ -9,28 +9,19 @@
             first_name : {
                 required: true,
             },
-            last_name : {
-                required: true,
-            },
-            user_name : {
-                required: true,
-            },
-            password : {
-                required: true,
-            },
             email : {
                 required: true,
             },
             phone : {
                 required: true,
             },
-            address: {
+            typeTranslation: {
                 required: true,
             },
-            employee_id : {
+            date : {
                 required: true,
             },
-            designation: {
+            qtdWords: {
                 required: true,
             },
             department: {
@@ -72,9 +63,9 @@
         bodyTag: "fieldset",
         transitionEffect: "fade",
         labels: {
-            previous : 'Previous',
-            next : 'Next',
-            finish : 'Submit',
+            previous : 'Anterior',
+            next : 'Próximo',
+            finish : 'Enviar',
             current : ''
         },
         titleTemplate : '<span class="title">#title#</span>',
@@ -187,6 +178,16 @@
         yearDefault: 'Year',
         minimumAge: 0,
         maximumAge: 120
+    });
+    $( "#first_toggle" ).click(function() { 
+        $( ".form-group.visible-initial" ).hide( "slow", function() {
+            $( ".form-group.invisible-initial" ).show( "slow", function() {}); 
+        }); 
+    });
+    $( "#second_toggle" ).click(function() { 
+        $( ".form-group.invisible-initial" ).hide( "slow", function() {
+            $( ".form-group.visible-initial" ).show( "slow", function() {});     
+        }); 
     });
         
 })(jQuery);

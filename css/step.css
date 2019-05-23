@@ -1,3 +1,82 @@
+
+.box-slider.toggle_radio.d-flex.p-2.justify-content-center {
+  width: 200px;
+}
+
+.toggle_radio{
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  height: 40px;
+  width: auto;
+}
+.toggle_radio > * {
+  float: left;
+}
+.toggle_radio input[type=radio]{
+  display: none;
+  /*position: fixed;*/
+}
+.toggle_radio label {
+  font: 90%/1.618 "Source Sans Pro";
+  color: #000;
+  z-index: 0;
+  display: block;
+  width: 100px;
+  height: 20px;
+  margin: 6px 3px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1;
+  /*background: rgba(0,0,0,.1);*/
+  text-align: center;
+  /*margin: 0 2px;*/
+  /*background: blue;*/ /*make it blue*/
+}
+.toggle_option_slider{
+  /*display: none;*/
+  /*background: red;*/
+  width: 100px;
+  height: 28px;
+  position: absolute;
+  top: 3px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+#first_toggle:checked ~ .toggle_option_slider{
+  background: rgb(228, 228, 228);
+  color: #fff;
+  left: 0;
+}
+#second_toggle:checked ~ .toggle_option_slider{
+  background: rgb(228, 228, 228);
+  color: #fff;
+  left: 50%;
+}
+#tree_toggle:checked ~ .toggle_option_slider{
+  background: rgb(228, 228, 228);
+  color: #fff;
+  left: 50%;
+}
+
+.form-group.invisible-initial {
+  display: none;
+}
+
+
 /* @extend display-flex; */
 display-flex, .form-row, ul, .title, .actions ul li a, .form-date-item .select-icon, .form-date-item .select-icon i, .form-date-group {
   display: flex;
@@ -192,7 +271,7 @@ a {
   margin-top: -5px; }
 
 .current .title {
-  background: #fa5e5b; }
+  background: #7b0303; }
 
 .content h3 {
   display: none; }
@@ -217,7 +296,7 @@ fieldset {
       .actions ul li:first-child a {
         background: #adadad; }
       .actions ul li a {
-        background: #fa5e5b;
+        background: #7b0303;
         width: 130px;
         height: 50px;
         color: #fff;
@@ -237,7 +316,7 @@ fieldset {
         -o-align-items: center;
         -ms-align-items: center; }
         .actions ul li a:hover {
-          background-color: #f82d2a; }
+          background-color: #ff0000; }
 
 label.error {
   display: block;
@@ -253,7 +332,8 @@ label.error {
     font-size: 13px;
     color: #ff1212; }
 
-input.error {
+input.error,
+select.error  {
   border: 1px solid #ff1212; }
 
 ul.list-item {
@@ -279,7 +359,7 @@ ul.list-item li:not(.init) {
   padding: 5px 20px; }
 
 ul.list-item li:not(.init):hover, ul.list-item li.selected:not(.init) {
-  background: #fa5e5b;
+  background: #7b0303;
   color: #fff; }
 
 li.init {
@@ -309,7 +389,7 @@ legend {
     display: inline-block; }
 
 .step-heading {
-  color: #fa5e5b;
+  color: #7b0303;
   float: left; }
 
 .step-number {
