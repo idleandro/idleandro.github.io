@@ -5,26 +5,31 @@
         errorPlacement: function errorPlacement(error, element) {
              element.before(error); 
         },
+        messages: {},
         rules: {
             first_name : {
                 required: true,
+                minlength: 3,
             },
             email : {
                 required: true,
             },
             phone : {
                 required: true,
+                minlength: 11,
             },
             typeTranslation: {
                 required: true,
             },
             date : {
                 required: true,
+                minlength: 10,
             },
             qtdWords: {
                 required: true,
+                minlength: 2,
             },
-            department: {
+            documents: {
                 required: true,
             },
             work_hours: {
@@ -179,15 +184,45 @@
         minimumAge: 0,
         maximumAge: 120
     });
-    $( "#first_toggle" ).click(function() { 
-        $( ".form-group.visible-initial" ).hide( "slow", function() {
-            $( ".form-group.invisible-initial" ).show( "slow", function() {}); 
-        }); 
+
+    $( ".toggle_option" ).click(function(e) { 
+           if ($(this).is("#first_toggle")) {
+            $( ".form-group.visible-initial" ).hide( "fast", function() {
+                $( ".form-group.invisible-initial" ).show( "fast", function() {}); 
+            });
+        } else if ($(this).is("#second_toggle")) {
+            $( ".form-group.invisible-initial" ).hide( "fast", function() {
+                $( ".form-group.visible-initial" ).show( "fast", function() {}); 
+            }); 
+        };
+   });
+
+    $("#url").on('change keydown paste input', function(){
+        if($("#url").val() == null || $("#url").val() ==""){
+            $(".documents").show();
+            console.log("mostrar")
+        } else {
+            $(".documents").hide();
+            console.log("ocultar")
+        }
     });
-    $( "#second_toggle" ).click(function() { 
-        $( ".form-group.invisible-initial" ).hide( "slow", function() {
-            $( ".form-group.visible-initial" ).show( "slow", function() {});     
-        }); 
+
+    var upload = document.getElementById("documents");
+    upload.addEventListener("change", function(e) {
+        var size = upload.files[0].size;
+        if(size < 1048576) { //1MB         
+          
+        } else {           
+          
+          upload.value = ""; //Limpa o campo          
+        }
+        e.preventDefault();
     });
+
+    $('#phone').mask('00 00000-0000');
+    $('#date').mask('00/00/0000');
+    $( "#first_name" ).rules( "remove", "min max" );
+
+
         
 })(jQuery);

@@ -322,7 +322,10 @@ label.error {
   display: block;
   position: absolute;
   top: 0px;
-  right: 0; }
+  right: 0;
+  text-indent: 70px;
+  color: transparent;
+ }
   label.error:after {
     font-family: 'themify';
     position: absolute;

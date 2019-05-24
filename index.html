@@ -359,7 +359,6 @@ aria-controls="v-pills-11" aria-selected="false">
           <label for="first_name" class="form-label required">Nome</label>
           <input type="text" name="first_name" id="first_name" />
         </div>
-        <div class="form-date">
 
          <div class="form-group">
           <label for="email" class="form-label required">E-mail</label>
@@ -368,7 +367,7 @@ aria-controls="v-pills-11" aria-selected="false">
 
         <div class="form-group">
           <label for="phone" class="form-label required">Telefone</label>
-          <input type="number" name="phone" id="phone" />
+          <input type="text" name="phone" id="phone" />
         </div>
       </fieldset>
 
@@ -386,7 +385,6 @@ aria-controls="v-pills-11" aria-selected="false">
           <div class="select-list">
             <label for="typeTranslation" class="form-label required">Tipo de Tradução</label>
             <select name="typeTranslation" id="typeTranslation">
-              <option value=""></option>
               <option value="Tradução simples">Tradução simples</option>
               <option value="Traduçao juramentada">Traduçao juramentada</option>
               <option value="Tradução simultânea">Tradução simultânea</option>
@@ -421,11 +419,11 @@ aria-controls="v-pills-11" aria-selected="false">
         </legend>
         <div class="form-group">
           <label for="date" class="form-label required">Prazo para Recebimento</label>
-          <input id="date" name="date" class="form-control" type="date">
+          <input id="date" name="date" class="form-control" type="text" placeholder="00/00/0000">
         </div>
         <div class="form-group">
           <div class="row">
-            <div class="col-md-6">Deseja enviar arquivo(s)</div>
+            <div class="col-md-6">Deseja enviar arquivo(s) ou Link</div>
             <div class="col-md-6">
               <div class="box-slider toggle_radio d-flex p-2 justify-content-center">
                 <input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
@@ -442,19 +440,19 @@ aria-controls="v-pills-11" aria-selected="false">
           <label for="qtdWords" class="form-label required">Quantidade de palavras</label>
           <input name="qtdWords" name=" type="text"  placeholder="Qtd de Palavras">
         </div>
-        <div class="form-group invisible-initial">
+        <div class="form-group invisible-initial invisible-url documents">
           <label for="documents">Selecione o(s) arquivo(s)</label>
-          <input id="documents" type="file" name="documents" multiple="">
+          <input id="documents" type="file" name="documents" multiple="" value="20">
        </div>
        <div class="form-group invisible-initial">
             <label for="url" class="form-label">URL</label>
             <input type="text" name="url" id="url" />
-            <span>Caso o arquivo seja grande envie o link do compartilhamento por exemplo: Google Driver, Dropbox, entre outros.</span>
+            <span>Caso o arquivo seja maior que 30Mb, envie o link do compartilhamento por exemplo: Google Driver, Dropbox, entre outros.</span>
       </div>
     </fieldset>
     <h3>
-<!--                         <span class="icon"><i class="ti-credit-card"></i></span>
-  <span class="title_text">Payment</span> -->
+      <span class="icon"><i class="ti-credit-card"></i></span>
+      <span class="title_text">Payment</span>
 </h3>
 <fieldset>
   <legend>
@@ -1096,6 +1094,7 @@ aria-controls="v-pills-11" aria-selected="false">
               <script src="js/jquery-validation/dist/additional-methods.min.js"></script>
               <script src="js/jquery-steps/jquery.steps.min.js"></script>
               <script src="js/minimalist-picker/dobpicker.js"></script>
+              <script src="js/jquery.mask.min.js"></script>
               <script src="js/step.js"></script>
               <script>
                 </body>
