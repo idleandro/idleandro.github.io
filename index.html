@@ -380,7 +380,7 @@ aria-controls="v-pills-11" aria-selected="false">
         <div class="form-select">
           <div class="select-list">
             <label for="typeTranslation" class="form-label required">Tipo de Tradução</label>
-            <select name="typeTranslation" id="typeTranslation">
+            <select name="typeTranslation" id="typeTranslation" class="form-control"> 
               <option value="Tradução simples">Tradução simples</option>
               <option value="Traduçao juramentada">Traduçao juramentada</option>
               <option value="Tradução simultânea">Tradução simultânea</option>
@@ -391,7 +391,7 @@ aria-controls="v-pills-11" aria-selected="false">
           </div>
         </div>
         <div class="row ">
-          <div class="col-md-5">
+          <div class="col-md-4">
             <input name="from" type="text" class="form-control" placeholder="De" id="from" value="Inglês" readonly="">
           </div>
           <div class="btn-alter">
@@ -399,7 +399,7 @@ aria-controls="v-pills-11" aria-selected="false">
               Alterar
             </button>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-4">
             <input name="for" type="text" class="form-control" placeholder="Para" id="for" value="Português" readonly="">
           </div>
         </div>
@@ -418,6 +418,10 @@ aria-controls="v-pills-11" aria-selected="false">
           <input id="date" name="date" class="form-control" type="text" placeholder="00/00/0000">
         </div>
         <div class="form-group">
+          <label for="qtdWords" class="form-label required">Quantidade de palavras</label>
+          <input name="qtdWords" name="qtdWords" type="text" class="form-control" placeholder="Qtd de Palavras">
+        </div>
+        <div class="form-group">
           <div class="row">
             <div class="col-md-6">Deseja enviar arquivo(s) ou Link</div>
             <div class="col-md-6">
@@ -432,10 +436,6 @@ aria-controls="v-pills-11" aria-selected="false">
             </div>
           </div>
         </div>
-        <div class="form-group visible-initial">
-          <label for="qtdWords" class="form-label required">Quantidade de palavras</label>
-          <input name="qtdWords" name=" type="text"  placeholder="Qtd de Palavras">
-        </div>
         <div class="form-group invisible-initial invisible-url documents">
           <label for="documents">Selecione o(s) arquivo(s)</label>
           <input id="documents" type="file" name="documents" multiple="" value="20">
@@ -443,7 +443,7 @@ aria-controls="v-pills-11" aria-selected="false">
        <div class="form-group invisible-initial">
             <label for="url" class="form-label">URL</label>
             <input type="text" name="url" id="url" />
-            <span>Caso o arquivo seja maior que 30Mb, envie o link do compartilhamento por exemplo: Google Driver, Dropbox, entre outros.</span>
+            <span>Caso seu arquivo seja maior que 30Mb, nos envie através de um serviço de compartilhamento. Ex: Dropbox, WeTransfer e Google Drive.</span>
       </div>
     </fieldset>
     <h3>

@@ -28,24 +28,9 @@
             qtdWords: {
                 required: true,
                 minlength: 2,
+                number: true
             },
             documents: {
-                required: true,
-            },
-            work_hours: {
-                required: true,
-            },
-            bank_name: {
-                required: true,
-            },
-            holder_name: {
-                required: true,
-            },
-            card_number: {
-                required: true,
-                number: true,
-            },
-            cvc: {
                 required: true,
             },
         },
@@ -187,9 +172,9 @@
 
     $( ".toggle_option" ).click(function(e) { 
            if ($(this).is("#first_toggle")) {
-            $( ".form-group.visible-initial" ).hide( "fast", function() {
+          //  $( ".form-group.visible-initial" ).hide( "fast", function() {
                 $( ".form-group.invisible-initial" ).show( "fast", function() {}); 
-            });
+          //  });
         } else if ($(this).is("#second_toggle")) {
             $( ".form-group.invisible-initial" ).hide( "fast", function() {
                 $( ".form-group.visible-initial" ).show( "fast", function() {}); 
@@ -206,11 +191,11 @@
             console.log("ocultar")
         }
     });
-
+  
     var upload = document.getElementById("documents");
     upload.addEventListener("change", function(e) {
         var size = upload.files[0].size;
-        if(size < 1048576) { //1MB         
+        if(size < 21048576) { //1MB         
           
         } else {           
           
