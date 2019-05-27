@@ -200,7 +200,7 @@ h2 {
   margin: 0px;
   padding-top: 35px; }
 
-.signup-form {
+.form-budget {
   padding: 2%; }
 
 input, select {
@@ -543,7 +543,7 @@ legend {
   .form-row .form-date, .form-row .form-select {
     width: 100%; } }
 @media screen and (max-width: 480px) {
-  .signup-form {
+  .form-budget {
     padding-left: 30px;
     padding-right: 30px; } }
 

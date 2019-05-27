@@ -1,6 +1,6 @@
 (function($) {
 
-    var form = $("#signup-form");
+    var form = $("#form-budget");
     form.validate({
         errorPlacement: function errorPlacement(error, element) {
              element.before(error); 
