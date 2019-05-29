@@ -9054,6 +9054,8 @@ h1, h2, h3, h4, h5,
   box-shadow: none !important; }
   .form-control:focus, .form-control:active {
     border-color: #000000; }
+    input#date {
+    margin-bottom: 2px;}
 
     input#url {
   height: 37px !important;

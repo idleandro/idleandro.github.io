@@ -65,6 +65,14 @@
   /*margin: 0 2px;*/
   /*background: blue;*/ /*make it blue*/
 }
+#txtUrgencyRate {
+  display: none;
+  color: #7b0303;
+}
+.itemUrgencyRate {
+  display: none;
+}
+
 .toggle_option_slider{
   /*display: none;*/
   /*background: red;*/

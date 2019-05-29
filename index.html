@@ -382,7 +382,7 @@ aria-controls="v-pills-11" aria-selected="false">
             <label for="typeTranslation" class="form-label required">Tipo de Tradução</label>
             <select name="typeTranslation" id="typeTranslation" class="form-control"> 
               <option value="Tradução simples">Tradução simples</option>
-              <option value="Traduçao juramentada">Traduçao juramentada</option>
+              <option value="Traduçao juramentada">Tradução juramentada</option>
               <option value="Tradução simultânea">Tradução simultânea</option>
               <option value="Tradução consecutiva">Tradução consecutiva</option>
               <option value="Tradução sussurrada">Tradução sussurrada</option>
@@ -416,6 +416,7 @@ aria-controls="v-pills-11" aria-selected="false">
         <div class="form-group">
           <label for="date" class="form-label required">Prazo para Recebimento</label>
           <input id="date" name="date" class="form-control" type="text" placeholder="00/00/0000">
+          <span id="txtUrgencyRate"></span>
         </div>
         <div class="row-nowrap">
           <div class="item">  
@@ -471,11 +472,11 @@ aria-controls="v-pills-11" aria-selected="false">
                 <ul class="list-group list-group-flush">
                   <p class="card-text"></p>
                   <strong>Tipo de Tradução:</strong>
-                  <p><span id="type-translation">Tradução simples</span>, De <span id="from">Inglês</span> Para <span id="for">Português</span></p>
+                  <p><span id="type-translation">Tradução simples</span>, De <span id="fromItem">Inglês</span> Para <span id="forItem">Português</span></p>
                   <strong>Prazo para recebimento:</strong>
                   <p id="delivery-term">10/10/2019</p>
                   <strong>Qtd de Palavras</strong>
-                  <p id="number-words">1800</p>
+                  <p class="number-words">1800</p>
                 </ul>
               </div>
             </div>
@@ -487,12 +488,11 @@ aria-controls="v-pills-11" aria-selected="false">
                 <p class="card-text"></p>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">1 lauda = 1500 caracteres</li>
-                  <li class="list-group-item">R$ 40,50 por lauda</li>
+                  <li class="list-group-item">R$ 40,5 por lauda</li>
                   <li class="list-group-item">R$ 0,027 por palavra</li>
-                  <li class="list-group-item">Qtd de palavras: <strong class="number-words" id="qtdWordsDetail">1800</strong></li>
-                  <li class="list-group-item">Taxa de urgência por palavra <strong id="urgency-rate">R$ 0,023</strong></li>
-                  <li class="list-group-item">Subtotal <strong id="value-word-rate">R$ 0,05</strong> x <strong id="number-words">1800</strong> = <strong class="total">R$ 90,00</strong></li>
-                  <li class="list-group-item">Total de: <strong class="total">R$ 90,00</strong></li>
+                  <li class="list-group-item">Qtd de palavras: <strong class="number-words">1800</strong></li>
+                  <li class="list-group-item" id="itemUrgencyRate">Taxa de urgência por palavra <strong id="urgency-rate">R$ 0,023</strong></li>
+                  <li class="list-group-item">Total de: <strong>R$ </strong><strong id="total" class="total">90,00</strong></li>
                 </ul>
                 <!-- 25 linhas x 50 toques (ou caracteres) = 1.250 toques (ou caracteres) - <a href="http://www.sintra.org.br/site/index.php?p=c&id=36&codcat=22" target="_blank">Saiba mais sobre o sistema de cobrança</a> -->
                 <!--                   <a href="#" class="btn btn-primary">Go somewhere</a> -->
