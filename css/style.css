@@ -197,6 +197,10 @@ button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color; }
 
+ul.ftco-footer-social.list-unstyled.float-md-left.float-lft.mt-5 {
+  margin-bottom: 20px;
+}
+
 input,
 button,
 select,
@@ -9100,7 +9104,6 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   background: #000000;
-  padding: 7em 0;
   z-index: 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
@@ -9601,17 +9604,9 @@ textarea.form-control {
   width: 100%;
   display: block;
   background: #7b0303;
-  color: rgba(255, 255, 255, 0.8);
+  color: #fff;
   background: #ff0000;
-  background: -moz-linear-gradient(-45deg, #ff0000 0%, #7b0303 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, #ff0000), color-stop(100%, #7b0303));
-  background: -webkit-linear-gradient(-45deg, #ff0000 0%, #7b0303 100%);
-  background: -o-linear-gradient(-45deg, #ff0000 0%, #7b0303 100%);
-  background: -ms-linear-gradient(-45deg, #ff0000 0%, #7b0303 100%);
-  background: -webkit-linear-gradient(315deg, #ff0000 0%, #7b0303 100%);
-  background: -o-linear-gradient(315deg, #ff0000 0%, #7b0303 100%);
-  background: linear-gradient(135deg, #ff0000 0%, #7b0303 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#7b0303', GradientType=1 );
+  background: #7b0303;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -9625,16 +9620,14 @@ textarea.form-control {
   .contact-section .box .icon {
     width: 100px;
     height: 100px;
-    background: rgba(0, 0, 0, 0.10);
     margin: 0 auto;
-    margin-bottom: 2em;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%; }
     .contact-section .box .icon span {
       color: #fff;
-      font-size: 30px; }
+      font-size: 50px; }
   .contact-section .box h3 {
     font-size: 17px;
     font-weight: 400;
