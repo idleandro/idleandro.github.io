@@ -6,7 +6,6 @@ var to;
 var deliveryTerm;
 var qtdWords;
 var date;
-var valueWord = 0.027;
 var urgencyRate;
 var txtUrgencyRate;
 var itemUrgencyRate;
@@ -26,6 +25,14 @@ function capturesFields(){
 	this.numberWords = document.querySelector("#qtdWords").value;
 	this.txtUrgencyRate = document.querySelector("#txtUrgencyRate");
 	this.itemUrgencyRate = document.getElementById("itemUrgencyRate");
+}
+
+function calculateEnForPt(){
+	var valueWord = 0.028;
+}
+
+function calculatePtForEn(){
+	var valueWord = 0.044;
 }
 
 function calculateWordValue(){
