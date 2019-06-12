@@ -213,11 +213,9 @@
     $('#date').mask('00/00/0000');
     $( "#first_name" ).rules( "remove", "min max" );
 
-
     $("#typeTranslation").on('change keydown paste input', function(){
         var value = document.querySelector("#typeTranslation").value;
-        console.log(value);
-        if(value == "Audio-Video"){
+        if(value == "Legendagem"){
             $("#block-words").hide();
             $("#block-minutes").show();
         } else {
@@ -225,6 +223,5 @@
             $("#block-minutes").hide();
         }
     });
-    
         
 })(jQuery);

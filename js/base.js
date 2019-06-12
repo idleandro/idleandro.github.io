@@ -12,10 +12,157 @@ var itemUrgencyRate;
 var total;
 
 $("#form-budget").on('change keydown paste input', function(){
-	capturesFields();
-	calculateWordValue();
-	insertsValueIntoFields();
+
+	 capturesFields();
+	// calculateWordValue();
+	// insertsValueIntoFields();
+	 discoversDayWeek();
 });
+
+
+function discoversDayWeek() {
+
+	var prazo =  moment().add(0, "days").format('DD/MM/YYYY');
+	console.log(moment(prazo, 'DD/MM/YYYY').date())
+	console.log(moment(prazo, 'DD/MM/YYYY').day())
+
+	
+	switch(moment().day()) {
+		case 0: //domingo
+		break;
+
+		case 6: //sabado
+		break;
+
+		case 3: // quarta 
+			
+		break;
+
+		default:
+        	console.log('não é nada')
+
+	}
+}
+
+function feriado(oi){
+	var consultar = oi;
+	var feriados = [];
+	var ano = moment(consultar, 'DD/MM/YYYY').year();
+	var pascoa = moment(ano + Easter(ano));
+
+
+	feriados.push({
+		data: moment(ano + '0101').format('DD/MM/YYYY'),
+		descricao: 'Confraternização Universal'
+	})
+	feriados.push({
+		data: moment(pascoa).subtract(48, 'days').format('DD/MM/YYYY'),
+		descricao: '2ºferia Carnaval'
+	})
+	feriados.push({
+		data: moment(pascoa).subtract(47, 'days').format('DD/MM/YYYY'),
+		descricao: 'Carnaval'
+	})
+	feriados.push({
+		data: moment(pascoa).format('DD/MM/YYYY'),
+		descricao: 'Páscoa'
+	})
+	feriados.push({
+		data: moment(pascoa).subtract(2, 'days').format('DD/MM/YYYY'),
+		descricao: '6ºfeira Santa'
+	})
+	feriados.push({
+		data: moment(pascoa).add(60, 'days').format('DD/MM/YYYY'),
+		descricao: 'Corpus Crist'
+	})
+	feriados.push({
+		data: moment(ano + '0421').format('DD/MM/YYYY'),
+		descricao: 'Tiradentes'
+	})
+	feriados.push({
+		data: moment(ano + '0501').format('DD/MM/YYYY'),
+		descricao: 'Dia do Trabalhador'
+	})
+	feriados.push({
+		data: moment(ano + '0907').format('DD/MM/YYYY'),
+		descricao: 'Dia da Independência'
+	})
+	feriados.push({
+		data: moment(ano + '1012').format('DD/MM/YYYY'),
+		descricao: 'N. S. Aparecida'
+	})
+	feriados.push({
+		data: moment(ano + '1102').format('DD/MM/YYYY'),
+		descricao: 'Todos os santos'
+	})
+	feriados.push({
+		data: moment(ano + '1225').format('DD/MM/YYYY'),
+		descricao: 'Natal'
+	})
+
+	retorno = jQuery.grep(feriados, function(n, i) {
+		return (n.data == consultar);
+	});
+
+
+	if (retorno.length) {
+		return retorno[0].descricao;
+	} else {
+		return false;
+	}
+}
+
+function Easter(Y) {
+  var C = Math.floor(Y / 100);
+  var N = Y - 19 * Math.floor(Y / 19);
+  var K = Math.floor((C - 17) / 25);
+  var I = C - Math.floor(C / 4) - Math.floor((C - K) / 3) + 19 * N + 15;
+  I = I - 30 * Math.floor((I / 30));
+  I = I - Math.floor(I / 28) * (1 - Math.floor(I / 28) * Math.floor(29 / (I + 1)) * Math.floor((21 - N) / 11));
+  var J = Y + Math.floor(Y / 4) + I + 2 - C + Math.floor(C / 4);
+  J = J - 7 * Math.floor(J / 7);
+  var L = I - J;
+  var M = 3 + Math.floor((L + 40) / 44);
+  var D = L + 28 - 31 * Math.floor(M / 4);
+
+  return padout(M) + '' + padout(D);
+}
+
+function padout(number) {
+  return (number < 10) ? '0' + number : number;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function capturesFields(){
 	this.typeTranslation = document.querySelector("#typeTranslation").value;
@@ -107,12 +254,6 @@ function addMsg(txt, txtVisibility, itemVisibility){
 	this.txtUrgencyRate.innerText =  txt;
 	this.txtUrgencyRate.style.display = txtVisibility;
 	this.itemUrgencyRate.style.display = itemVisibility;
-}
-
-function formatDate(){
-	var newDate = this.date.split('/');
-	var nDate = newDate[1] + '-' + newDate[0] + '-' + newDate[2];
-	return new Date(nDate);
 }
 
 function alter(idFrom, idTo){
