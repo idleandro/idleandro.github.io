@@ -16,36 +16,29 @@ $("#form-budget").on('change keydown paste input', function(){
 	 capturesFields();
 	// calculateWordValue();
 	// insertsValueIntoFields();
-	 discoversDayWeek();
+	 
+	 var date = addWeekdays(moment(), 3);
+	 console.log(moment(date).format('DD/MM/YYYY'));
+	 console.log("DIA ANTERIOR " + moment(date).subtract(1, 'days').format('DD/MM/YYYY'))
+	 if (checkedHoliday(term)) {
+		term = addDays(term, 1); // Adiciona + 1 dia caso seja feriado
+	}
 });
 
-
-function discoversDayWeek() {
-
-	var prazo =  moment().add(0, "days").format('DD/MM/YYYY');
-	console.log(moment(prazo, 'DD/MM/YYYY').date())
-	console.log(moment(prazo, 'DD/MM/YYYY').day())
-
-	
-	switch(moment().day()) {
-		case 0: //domingo
-		break;
-
-		case 6: //sabado
-		break;
-
-		case 3: // quarta 
-			
-		break;
-
-		default:
-        	console.log('não é nada')
-
-	}
+function addWeekdays(date, days) {
+  date = moment(date); // use a clone
+  while (days > 0) {
+    date = date.add(1, 'days');
+    // decrease "days" only if it's a weekday.
+    if (date.isoWeekday() !== 6 && date.isoWeekday() !== 7) {
+      days -= 1;
+    }
+  }
+  return date;
 }
 
-function feriado(oi){
-	var consultar = oi;
+function checkedHoliday(data){
+	var consultar = moment(data).format('DD/MM/YYYY');
 	var feriados = [];
 	var ano = moment(consultar, 'DD/MM/YYYY').year();
 	var pascoa = moment(ano + Easter(ano));
@@ -57,7 +50,7 @@ function feriado(oi){
 	})
 	feriados.push({
 		data: moment(pascoa).subtract(48, 'days').format('DD/MM/YYYY'),
-		descricao: '2ºferia Carnaval'
+		descricao: '2º feria de Carnaval'
 	})
 	feriados.push({
 		data: moment(pascoa).subtract(47, 'days').format('DD/MM/YYYY'),
@@ -69,11 +62,11 @@ function feriado(oi){
 	})
 	feriados.push({
 		data: moment(pascoa).subtract(2, 'days').format('DD/MM/YYYY'),
-		descricao: '6ºfeira Santa'
+		descricao: '6º Feira Santa'
 	})
 	feriados.push({
 		data: moment(pascoa).add(60, 'days').format('DD/MM/YYYY'),
-		descricao: 'Corpus Crist'
+		descricao: 'Corpus Christi'
 	})
 	feriados.push({
 		data: moment(ano + '0421').format('DD/MM/YYYY'),
@@ -93,20 +86,19 @@ function feriado(oi){
 	})
 	feriados.push({
 		data: moment(ano + '1102').format('DD/MM/YYYY'),
-		descricao: 'Todos os santos'
+		descricao: 'Todos os Santos'
 	})
 	feriados.push({
 		data: moment(ano + '1225').format('DD/MM/YYYY'),
 		descricao: 'Natal'
 	})
 
-	retorno = jQuery.grep(feriados, function(n, i) {
+	existeFeriado = jQuery.grep(feriados, function(n, i) {
 		return (n.data == consultar);
 	});
 
-
-	if (retorno.length) {
-		return retorno[0].descricao;
+	if (existeFeriado.length) {
+		return existeFeriado[0].descricao;
 	} else {
 		return false;
 	}
