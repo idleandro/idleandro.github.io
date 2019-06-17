@@ -156,7 +156,7 @@
 					<div class="select-list">
 						<label for="typeTranslation" class="form-label required">Tipo de Tradução</label>
 						<select name="typeTranslation" id="typeTranslation" class="form-control"> 
-							<option value=""></option>
+							<option value="">Escolha um tipo de tradução</option>
 							<option value="Traducao-Livre">Tradução Livre</option>
 							<option value="Legendagem">Legendagem</option>
 						</select>
@@ -186,9 +186,13 @@
 					<span class="step-number">Step 3 / 4</span>
 				</legend>
 				<div class="form-group">
-					<label for="date" class="form-label required">Prazo para Recebimento</label>
-					<input id="date" name="date" class="form-control" type="text" placeholder="00/00/0000">
+					<label for="deliveryDateOption" class="form-label required">Prazo para Recebimento</label>
 					<span id="txtUrgencyRate"></span>
+					<select name="deliveryDateOption" id="deliveryDateOption" class="form-control"> 
+						<option value="">Escolha uma data</option>
+						<option value="" id="deliveryDate"></option>
+						<option value="" id="deliveryExpress"></option>
+					</select>
 				</div>
 				<div class="row-nowrap">
 					<div class="item" id="block-words">  

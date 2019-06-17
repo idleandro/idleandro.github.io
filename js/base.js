@@ -10,26 +10,53 @@ var urgencyRate;
 var txtUrgencyRate;
 var itemUrgencyRate;
 var total;
+var deliveryDate = "xxxxx";
+var deliveryExpress = "yyyy";
 
 $("#form-budget").on('change keydown paste input', function(){
 
 	 capturesFields();
 	// calculateWordValue();
 	// insertsValueIntoFields();
-	 
-	 var date = addWeekdays(moment(), 3);
-	 console.log(moment(date).format('DD/MM/YYYY'));
-	 console.log("DIA ANTERIOR " + moment(date).subtract(1, 'days').format('DD/MM/YYYY'))
-	 if (checkedHoliday(term)) {
-		term = addDays(term, 1); // Adiciona + 1 dia caso seja feriado
-	}
-});
+	deliveryData();
+ });
 
-function addWeekdays(date, days) {
-  date = moment(date); // use a clone
+function deliveryData() {
+	var date = increaseDay(moment(), 3);
+	var expressDelivery = decrementDay(date, 1);
+
+	if (checkedHoliday(date)) {
+		date = increaseDay(date, 1);
+		var holidayDate = checkedHoliday(expressDelivery);
+	}
+
+	if (checkedHoliday(expressDelivery)) {
+		expressDelivery = increaseDay(expressDelivery, 1);
+		var holidayExpress = checkedHoliday(expressDelivery);
+	}
+
+	this.deliveryDate.value = moment(date).format('DD/MM/YYYY');
+	this.deliveryExpress.value = moment(expressDelivery).format('DD/MM/YYYY');
+
+	this.deliveryDate.innerText = moment(date).format('DD/MM/YYYY');
+	this.deliveryExpress.innerText = moment(expressDelivery).format('DD/MM/YYYY');
+}
+
+function increaseDay(date, days) {
+  var date = moment(date);
   while (days > 0) {
     date = date.add(1, 'days');
-    // decrease "days" only if it's a weekday.
+    if (date.isoWeekday() !== 6 && date.isoWeekday() !== 7) {
+      days -= 1;
+    }
+  }
+  return date;
+}
+
+function decrementDay(date, days) {
+  var date = moment(date);
+  while (days > 0) {
+    date = date.subtract(1, 'days')
     if (date.isoWeekday() !== 6 && date.isoWeekday() !== 7) {
       days -= 1;
     }
@@ -42,7 +69,6 @@ function checkedHoliday(data){
 	var feriados = [];
 	var ano = moment(consultar, 'DD/MM/YYYY').year();
 	var pascoa = moment(ano + Easter(ano));
-
 
 	feriados.push({
 		data: moment(ano + '0101').format('DD/MM/YYYY'),
@@ -69,7 +95,7 @@ function checkedHoliday(data){
 		descricao: 'Corpus Christi'
 	})
 	feriados.push({
-		data: moment(ano + '0421').format('DD/MM/YYYY'),
+		data: moment(ano + '0621').format('DD/MM/YYYY'),
 		descricao: 'Tiradentes'
 	})
 	feriados.push({
@@ -160,7 +186,8 @@ function capturesFields(){
 	this.typeTranslation = document.querySelector("#typeTranslation").value;
 	this.from = document.querySelector("#from").value;
 	this.to = document.querySelector("#for").value;
-	this.date = document.querySelector("#date").value;
+	this.deliveryDate = document.querySelector("#deliveryDate");
+	this.deliveryExpress = document.querySelector("#deliveryExpress");
 	this.numberWords = document.querySelector("#qtdWords").value;
 	this.txtUrgencyRate = document.querySelector("#txtUrgencyRate");
 	this.itemUrgencyRate = document.getElementById("itemUrgencyRate");

@@ -21,9 +21,8 @@
             typeTranslation: {
                 required: true,
             },
-            date : {
-                required: true,
-                minlength: 10,
+            deliveryDateOption : {
+                required: true
             },
             qtdWords: {
                 required: true,
