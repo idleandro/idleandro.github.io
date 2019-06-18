@@ -7,7 +7,7 @@
         },
         messages: {},
         rules: {
-            first_name : {
+            name : {
                 required: true,
                 minlength: 3,
             },
