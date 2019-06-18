@@ -2077,7 +2077,7 @@ a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none; }
   .btn-alter {
-    margin: 0 9px;
+    margin: auto 9px;
     padding: 7px 0;
   }
 
