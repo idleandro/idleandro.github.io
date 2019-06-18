@@ -10,8 +10,8 @@ var urgencyRate;
 var txtUrgencyRate;
 var itemUrgencyRate;
 var total;
-var deliveryDate = "xxxxx";
-var deliveryExpress = "yyyy";
+var deliveryDate = "";
+var deliveryExpress = "";
 
 $("#form-budget").on('change keydown paste input', function(){
 
@@ -38,8 +38,8 @@ function deliveryData() {
 	this.deliveryDate.value = moment(date).format('DD/MM/YYYY');
 	this.deliveryExpress.value = moment(expressDelivery).format('DD/MM/YYYY');
 
-	this.deliveryDate.innerText = moment(date).format('DD/MM/YYYY');
-	this.deliveryExpress.innerText = moment(expressDelivery).format('DD/MM/YYYY');
+	this.deliveryDate.innerText = moment(date).format('DD/MM/YYYY') + " - Normal";
+	this.deliveryExpress.innerText = moment(expressDelivery).format('DD/MM/YYYY') + " - Expressa";
 }
 
 function increaseDay(date, days) {
