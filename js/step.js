@@ -176,9 +176,7 @@
 
     $( ".toggle_option" ).click(function(e) { 
            if ($(this).is("#first_toggle")) {
-          //  $( ".form-group.visible-initial" ).hide( "fast", function() {
                 $( ".form-group.invisible-initial" ).show( "fast", function() {}); 
-          //  });
         } else if ($(this).is("#second_toggle")) {
             $( ".form-group.invisible-initial" ).hide( "fast", function() {
                 $( ".form-group.visible-initial" ).show( "fast", function() {}); 
@@ -186,13 +184,19 @@
         };
    });
 
+    $( "#typeTranslation" ).click(function(e) { 
+        if ($(this).val() == "Legendagem") {
+            $( ".subtitle" ).show( "fast", function() {}); 
+        } else {
+            $( ".subtitle" ).hide( "fast", function() {}); 
+        };
+   });
+
     $("#url").on('change keydown paste input', function(){
         if($("#url").val() == null || $("#url").val() ==""){
             $(".documents").show();
-            console.log("mostrar")
         } else {
             $(".documents").hide();
-            console.log("ocultar")
         }
     });
   

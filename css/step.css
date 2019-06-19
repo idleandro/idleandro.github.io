@@ -533,6 +533,10 @@ legend {
   width: 100%;
 }
 
+.subtitle {
+  display: none;
+}
+
 .list-item {
   position: absolute;
   width: 100%;

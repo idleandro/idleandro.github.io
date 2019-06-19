@@ -3031,11 +3031,11 @@ input[type="button"].btn-block {
   opacity: 0; }
   .custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
-    border-color: #007bff;
-    background-color: #007bff; }
+    border-color: #cc0000;
+    background-color: #7b0303; }
   .custom-control-input:focus ~ .custom-control-label::before {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(204, 0, 0, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(204, 0, 0, 0.25); }
   .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
     border-color: #80bdff; }
   .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
@@ -3050,14 +3050,15 @@ input[type="button"].btn-block {
 .custom-control-label {
   position: relative;
   margin-bottom: 0;
-  vertical-align: top; }
+  vertical-align: top;
+  font-size: 1.0rem; }
   .custom-control-label::before {
     position: absolute;
     top: 0.25rem;
     left: -1.5rem;
     display: block;
-    width: 1rem;
-    height: 1rem;
+    width: 1.20rem;
+    height: 1.20rem;
     pointer-events: none;
     content: "";
     background-color: #fff;
@@ -3067,8 +3068,8 @@ input[type="button"].btn-block {
     top: 0.25rem;
     left: -1.5rem;
     display: block;
-    width: 1rem;
-    height: 1rem;
+    width: 1.20rem;
+    height: 1.20rem;
     content: "";
     background-repeat: no-repeat;
     background-position: center center;
