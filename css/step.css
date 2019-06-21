@@ -378,7 +378,7 @@ label.error {
     color: #ff1212; }
 
 input.error,
-select.error  {
+select.error    {
   border: 1px solid #ff1212; }
 
 ul.list-item {

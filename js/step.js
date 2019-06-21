@@ -37,6 +37,9 @@
             documents: {
                 required: true,
             },
+            typeSubtitling: {
+              required: true,  
+            }
         },
         onfocusout: function(element) {
             $(element).valid();
@@ -184,14 +187,6 @@
         };
    });
 
-    $( "#typeTranslation" ).click(function(e) { 
-        if ($(this).val() == "Legendagem") {
-            $( ".subtitle" ).show( "fast", function() {}); 
-        } else {
-            $( ".subtitle" ).hide( "fast", function() {}); 
-        };
-   });
-
     $("#url").on('change keydown paste input', function(){
         if($("#url").val() == null || $("#url").val() ==""){
             $(".documents").show();
@@ -214,17 +209,19 @@
 
     $('#phone').mask('00 00000-0000');
     $('#date').mask('00/00/0000');
-    $( "#first_name" ).rules( "remove", "min max" );
+    $( "#first" ).rules( "remove", "min max" );
 
     $("#typeTranslation").on('change keydown paste input', function(){
         var value = document.querySelector("#typeTranslation").value;
         if(value == "Legendagem"){
             $("#block-words").hide();
             $("#block-minutes").show();
+            $(".subtitle").show("fast"); 
         } else {
             $("#block-words").show();
             $("#block-minutes").hide();
+            $(".subtitle").hide("fast"); 
         }
-    });
+    }); //document.querySelector("input[name=type-of-subtitling]:checked")
         
 })(jQuery);
