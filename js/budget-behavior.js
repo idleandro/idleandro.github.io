@@ -21,7 +21,7 @@ function uploadMultipleFiles(files) {
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles");
-    xhr.setRequestHeader("Content-Type", "application/form-data;charset=UTF-8");
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 
     xhr.onload = function() {
