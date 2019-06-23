@@ -1,5 +1,48 @@
 deliveryData();
 
+$("#documents").ready(function(){
+    $("input[type=file]").click(function(){
+       var files = $(this).files;
+       console.log("estou acima" + files);
+    });
+
+    $("input[type=file]").change(function(){
+       var files = document.querySelector("#documents").files;
+       uploadMultipleFiles(files);
+
+    });
+});
+
+function uploadMultipleFiles(files) {
+    var formData = new FormData();
+    for(var index = 0; index < files.length; index++) {
+        formData.append("files", files[index]);
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles");
+    //xhr.setRequestHeader('Content-Type', 'application/form-data');
+    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+    xhr.onload = function() {
+        console.log(xhr.responseText);
+        var response = JSON.parse(xhr.responseText);
+        if(xhr.status == 200) {
+          //  multipleFileUploadError.style.display = "none";
+            var content = "<p>All Files Uploaded Successfully</p>";
+            for(var i = 0; i < response.length; i++) {
+                content += "<p>DownloadUrl : <a href='" + response[i].fileDownloadUri + "' target='_blank'>" + response[i].fileDownloadUri + "</a></p>";
+            }
+            // multipleFileUploadSuccess.innerHTML = content;
+            // multipleFileUploadSuccess.style.display = "block";
+        } else {
+            // multipleFileUploadSuccess.style.display = "none";
+            // multipleFileUploadError.innerHTML = (response && response.message) || "Some Error Occurred";
+        }
+    }
+    xhr.send(formData);
+}
+
 function deliveryData() {
 	var deliveryDate = document.querySelector("#deliveryDate");
 	var deliveryExpress = document.querySelector("#deliveryExpress");
