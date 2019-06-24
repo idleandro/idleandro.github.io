@@ -9,36 +9,48 @@ $("#documents").ready(function(){
     $("input[type=file]").change(function(){
        var files = document.querySelector("#documents").files;
        uploadMultipleFiles(files);
-
     });
 });
 
 function uploadMultipleFiles(files) {
-    var formData = new FormData();
 
+    var formData = new FormData();
     for(var index = 0; index < files.length; index++) {
         formData.append("files", files[index]);
     }
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "http://localhost:8080/uploadMultipleFiles");
-   // xhr.setRequestHeader("Content-type","application/form-data")
-  //  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
    
     xhr.onload = function() {
         console.log(xhr.responseText);
         var response = JSON.parse(xhr.responseText);
+
         if(xhr.status == 200) {
-          //  multipleFileUploadError.style.display = "none";
-            var content = "<p>All Files Uploaded Successfully</p>";
+            var content;
             for(var i = 0; i < response.length; i++) {
-                content += "<p>DownloadUrl : <a href='" + response[i].fileDownloadUri + "' target='_blank'>" + response[i].fileDownloadUri + "</a></p>";
+                content += "<th>"+ (i+1) +"</th><td>"+response[i].fileName +"</td><td>"+response[i].qtdWords +"</td>";
+                var tbody = document.querySelector("#form-budget-p-1 > table > tbody");
+                tbody.innerHTML = "";
             }
-            // multipleFileUploadSuccess.innerHTML = content;
-            // multipleFileUploadSuccess.style.display = "block";
+
+			for (var i = 0; i < response.length; i++){
+			    var tr = document.createElement('tr');   
+			    var td1 = document.createElement('td');
+			    var td2 = document.createElement('td');
+			    var td3 = document.createElement('td');
+
+				td1.appendChild(document.createTextNode(i+1));
+			    td2.appendChild(document.createTextNode(response[i].fileName));
+			    td3.appendChild(document.createTextNode(response[i].qtdWords));
+
+			    tr.appendChild(td1);
+			    tr.appendChild(td2);
+			    tr.appendChild(td3);
+			    tbody.appendChild(tr);
+			}
         } else {
-            // multipleFileUploadSuccess.style.display = "none";
-            // multipleFileUploadError.innerHTML = (response && response.message) || "Some Error Occurred";
+             //zzz.innerHTML = (response && response.message) || "Some Error Occurred";
         }
     }
     console.log(formData);

@@ -179,10 +179,10 @@
 
     $( ".toggle_option" ).click(function(e) { 
            if ($(this).is("#first_toggle")) {
-                $( ".form-group.invisible-initial" ).show( "fast", function() {}); 
+                //$( ".form-group.invisible-initial" ).show( "fast", function() {}); 
         } else if ($(this).is("#second_toggle")) {
             $( ".form-group.invisible-initial" ).hide( "fast", function() {
-                $( ".form-group.visible-initial" ).show( "fast", function() {}); 
+               // $( ".form-group.visible-initial" ).show( "fast", function() {}); 
             }); 
         };
    });
@@ -192,6 +192,15 @@
             $(".documents").show();
         } else {
             $(".documents").hide();
+        }
+    });
+
+   $("#documents").on('change keydown paste input', function(){
+       console.log("o");
+        if($("#documents").val() == null || $("#documents").val() ==""){
+            $("#tableDetail").hide();
+        } else {
+            $("#tableDetail").show();
         }
     });
   

@@ -533,7 +533,7 @@ legend {
   width: 100%;
 }
 
-.subtitle {
+.subtitle, #tableDetail {
   display: none;
 }
 

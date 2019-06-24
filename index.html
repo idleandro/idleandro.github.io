@@ -185,7 +185,7 @@
 						<option value="" id="deliveryExpress"></option>
 					</select>
 				</div>
-				<div class="row-nowrap">
+<!-- 				<div class="row-nowrap">
 					<div class="item" id="block-words">  
 						<div class="form-group">
 							<label for="qtdWords" class="form-label required">Quantidade de palavras</label>
@@ -201,6 +201,27 @@
 					<div class="item" id="link-help">
 						<a href="https://support.office.com/pt-br/article/mostrar-contagem-de-palavras-3c9e6a11-a04d-43b4-977c-563a0e0d5da3" target="_blank">Como mostrar a quantidade de palavras do arquivo  - Office 365</a>
 					</div>
+				</div> -->
+				<!-- invisible-initial / invisible-initial -->
+				<div class="form-group  invisible-url documents">
+					<label for="documents">Selecione o(s) arquivo(s)</label>
+					<input id="documents" type="file" name="documents" multiple="">
+				</div>
+				<table class="table table-striped" id="tableDetail">
+				  <thead>
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Nome do Arquivo</th>
+				      <th scope="col">Quantidade de Palavras</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  </tbody>
+				</table>
+				<div class="form-group ">
+					<label for="url" class="form-label">URL</label>
+					<input type="text" name="url" id="url" class="form-control" />
+					<span>Caso seu arquivo seja maior que 30Mb, nos envie através de um serviço de compartilhamento. Ex: Dropbox, WeTransfer e Google Drive.</span>
 				</div>
 				<div class="form-group">
 					<div class="row-nowrap"">
@@ -216,15 +237,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="form-group invisible-initial invisible-url documents">
-					<label for="documents">Selecione o(s) arquivo(s)</label>
-					<input id="documents" type="file" name="documents" multiple="">
-				</div>
-				<div class="form-group invisible-initial">
-					<label for="url" class="form-label">URL</label>
-					<input type="text" name="url" id="url" class="form-control" />
-					<span>Caso seu arquivo seja maior que 30Mb, nos envie através de um serviço de compartilhamento. Ex: Dropbox, WeTransfer e Google Drive.</span>
 				</div>
 			</fieldset>
 			<h3>

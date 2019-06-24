@@ -27,7 +27,7 @@ var Values = {
 	setNumberWords: function(){
 		var elements = document.getElementsByClassName('number-words');
 		for (var i = 0; i < elements.length; i++) {
-			elements[i].innerText = this.qtdWords.value;
+		//	elements[i].innerText = this.qtdWords.value;
 		}
 	}
 };
@@ -39,11 +39,6 @@ this.formDudget.addEventListener('change', (event) => {
 	obj.setValuesCard();
 	obj.setNumberWords();
 });
-
-
-
-
-
 
 function calculatePtForEn(){
 	var valueWord = 0.044;
