@@ -20,7 +20,7 @@ function uploadMultipleFiles(files) {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:8080/uploadMultipleFiles");
+    xhr.open("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles");
    
     xhr.onload = function() {
         console.log(xhr.responseText);
