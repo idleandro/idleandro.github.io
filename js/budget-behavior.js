@@ -15,18 +15,16 @@ $("#documents").ready(function(){
 
 function uploadMultipleFiles(files) {
     var formData = new FormData();
+
     for(var index = 0; index < files.length; index++) {
         formData.append("files", files[index]);
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles");
-    xhr.setRequestHeader("Content-type","application/form-data")
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-    xhr.setRequestHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
-    xhr.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
-
+    xhr.open("POST", "http://localhost:8080/uploadMultipleFiles");
+   // xhr.setRequestHeader("Content-type","application/form-data")
+  //  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+   
     xhr.onload = function() {
         console.log(xhr.responseText);
         var response = JSON.parse(xhr.responseText);
@@ -43,6 +41,7 @@ function uploadMultipleFiles(files) {
             // multipleFileUploadError.innerHTML = (response && response.message) || "Some Error Occurred";
         }
     }
+    console.log(formData);
     xhr.send(formData);
 }
 
