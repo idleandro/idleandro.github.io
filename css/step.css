@@ -1,5 +1,5 @@
 
-.row-nowrap {
+.row-nowrap{
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
@@ -106,7 +106,7 @@
   left: 50%;
 }
 
-div#link-help {
+div#link-help, .btn-clear {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -114,7 +114,15 @@ div#link-help {
   padding: 0  15px 0;
 }
 
-.form-group.invisible-initial {
+.btn-clear {
+  margin-top: 10px; 
+}
+
+.btn-alter > button{
+  margin-top: 7px;
+}
+
+.invisible-initial {
   display: none;
 }
 

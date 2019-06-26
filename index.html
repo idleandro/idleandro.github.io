@@ -185,47 +185,9 @@
 						<option value="" id="deliveryExpress"></option>
 					</select>
 				</div>
-<!-- 				<div class="row-nowrap">
-					<div class="item" id="block-words">  
-						<div class="form-group">
-							<label for="qtdWords" class="form-label required">Quantidade de palavras</label>
-							<input name="qtdWords" id="qtdWords" class="form-control" name="qtdWords" type="text" class="form-control" placeholder="Qtd de Palavras">
-						</div>
-					</div>
-					<div class="item" id="block-minutes">  
-						<div class="form-group">
-							<label for="qtdMinutes" class="form-label required">Quantidade de Minutos</label>
-							<input name="qtdMinutes" id="qtdMinutes" class="form-control" name="qtdMinutes" type="text" class="form-control" placeholder="Qtd de Minutos">
-						</div>
-					</div>
-					<div class="item" id="link-help">
-						<a href="https://support.office.com/pt-br/article/mostrar-contagem-de-palavras-3c9e6a11-a04d-43b4-977c-563a0e0d5da3" target="_blank">Como mostrar a quantidade de palavras do arquivo  - Office 365</a>
-					</div>
-				</div> -->
-				<!-- invisible-initial / invisible-initial -->
-				<div class="form-group  invisible-url documents">
-					<label for="documents">Selecione o(s) arquivo(s)</label>
-					<input id="documents" type="file" name="documents" multiple="">
-				</div>
-				<table class="table table-striped" id="tableDetail">
-				  <thead>
-				    <tr>
-				      <th scope="col">#</th>
-				      <th scope="col">Nome do Arquivo</th>
-				      <th scope="col">Quantidade de Palavras</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				  </tbody>
-				</table>
-				<div class="form-group ">
-					<label for="url" class="form-label">URL</label>
-					<input type="text" name="url" id="url" class="form-control" />
-					<span>Caso seu arquivo seja maior que 30Mb, nos envie através de um serviço de compartilhamento. Ex: Dropbox, WeTransfer e Google Drive.</span>
-				</div>
 				<div class="form-group">
 					<div class="row-nowrap"">
-						<div class="link-documents">Deseja enviar arquivo(s) ou Link</div>
+						<div class="link-documents">Deseja enviar Link de compartilhamento do arquivo</div>
 						<div class="item">
 							<div class="box-slider toggle_radio d-flex p-2 justify-content-center">
 								<input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
@@ -238,6 +200,54 @@
 						</div>
 					</div>
 				</div>
+				<div id="block-documents">
+					<div class="row">
+					  <div class="form-group invisible-url documents col-8">
+					  		<label for="documents">Selecione o(s) arquivo(s)</label>
+							<input id="documents" type="file" name="documents" multiple="">
+					  </div>
+					  <div class="col-4 btn-clear"><button type="button" class="btn btn-outline-danger" id="btn-clear">Limpar</button></div>
+					</div>
+					<table class="table table-striped" id="tableDetail">
+					  <thead>
+					    <tr>
+					      <th scope="col">#</th>
+					      <th scope="col">Nome do Arquivo</th>
+					      <th scope="col">Quantidade de Palavras</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  </tbody>
+					</table>					
+				</div>
+				<div id="block-url" class="invisible-initial">
+					<!-- //class="row-nowrap invisible-initial" -->
+					<div class="row"> 
+						<div class="form-group col-8">
+							<label for="url" class="form-label">URL</label>
+							<input type="text" name="url" id="url" class="form-control" />
+							<span>Caso seu arquivo seja maior que 30Mb, nos envie através de um serviço de compartilhamento. Ex: Dropbox, WeTransfer e Google Drive.</span>
+						</div>
+						<div class="form-group col-4 item" id="block-words">  
+							<div class="form-group visible-initial">
+								<label for="qtdWords" class="form-label required">Quantidade de caracteres</label>
+								<input name="qtdWords" id="qtdWords" class="form-control" name="qtdWords" type="text" class="form-control" placeholder="Qtd de Palavras">
+							</div>
+						</div>
+						<div class="form-group col-4 item invisible-initial" id="block-minutes">  
+							<div class="form-group">
+								<label for="qtdMinutes" class="form-label required">Quantidade de Minutos</label>
+								<input name="qtdMinutes" id="qtdMinutes" class="form-control" name="qtdMinutes" type="text" class="form-control" placeholder="Qtd de Minutos">
+							</div>
+						</div>
+	<!-- 					<div class="item" id="link-help">
+							<a href="https://support.office.com/pt-br/article/mostrar-contagem-de-palavras-3c9e6a11-a04d-43b4-977c-563a0e0d5da3" target="_blank">Como mostrar a quantidade de palavras do arquivo  - Office 365</a>
+						</div> -->						
+					</div>
+				</div>
+
+				<!-- invisible-initial / invisible-initial -->
+
 			</fieldset>
 			<h3>
 				<span class="icon"><i class="ti-credit-card"></i></span>

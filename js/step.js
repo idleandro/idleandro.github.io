@@ -179,38 +179,35 @@
 
     $( ".toggle_option" ).click(function(e) { 
            if ($(this).is("#first_toggle")) {
-                //$( ".form-group.invisible-initial" ).show( "fast", function() {}); 
+                $("#block-documents").fadeOut("fast", function(){
+                 $("#block-url").fadeIn( "fast");
+                });
         } else if ($(this).is("#second_toggle")) {
-            $( ".form-group.invisible-initial" ).hide( "fast", function() {
-               // $( ".form-group.visible-initial" ).show( "fast", function() {}); 
-            }); 
+            $("#block-url").fadeOut( "fast" , function(){
+                 $("#block-documents").fadeIn( "fast");
+            });
         };
    });
 
-    $("#url").on('change keydown paste input', function(){
-        if($("#url").val() == null || $("#url").val() ==""){
-            $(".documents").show();
+   $("#documents").on('change keydown paste input', function(){
+        if($("#documents").val() == null || $("#documents").val() ==""){
+            $("#tableDetail").fadeOut();
         } else {
-            $(".documents").hide();
+            $("#tableDetail").fadeIn();
         }
     });
 
-   $("#documents").on('change keydown paste input', function(){
-       console.log("o");
-        if($("#documents").val() == null || $("#documents").val() ==""){
-            $("#tableDetail").hide();
-        } else {
-            $("#tableDetail").show();
-        }
-    });
-  
+   $("#btn-clear").on('click', function(){
+           document.querySelector("#documents").value = "";
+           $("#tableDetail").hide();
+   });
+
     var upload = document.getElementById("documents");
     upload.addEventListener("change", function(e) {
         var size = upload.files[0].size;
         if(size < 21048576) { //1MB         
           
         } else {           
-          
           upload.value = ""; //Limpa o campo          
         }
         e.preventDefault();
@@ -231,6 +228,6 @@
             $("#block-minutes").hide();
             $(".subtitle").hide("fast"); 
         }
-    }); //document.querySelector("input[name=type-of-subtitling]:checked")
+    });
         
 })(jQuery);

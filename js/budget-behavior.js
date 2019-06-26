@@ -20,7 +20,7 @@ function uploadMultipleFiles(files) {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles");
+    xhr.open("POST", "http://localhost:8080/uploadMultipleFiles");
    
     xhr.onload = function() {
         console.log(xhr.responseText);
@@ -30,7 +30,7 @@ function uploadMultipleFiles(files) {
             var content;
             for(var i = 0; i < response.length; i++) {
                 content += "<th>"+ (i+1) +"</th><td>"+response[i].fileName +"</td><td>"+response[i].qtdWords +"</td>";
-                var tbody = document.querySelector("#form-budget-p-1 > table > tbody");
+                var tbody = document.querySelector("#tableDetail > tbody");
                 tbody.innerHTML = "";
             }
 
