@@ -1,16 +1,17 @@
-var formDudget, typeTranslation, from, to, qtdWords, qtdMinutes, dateSelected, documents, url, nameClient, email, phone;
+var formDudget, typeTranslation, typeSubtitling, from, to, qtdCaracteres, qtdMinutes, dateSelected, documents, url, nameClient, email, phone;
 
 this.formDudget = document.querySelector('#form-budget');
 
 var Values = {
 	capturesFieldsForm: function(){
 		this.typeTranslation = document.querySelector("#typeTranslation");
+		this.typeSubtitling = document.querySelectorAll('input[name="typeSubtitling"]:checked');
 		this.from = document.querySelector("#from");
 		this.to = document.querySelector("#for");
-		this.dateSelected = document.querySelector("#deliveryDateOption")
+		this.dateSelected = document.querySelector("#deliveryDateOption");
 		this.deliveryDate = document.querySelector("#deliveryDate");
 		this.deliveryExpress = document.querySelector("#deliveryExpress");
-		this.qtdWords = document.querySelector("#qtdWords");
+		this.qtdCaracteres = document.querySelector("#qtdCaracteres");
 		this.qtdMinutes = document.querySelector("#qtdMinutes");
 		this.documents = document.querySelector("#documents");
 		this.url = document.querySelector("#url");
@@ -24,20 +25,31 @@ var Values = {
 		document.querySelector("#forItem").innerText = this.to.value;
 		document.querySelector("#delivery-term").innerText = this.dateSelected.value;
 	},
-	setNumberWords: function(){
-		var elements = document.getElementsByClassName('number-words');
-		for (var i = 0; i < elements.length; i++) {
-		//	elements[i].innerText = this.qtdWords.value;
+	setNumberCharactersOrMinutes: function(){
+		var characters = document.getElementsByClassName('number-characters');
+		var minutes = document.getElementsByClassName('number-minutes');
+
+		if (this.typeTranslation.value == "Legendagem") {
+			for (var i = 0; i < minutes.length; i++) {
+				minutes[i].innerText = this.qtdMinutes.value;
+				$(".item-caracteres").hide();
+				$(".item-minutes").show();
+			}
+		} else {
+			for (var i = 0; i < characters.length; i++) {
+				characters[i].innerText = this.qtdCaracteres.value;
+				$(".item-minutes").hide();
+				$(".item-caracteres").show();
+			}
 		}
 	}
 };
-
 
 this.formDudget.addEventListener('change', (event) => {
   var obj = Object.create(Values);
 	obj.capturesFieldsForm();
 	obj.setValuesCard();
-	obj.setNumberWords();
+	obj.setNumberCharactersOrMinutes();
 });
 
 function calculatePtForEn(){
@@ -95,8 +107,6 @@ function insertsValueIntoFields(){
 	document.querySelector("#urgency-rate").innerText = this.urgencyRate;
 	document.querySelector("#total").innerText = this.total;
 }
-
-
 
 function setTotal(total){
 	this.total =  formatPtBr(total);

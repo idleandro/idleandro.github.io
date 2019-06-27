@@ -204,7 +204,8 @@
 					<div class="row">
 					  <div class="form-group invisible-url documents col-8">
 					  		<label for="documents">Selecione o(s) arquivo(s)</label>
-							<input id="documents" type="file" name="documents" multiple="">
+							<input id="documents" type="file" name="documents" multiple="" placeholder="Links Ex: Dropbox, Google Drive etc">
+							<!-- <span>Arquivos maior que 30Mb, envie através de um serviço de compartilhamento. Ex: Dropbox, Google Drive etc.</span> -->
 					  </div>
 					  <div class="col-4 btn-clear"><button type="button" class="btn btn-outline-danger" id="btn-clear">Limpar</button></div>
 					</div>
@@ -213,7 +214,7 @@
 					    <tr>
 					      <th scope="col">#</th>
 					      <th scope="col">Nome do Arquivo</th>
-					      <th scope="col">Quantidade de Palavras</th>
+					      <th scope="col">Qtd de caracteres</th>
 					    </tr>
 					  </thead>
 					  <tbody>
@@ -226,12 +227,11 @@
 						<div class="form-group col-8">
 							<label for="url" class="form-label">URL</label>
 							<input type="text" name="url" id="url" class="form-control" />
-							<span>Caso seu arquivo seja maior que 30Mb, nos envie através de um serviço de compartilhamento. Ex: Dropbox, WeTransfer e Google Drive.</span>
 						</div>
-						<div class="form-group col-4 item" id="block-words">  
+						<div class="form-group col-4 item" id="block-caracteres">  
 							<div class="form-group visible-initial">
-								<label for="qtdWords" class="form-label required">Quantidade de caracteres</label>
-								<input name="qtdWords" id="qtdWords" class="form-control" name="qtdWords" type="text" class="form-control" placeholder="Qtd de Palavras">
+								<label for="qtdCaracteres" class="form-label required">Qtd de caracteres</label>
+								<input name="qtdCaracteres" id="qtdCaracteres" class="form-control" name="qtdCaracteres" type="text" class="form-control" placeholder="Qtd de caracteres">
 							</div>
 						</div>
 						<div class="form-group col-4 item invisible-initial" id="block-minutes">  
@@ -241,7 +241,7 @@
 							</div>
 						</div>
 	<!-- 					<div class="item" id="link-help">
-							<a href="https://support.office.com/pt-br/article/mostrar-contagem-de-palavras-3c9e6a11-a04d-43b4-977c-563a0e0d5da3" target="_blank">Como mostrar a quantidade de palavras do arquivo  - Office 365</a>
+							<a href="https://support.office.com/pt-br/article/mostrar-contagem-de-caracteres-3c9e6a11-a04d-43b4-977c-563a0e0d5da3" target="_blank">Como mostrar a quantidade de caracteres do arquivo  - Office 365</a>
 						</div> -->						
 					</div>
 				</div>
@@ -271,7 +271,8 @@
 										<span> para </span> 
 										<span id="forItem">Português</span></li>
 									<li class="list-group-item">Prazo para recebimento: <span id="delivery-term">10/10/2019</span></li>
-									<li class="list-group-item">Qtd de palavras: <span class="number-words">1800</span></li>
+									<li class="list-group-item item-caracteres">Qtd de caracteres: <span class="number-characters">1800</span></li>
+									<li class="list-group-item item-minutes">Qtd de minutos: <span class="number-minutes">1800</span></li>
 								</ul>
 							</div>
 						</div>
@@ -282,10 +283,11 @@
 								<h5 class="card-title">Detalhes de valores</h5>
 								<p class="card-text"></p>
 								<ul class="list-group list-group-flush">
-									<li class="list-group-item">1 lauda = 1500 caracteres</li>
+									<li class="list-group-item">1 lauda = 1250 caracteres</li>
 									<li class="list-group-item">R$ 40,5 por lauda</li>
-									<li class="list-group-item">R$ 0,027 por palavra</li>
-									<li class="list-group-item">Qtd de palavras: <strong class="number-words">1800</strong></li>
+									<li class="list-group-item">R$ 0,027 por caractere</li>
+									<li class="list-group-item item-caracteres">Qtd de caracteres: <strong class="number-characters">1800</strong></li>
+									<li class="list-group-item item-minutes"">Qtd de minutos: <strong class="number-minutes">1800</strong></li>
 									<li class="list-group-item" id="itemUrgencyRate">Taxa de urgência por palavra <strong id="urgency-rate">R$ 0,023</strong></li>
 									<li class="list-group-item">Total de: <strong>R$ </strong><strong id="total" class="total">90,00</strong></li>
 								</ul>

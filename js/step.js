@@ -24,7 +24,7 @@
             deliveryDateOption : {
                 required: true
             },
-            qtdWords: {
+            qtdCaracteres: {
                 required: true,
                 minlength: 2,
                 number: true
@@ -220,11 +220,11 @@
     $("#typeTranslation").on('change keydown paste input', function(){
         var value = document.querySelector("#typeTranslation").value;
         if(value == "Legendagem"){
-            $("#block-words").hide();
+            $("#block-caracteres").hide();
             $("#block-minutes").show();
             $(".subtitle").show("fast"); 
         } else {
-            $("#block-words").show();
+            $("#block-caracteres").show();
             $("#block-minutes").hide();
             $(".subtitle").hide("fast"); 
         }
