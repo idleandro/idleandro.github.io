@@ -187,7 +187,7 @@
 				</div>
 				<div class="form-group">
 					<div class="row-nowrap"">
-						<div class="link-documents">Deseja enviar Link de compartilhamento do arquivo</div>
+						<div class="link-documents">Deseja enviar Link do arquivo: </div>
 						<div class="item">
 							<div class="box-slider toggle_radio d-flex p-2 justify-content-center">
 								<input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
@@ -204,8 +204,9 @@
 					<div class="row">
 					  <div class="form-group invisible-url documents col-8">
 					  		<label for="documents">Selecione o(s) arquivo(s)</label>
-							<input id="documents" type="file" name="documents" multiple="" placeholder="Links Ex: Dropbox, Google Drive etc">
+							<input id="documents" type="file" name="documents" multiple="">
 							<!-- <span>Arquivos maior que 30Mb, envie através de um serviço de compartilhamento. Ex: Dropbox, Google Drive etc.</span> -->
+							<span class="erro-server"></span>
 					  </div>
 					  <div class="col-4 btn-clear"><button type="button" class="btn btn-outline-danger" id="btn-clear">Limpar</button></div>
 					</div>
@@ -226,7 +227,7 @@
 					<div class="row"> 
 						<div class="form-group col-8">
 							<label for="url" class="form-label">URL</label>
-							<input type="text" name="url" id="url" class="form-control" />
+							<input type="text" name="url" id="url" class="form-control" placeholder="Dropbox, Google Drive etc"/>
 						</div>
 						<div class="form-group col-4 item" id="block-caracteres">  
 							<div class="form-group visible-initial">
@@ -236,7 +237,7 @@
 						</div>
 						<div class="form-group col-4 item invisible-initial" id="block-minutes">  
 							<div class="form-group">
-								<label for="qtdMinutes" class="form-label required">Quantidade de Minutos</label>
+								<label for="qtdMinutes" class="form-label required">Qtd de Minutos</label>
 								<input name="qtdMinutes" id="qtdMinutes" class="form-control" name="qtdMinutes" type="text" class="form-control" placeholder="Qtd de Minutos">
 							</div>
 						</div>

@@ -73,6 +73,11 @@
   display: none;
 }
 
+.totalCaracteres > td {
+  background: #7b0303;
+  color: #fff;
+}
+
 .toggle_option_slider{
   /*display: none;*/
   /*background: red;*/

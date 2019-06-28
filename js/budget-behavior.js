@@ -1,5 +1,7 @@
 deliveryData();
 
+ var sumCaracteres = 0;
+
 $("#documents").ready(function(){
     $("input[type=file]").click(function(){
        var files = $(this).files;
@@ -20,11 +22,13 @@ function uploadMultipleFiles(files) {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:8080/uploadMultipleFiles");
+    xhr.open("POST", "http://apifdxab.herokuapp.com//uploadMultipleFiles");
    
     xhr.onload = function() {
         console.log(xhr.responseText);
         var response = JSON.parse(xhr.responseText);
+        var totalCaracteres = document.getElementsByClassName('nCaracteres');
+       
 
         if(xhr.status == 200) {
             var content;
@@ -35,26 +39,46 @@ function uploadMultipleFiles(files) {
             }
 
 			for (var i = 0; i < response.length; i++){
-			    var tr = document.createElement('tr');   
+			    var tr = document.createElement('tr'); 
+			    var trTotal = document.createElement('tr'); 
+			    trTotal.className = "totalCaracteres";
 			    var td1 = document.createElement('td');
 			    var td2 = document.createElement('td');
-			    var td3 = document.createElement('td');
-
+			    var td3 = document.createElement("td");
+			    	td3.className = "nCaracteres";
+			    var td4 = document.createElement("td");
+			   		td4.setAttribute("colspan", "2");
+			   		td4.setAttribute("align", "right");
+			    var tdTotal = document.createElement("td");
+			    
 				td1.appendChild(document.createTextNode(i+1));
 			    td2.appendChild(document.createTextNode(response[i].fileName));
 			    td3.appendChild(document.createTextNode(response[i].qtdWords));
-
+			    td4.appendChild(document.createTextNode("Total de caracteres: "));
+			    sumCaracteres += parseInt(response[i].qtdWords);
 			    tr.appendChild(td1);
 			    tr.appendChild(td2);
 			    tr.appendChild(td3);
+			    trTotal.appendChild(td4);
+			    tdTotal.appendChild(document.createTextNode(sumCaracteres));
+			    trTotal.appendChild(tdTotal);
 			    tbody.appendChild(tr);
 			}
+			tbody.appendChild(trTotal);
         } else {
-             //zzz.innerHTML = (response && response.message) || "Some Error Occurred";
+        	var erroServer =  document.querySelector(".erro-server");
+             erroServer.innerHTML = "Servidor indisponível no momento";
+             erroServer.style.color = "#7b0303"
+             setTimeout(function(){ document.querySelector("#btn-clear").click(); }, 1000);
+             
         }
     }
     console.log(formData);
     xhr.send(formData);
+}
+
+function getTotalCaracteres(){
+	return this.sumCaracteres;
 }
 
 function deliveryData() {

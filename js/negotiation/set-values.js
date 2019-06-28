@@ -1,4 +1,4 @@
-var formDudget, typeTranslation, typeSubtitling, from, to, qtdCaracteres, qtdMinutes, dateSelected, documents, url, nameClient, email, phone;
+var formDudget, typeTranslation, typeSubtitling, from, to, qtdCaracteres, qtdMinutes, dateSelected, documents, url, nameClient, email, phone, nCaracteres;
 
 this.formDudget = document.querySelector('#form-budget');
 
@@ -13,6 +13,7 @@ var Values = {
 		this.deliveryExpress = document.querySelector("#deliveryExpress");
 		this.qtdCaracteres = document.querySelector("#qtdCaracteres");
 		this.qtdMinutes = document.querySelector("#qtdMinutes");
+		this.nCaracteres = document.querySelectorAll(".nCaracteres");
 		this.documents = document.querySelector("#documents");
 		this.url = document.querySelector("#url");
 		this.nameClient = document.querySelector("#name");
@@ -27,26 +28,39 @@ var Values = {
 	},
 	setNumberCharactersOrMinutes: function(){
 		var characters = document.getElementsByClassName('number-characters');
+		var nCaracteres = document.getElementsByClassName('nCaracteres');
 		var minutes = document.getElementsByClassName('number-minutes');
 
 		if (this.typeTranslation.value == "Legendagem") {
-			for (var i = 0; i < minutes.length; i++) {
-				minutes[i].innerText = this.qtdMinutes.value;
+				$("#qtdCaracteres").val("");
 				$(".item-caracteres").hide();
 				$(".item-minutes").show();
+
+			for (var i = 0; i < minutes.length; i++) {
+				minutes[i].innerText = this.qtdMinutes.value;
 			}
+
 		} else {
-			for (var i = 0; i < characters.length; i++) {
-				characters[i].innerText = this.qtdCaracteres.value;
-				$(".item-minutes").hide();
-				$(".item-caracteres").show();
+			$("#qtdMinutes").val("");
+			$(".item-minutes").hide();
+			$(".item-caracteres").show();
+
+			if (document.querySelector("#first_toggle").checked) {
+				for (var i = 0; i < characters.length; i++) {
+					characters[i].innerText = this.qtdCaracteres.value;
+				}	
+			} else {
+				for (var i = 0; i < characters.length; i++) {
+					characters[i].innerText = getTotalCaracteres();
+				}
 			}
 		}
 	}
 };
 
-this.formDudget.addEventListener('change', (event) => {
-  var obj = Object.create(Values);
+this.formDudget.addEventListener('click', (event) => {
+	console.log("clicou");
+	var obj = Object.create(Values);
 	obj.capturesFieldsForm();
 	obj.setValuesCard();
 	obj.setNumberCharactersOrMinutes();
@@ -72,40 +86,30 @@ function calculateWordValue(){
 
 		switch (diffDays) {
 			case 1:
-				setTotal(this.numberWords * (this.valueWord + 0.027));
-				this.urgencyRate = 0.027;
+			setTotal(this.numberWords * (this.valueWord + 0.027));
+			this.urgencyRate = 0.027;
 			break;
 			case 2:
-				setTotal(this.numberWords * (this.valueWord + 0.026));
-				this.urgencyRate = 0.026;
+			setTotal(this.numberWords * (this.valueWord + 0.026));
+			this.urgencyRate = 0.026;
 			break;
 			case 3:
-				setTotal(this.numberWords * (this.valueWord + 0.025));
-				this.urgencyRate = 0.025;
+			setTotal(this.numberWords * (this.valueWord + 0.025));
+			this.urgencyRate = 0.025;
 			break;
 			case 4:
-				setTotal(this.numberWords * (this.valueWord + 0.024));
-				this.urgencyRate = 0.024;
+			setTotal(this.numberWords * (this.valueWord + 0.024));
+			this.urgencyRate = 0.024;
 			break;
 			case 5:
-				setTotal(this.numberWords * (this.valueWord + 0.023));
-				this.urgencyRate = 0.023;
+			setTotal(this.numberWords * (this.valueWord + 0.023));
+			this.urgencyRate = 0.023;
 			break;
 		}
 	} else if (diffDays > 5 && today < submittedDate) {
 		addMsg("", "none", "none")
 		setTotal(this.numberWords * this.valueWord);
 	}
-}
-
-function insertsValueIntoFields(){
-	document.querySelector("#type-translation").innerText = this.typeTranslation;
-	document.querySelector("#fromItem").innerText = this.from;
-	document.querySelector("#forItem").innerText = this.to;
-	document.querySelector("#delivery-term").innerText = this.date;
-	setNumberWords();
-	document.querySelector("#urgency-rate").innerText = this.urgencyRate;
-	document.querySelector("#total").innerText = this.total;
 }
 
 function setTotal(total){
