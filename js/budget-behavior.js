@@ -15,8 +15,8 @@ $("#documents").ready(function(){
 });
 
 function execute(files) {
-	uploadMultipleFiles("POST", "http://localhost:8080/uploadMultipleFiles", files)
-	//uploadMultipleFiles("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles", files)
+	//uploadMultipleFiles("POST", "http://localhost:8080/uploadMultipleFiles", files)
+	uploadMultipleFiles("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles", files)
 	.then(function (datums) {
 		hideSpinner();
 		showTable();
