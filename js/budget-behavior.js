@@ -15,8 +15,8 @@ $("#documents").ready(function(){
 });
 
 function execute(files) {
-	uploadMultipleFiles("POST", "http://localhost:8080/uploadMultipleFiles", files)
-	//uploadMultipleFiles("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles", files)
+	//uploadMultipleFiles("POST", "http://localhost:8080/uploadMultipleFiles", files)
+	uploadMultipleFiles("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles", files)
 	.then(function (datums) {
 		hideSpinner();
 		showTable();
@@ -24,6 +24,7 @@ function execute(files) {
 	.catch(function (err) {
 		document.querySelector("#documents").value = "";
 		hideSpinner();
+		clearTable();
 		document.querySelector(".msg-error-server").innerText = "Erro ao acessar servidor! Por favor tente mais tarde.";	
 	});
 }
@@ -124,6 +125,14 @@ function generatesTable(response) {
 function showTable(){
 	var table = document.querySelector("#tableDetail");
 		table.style.display = "block";
+		document.querySelector("#block-documents > div.msg-error-server").innerText = "";
+}
+
+function clearTable(){
+	var tbody = document.querySelector("#tableDetail > tbody");
+	var table = document.querySelector("#tableDetail");
+		tbody.innerHTML = "";
+		table.style.display = "none";		
 }
 
 function hideSpinner(){
