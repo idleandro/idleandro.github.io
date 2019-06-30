@@ -59,7 +59,6 @@ var Values = {
 };
 
 this.formDudget.addEventListener('click', (event) => {
-	console.log("clicou");
 	var obj = Object.create(Values);
 	obj.capturesFieldsForm();
 	obj.setValuesCard();

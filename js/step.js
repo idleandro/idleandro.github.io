@@ -191,27 +191,36 @@
 
    $("#documents").on('change keydown paste input', function(){
         if($("#documents").val() == null || $("#documents").val() ==""){
-            $("#tableDetail").fadeOut();
+            clearTable();
         } else {
-            $("#tableDetail").fadeIn();
+            var spinner = document.querySelector(".spinner");
+            spinner.style.display = "block"
         }
     });
 
    $("#btn-clear").on('click', function(){
-           document.querySelector("#documents").value = "";
-           $("#tableDetail").hide();
+       clearTable();
    });
 
-    var upload = document.getElementById("documents");
-    upload.addEventListener("change", function(e) {
-        var size = upload.files[0].size;
-        if(size < 21048576) { //1MB         
+     function clearTable() {
+        document.querySelector("#documents").value = "";
+        var table = document.querySelector("#tableDetail");
+        var tbody = document.querySelector("#tableDetail > tbody");
+        table.style.display = "none";
+        tbody.innerHTML = "";
+        document.querySelector(".msg-error-server").innerHTML = " ";
+   };
+
+    // var upload = document.getElementById("documents");
+    // upload.addEventListener("change", function(e) {
+    //     var size = upload.files[0].size;
+    //     if(size < 21048576) { //1MB         
           
-        } else {           
-          upload.value = ""; //Limpa o campo          
-        }
-        e.preventDefault();
-    });
+    //     } else {           
+    //       upload.value = ""; //Limpa o campo          
+    //     }
+    //     e.preventDefault();
+    // });
 
     $('#phone').mask('00 00000-0000');
     $('#date').mask('00/00/0000');

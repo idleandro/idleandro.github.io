@@ -203,14 +203,16 @@
 				<div id="block-documents">
 					<div class="row">
 					  <div class="form-group invisible-url documents col-8">
-					  		<label for="documents">Selecione o(s) arquivo(s)</label>
+					  		<label for="documents">Selecione o(s) arquivo(s) doc, docx, pdf ou xls</label>
 							<input id="documents" type="file" name="documents" multiple="">
 							<!-- <span>Arquivos maior que 30Mb, envie através de um serviço de compartilhamento. Ex: Dropbox, Google Drive etc.</span> -->
 							<span class="erro-server"></span>
 					  </div>
 					  <div class="col-4 btn-clear"><button type="button" class="btn btn-outline-danger" id="btn-clear">Limpar</button></div>
 					</div>
-					<table class="table table-striped" id="tableDetail">
+					<div class="spinner"></div>
+					<div class="msg-error-server"></div>
+					<table class="table table-striped opacityOn" id="tableDetail">
 					  <thead>
 					    <tr>
 					      <th scope="col">#</th>

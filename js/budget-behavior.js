@@ -1,6 +1,4 @@
-deliveryData();
-
- var sumCaracteres = 0;
+var sumCaracteres = 0;
 
 $("#documents").ready(function(){
     $("input[type=file]").click(function(){
@@ -10,77 +8,134 @@ $("#documents").ready(function(){
 
     $("input[type=file]").change(function(){
        var files = document.querySelector("#documents").files;
-       uploadMultipleFiles(files);
+       if (files.length > 0) {
+       	execute(files);
+       	}
     });
 });
 
-function uploadMultipleFiles(files) {
+function execute(files) {
+	uploadMultipleFiles("POST", "http://localhost:8080/uploadMultipleFiles", files)
+	//uploadMultipleFiles("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles", files)
+	.then(function (datums) {
+		hideSpinner();
+		showTable();
+	})
+	.catch(function (err) {
+		document.querySelector("#documents").value = "";
+		hideSpinner();
+		document.querySelector(".msg-error-server").innerText = "Erro ao acessar servidor! Por favor tente mais tarde.";	
+	});
+}
 
-    var formData = new FormData();
-    for(var index = 0; index < files.length; index++) {
-        formData.append("files", files[index]);
-    }
+function uploadMultipleFiles(method, url, files) {
+	
+	var formData = new FormData();
+	for(var index = 0; index < files.length; index++) {
+		formData.append("files", files[index]);
+	}
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://apifdxab.herokuapp.com//uploadMultipleFiles");
-   
-    xhr.onload = function() {
-        console.log(xhr.responseText);
-        var response = JSON.parse(xhr.responseText);
-        var totalCaracteres = document.getElementsByClassName('nCaracteres');
-       
+	return new Promise(function (resolve, reject) {
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open(method, url);
+		xhr.onload = function() {
 
-        if(xhr.status == 200) {
-            var content;
-            for(var i = 0; i < response.length; i++) {
-                content += "<th>"+ (i+1) +"</th><td>"+response[i].fileName +"</td><td>"+response[i].qtdWords +"</td>";
-                var tbody = document.querySelector("#tableDetail > tbody");
-                tbody.innerHTML = "";
-            }
-
-			for (var i = 0; i < response.length; i++){
-			    var tr = document.createElement('tr'); 
-			    var trTotal = document.createElement('tr'); 
-			    trTotal.className = "totalCaracteres";
-			    var td1 = document.createElement('td');
-			    var td2 = document.createElement('td');
-			    var td3 = document.createElement("td");
-			    	td3.className = "nCaracteres";
-			    var td4 = document.createElement("td");
-			   		td4.setAttribute("colspan", "2");
-			   		td4.setAttribute("align", "right");
-			    var tdTotal = document.createElement("td");
-			    
-				td1.appendChild(document.createTextNode(i+1));
-			    td2.appendChild(document.createTextNode(response[i].fileName));
-			    td3.appendChild(document.createTextNode(response[i].qtdWords));
-			    td4.appendChild(document.createTextNode("Total de caracteres: "));
-			    sumCaracteres += parseInt(response[i].qtdWords);
-			    tr.appendChild(td1);
-			    tr.appendChild(td2);
-			    tr.appendChild(td3);
-			    trTotal.appendChild(td4);
-			    tdTotal.appendChild(document.createTextNode(sumCaracteres));
-			    trTotal.appendChild(tdTotal);
-			    tbody.appendChild(tr);
+			var response = JSON.parse(xhr.responseText);
+	        if (this.status >= 200 && this.status < 300) {
+			 	if (generatesTable(response)) {
+			 		resolve(xhr.response);	
+			 	}
+			} else {
+				reject({
+					status: this.status,
+					statusText: xhr.statusText
+				});
 			}
-			tbody.appendChild(trTotal);
-        } else {
-        	var erroServer =  document.querySelector(".erro-server");
-             erroServer.innerHTML = "Servidor indisponível no momento";
-             erroServer.style.color = "#7b0303"
-             setTimeout(function(){ document.querySelector("#btn-clear").click(); }, 1000);
-             
-        }
-    }
-    console.log(formData);
-    xhr.send(formData);
+		};
+		xhr.onerror = function () {
+			reject({
+				status: this.status,
+				statusText: xhr.statusText
+			});
+		};
+		console.log(formData);
+		xhr.send(formData);
+	});
+}
+
+function generatesTable(response) {
+
+	var content;
+	this.sumCaracteres=0;
+
+	for(var i = 0; i < response.length; i++) {
+		
+		content += 
+		"<th>"+ (i+1) +"</th>"+ 
+		"<td>"+response[i].fileName +"</td>"+
+		"<td>"+response[i].qtdWords +"</td>";
+		
+		var tbody = document.querySelector("#tableDetail > tbody");
+		tbody.innerHTML = "";
+	}
+
+	for (var i = 0; i < response.length; i++){
+		var tr = document.createElement('tr'); 
+		var trTotal = document.createElement('tr'); 
+		trTotal.className = "totalCaracteres";
+		var td1 = document.createElement('td');
+		var td2 = document.createElement('td');
+		td2.className = "col-sm";
+		var td3 = document.createElement("td");
+		td3.className = "nCaracteres";
+		var td4 = document.createElement("td");
+		td4.setAttribute("colspan", "2");
+		td4.setAttribute("align", "right");
+		var tdTotal = document.createElement("td");
+
+		td1.appendChild(document.createTextNode(i+1));
+		td2.appendChild(document.createTextNode(response[i].fileName));
+
+		if (response[i].qtdWords == 0) {
+			td3.appendChild(document.createTextNode("Arquivo com formato inválido"));
+		} else { 
+			td3.appendChild(document.createTextNode(response[i].qtdWords));
+		}
+
+		td4.appendChild(document.createTextNode("Total de caracteres: "));
+		this.sumCaracteres += parseInt(response[i].qtdWords);
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+		tr.appendChild(td3);
+		trTotal.appendChild(td4);
+		if (this.sumCaracteres ==0) {
+			tdTotal.appendChild(document.createTextNode("Arquivo com formato inválido"));	
+		} else {
+			tdTotal.appendChild(document.createTextNode(this.sumCaracteres));
+		}
+		trTotal.appendChild(tdTotal);
+		tbody.appendChild(tr);
+	}
+	tbody.appendChild(trTotal);
+	return true;
+}
+
+function showTable(){
+	var table = document.querySelector("#tableDetail");
+		table.style.display = "block";
+}
+
+function hideSpinner(){
+	var spinner = document.querySelector(".spinner");
+	spinner.style.display = "none";
 }
 
 function getTotalCaracteres(){
 	return this.sumCaracteres;
 }
 
+deliveryData();
 function deliveryData() {
 	var deliveryDate = document.querySelector("#deliveryDate");
 	var deliveryExpress = document.querySelector("#deliveryExpress");
