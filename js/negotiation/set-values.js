@@ -5,7 +5,7 @@ this.formDudget = document.querySelector('#form-budget');
 var Values = {
 	capturesFieldsForm: function(){
 		this.typeTranslation = document.querySelector("#typeTranslation");
-		this.typeSubtitling = document.querySelectorAll('input[name="typeSubtitling"]:checked');
+		this.typeSubtitling = document.querySelector('input[name="typeSubtitling"]:checked');
 		this.from = document.querySelector("#from");
 		this.to = document.querySelector("#for");
 		this.dateSelected = document.querySelector("#deliveryDateOption");
@@ -22,6 +22,12 @@ var Values = {
 	},
 	setValuesCard: function(){
 		document.querySelector("#type-translation").innerText = this.typeTranslation.value;
+		if (this.typeTranslation.value == "Legendagem") {
+			document.querySelector("#type-subtitling").innerText = this.typeSubtitling.value;
+			document.querySelector("#type-translation").innerText = "";
+		} else {
+			document.querySelector("#type-subtitling").innerText = "";
+		}
 		document.querySelector("#fromItem").innerText = this.from.value;
 		document.querySelector("#forItem").innerText = this.to.value;
 		document.querySelector("#delivery-term").innerText = this.dateSelected.value;
@@ -30,31 +36,48 @@ var Values = {
 		var characters = document.getElementsByClassName('number-characters');
 		var nCaracteres = document.getElementsByClassName('nCaracteres');
 		var minutes = document.getElementsByClassName('number-minutes');
-
+		var toggle_option = document.querySelector('input[name="toggle_option"]:checked');
+	
 		if (this.typeTranslation.value == "Legendagem") {
-				$("#qtdCaracteres").val("");
-				$(".item-caracteres").hide();
-				$(".item-minutes").show();
-
-			for (var i = 0; i < minutes.length; i++) {
-				minutes[i].innerText = this.qtdMinutes.value;
-			}
-
+			//$("#qtdCaracteres").val("");
+			//$(".item-caracteres").hide();
+			//$(".item-minutes").show();
 		} else {
-			$("#qtdMinutes").val("");
-			$(".item-minutes").hide();
-			$(".item-caracteres").show();
-
-			if (document.querySelector("#first_toggle").checked) {
-				for (var i = 0; i < characters.length; i++) {
-					characters[i].innerText = this.qtdCaracteres.value;
-				}	
-			} else {
-				for (var i = 0; i < characters.length; i++) {
-					characters[i].innerText = getTotalCaracteres();
-				}
-			}
+			//$("#qtdMinutes").val("");
+			//$(".item-minutes").hide();
+			//$(".item-caracteres").show();
 		}
+
+		if (document.querySelector('input[id="first_toggle"]:checked')) {
+				if (this.typeTranslation.value == "Legendagem") {
+
+					$(".item-caracteres").hide();
+					$(".item-minutes").show();
+
+					for (var i = 0; i < minutes.length; i++) {
+			 			minutes[i].innerText = this.qtdMinutes.value;
+			 		}	
+
+				} else {
+
+					$(".item-minutes").hide();
+					$(".item-caracteres").show();
+
+					$("#qtdMinutes").val("");
+					for (var i = 0; i < characters.length; i++) {
+		 	 			characters[i].innerText = this.qtdCaracteres.value;
+		 			 }
+
+				}
+			} else {
+				$(".item-minutes").hide();
+				$(".item-caracteres").show();
+				
+				for (var i = 0; i < characters.length; i++) {
+		 			characters[i].innerText = formatPtBr(getTotalCaracteres());
+			 	}
+			}
+
 	}
 };
 

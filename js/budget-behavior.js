@@ -15,8 +15,8 @@ $("#documents").ready(function(){
 });
 
 function execute(files) {
-	//uploadMultipleFiles("POST", "http://localhost:8080/uploadMultipleFiles", files)
-	uploadMultipleFiles("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles", files)
+	uploadMultipleFiles("POST", "http://localhost:8080/uploadMultipleFiles", files)
+	//uploadMultipleFiles("POST", "https://apifdxab.herokuapp.com/uploadMultipleFiles", files)
 	.then(function (datums) {
 		hideSpinner();
 		showTable();
@@ -101,7 +101,7 @@ function generatesTable(response) {
 		if (response[i].qtdWords == 0) {
 			td3.appendChild(document.createTextNode("Arquivo com formato inválido"));
 		} else { 
-			td3.appendChild(document.createTextNode(response[i].qtdWords));
+			td3.appendChild(document.createTextNode(formatPtBr(response[i].qtdWords)));
 		}
 
 		td4.appendChild(document.createTextNode("Total de caracteres: "));
@@ -113,7 +113,7 @@ function generatesTable(response) {
 		if (this.sumCaracteres ==0) {
 			tdTotal.appendChild(document.createTextNode("Arquivo com formato inválido"));	
 		} else {
-			tdTotal.appendChild(document.createTextNode(this.sumCaracteres));
+			tdTotal.appendChild(document.createTextNode(formatPtBr(this.sumCaracteres)));
 		}
 		trTotal.appendChild(tdTotal);
 		tbody.appendChild(tr);
@@ -142,6 +142,11 @@ function hideSpinner(){
 
 function getTotalCaracteres(){
 	return this.sumCaracteres;
+}
+
+function formatPtBr(value){
+	var result = ((Math.round(value*100))/100);
+	return result.toLocaleString('pt-BR');
 }
 
 deliveryData();

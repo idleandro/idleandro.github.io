@@ -138,15 +138,15 @@
 					</div>
 					<div class="subtitle container">
 						<div class="custom-control custom-radio">
-							<input type="radio" id="customRadio1" data-subtitle="subtitle" name="typeSubtitling" class="custom-control-input">
+							<input type="radio" id="customRadio1" checked="" data-subtitle="subtitle" name="typeSubtitling" class="custom-control-input" value="Legenda com roteiro original">
 							<label class="custom-control-label" for="customRadio1">Tradução para legendas com roteiro original</label>
 						</div>
 						<div class="custom-control custom-radio">
-							<input type="radio" id="customRadio2" data-subtitle="subtitle" name="typeSubtitling" class="custom-control-input">
+							<input type="radio" id="customRadio2" data-subtitle="subtitle" name="typeSubtitling" class="custom-control-input" value="Legenda sem roteiro original">
 							<label class="custom-control-label" for="customRadio2">Tradução para legendas sem roteiro original</label>
 						</div>
 						<div class="custom-control custom-radio">
-							<input type="radio" id="customRadio3" data-subtitle="subtitle" name="typeSubtitling" class="custom-control-input">
+							<input type="radio" id="customRadio3" data-subtitle="subtitle" name="typeSubtitling" class="custom-control-input" value="Legendas com marcação de tempo">
 							<label class="custom-control-label" for="customRadio3">Tradução para legendas com marcação de tempo</label>
 						</div>
 					</div>
@@ -191,7 +191,7 @@
 						<div class="item">
 							<div class="box-slider toggle_radio d-flex p-2 justify-content-center">
 								<input type="radio" class="toggle_option" id="first_toggle" name="toggle_option">
-								<input type="radio" checked class="toggle_option" id="second_toggle" name="toggle_option">
+								<input type="radio" class="toggle_option" id="second_toggle" name="toggle_option">
 								<label for="first_toggle"><p>Sim</p></label>
 								<label for="second_toggle"><p>Não</p></label>
 								<div class="toggle_option_slider"  class="form-control">
@@ -267,15 +267,16 @@
 							<div class="card-body">
 								<h5 class="card-title">Informações sobre o serviço</h5>
 								<ul class="list-group list-group-flush">
-									<li class="list-group-item">Tipo de Tradução: <span id="type-translation">Tradução simples</span></li>
+									<li class="list-group-item">Tipo de Tradução: <span id="type-translation">Tradução simples</span>
+										<span id="type-subtitling"></span></li>
 									<li class="list-group-item">
 										<span>De </span> 
 										<span id="fromItem">Inglês</span>
 										<span> para </span> 
 										<span id="forItem">Português</span></li>
-									<li class="list-group-item">Prazo para recebimento: <span id="delivery-term">10/10/2019</span></li>
-									<li class="list-group-item item-caracteres">Qtd de caracteres: <span class="number-characters">1800</span></li>
-									<li class="list-group-item item-minutes">Qtd de minutos: <span class="number-minutes">1800</span></li>
+									<li class="list-group-item">Prazo para recebimento: <span id="delivery-term"></span></li>
+									<li class="list-group-item item-caracteres">Qtd de caracteres: <span class="number-characters"></span></li>
+									<li class="list-group-item item-minutes">Qtd de minutos: <span class="number-minutes"></span></li>
 								</ul>
 							</div>
 						</div>
@@ -289,10 +290,10 @@
 									<li class="list-group-item">1 lauda = 1250 caracteres</li>
 									<li class="list-group-item">R$ 40,5 por lauda</li>
 									<li class="list-group-item">R$ 0,027 por caractere</li>
-									<li class="list-group-item item-caracteres">Qtd de caracteres: <strong class="number-characters">1800</strong></li>
-									<li class="list-group-item item-minutes"">Qtd de minutos: <strong class="number-minutes">1800</strong></li>
-									<li class="list-group-item" id="itemUrgencyRate">Taxa de urgência por palavra <strong id="urgency-rate">R$ 0,023</strong></li>
-									<li class="list-group-item">Total de: <strong>R$ </strong><strong id="total" class="total">90,00</strong></li>
+									<li class="list-group-item item-caracteres">Qtd de caracteres: <strong class="number-characters"></strong></li>
+									<li class="list-group-item item-minutes"">Qtd de minutos: <strong class="number-minutes"></strong></li>
+									<li class="list-group-item" id="itemUrgencyRate">Taxa de urgência por caracter <strong id="urgency-rate">R$ 0,023</strong></li>
+									<li class="list-group-item">Total de: <strong>R$ </strong><strong id="total" class="total"></strong></li>
 								</ul>
 								<!-- 25 linhas x 50 toques (ou caracteres) = 1.250 toques (ou caracteres) - <a href="http://www.sintra.org.br/site/index.php?p=c&id=36&codcat=22" target="_blank">Saiba mais sobre o sistema de cobrança</a> -->
 								<!--                   <a href="#" class="btn btn-primary">Go somewhere</a> -->
