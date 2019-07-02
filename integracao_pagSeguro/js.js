@@ -90,7 +90,7 @@ xhr.onreadystatechange = function () {
     }
 };
 
-var data = JSON.stringify({ "currency" : "BRL",
+var data = JSON.stringify({"currency" : "BRL",
 "itemId1" : "0001",
 "itemDescription1" : "Produto PagSeguroI",
 "itemAmount1:99999" : "99",
@@ -102,7 +102,7 @@ var data = JSON.stringify({ "currency" : "BRL",
 "itemQuantity2" : "2",
 "itemWeight2" : "750",
 "reference" : "REF1234",
-"senderName" :  "Comprador",
+"senderName" : "Comprador",
 "senderAreaCode" : "99",
 "senderPhone" : "999999999",
 "senderEmail" : "comprador@uol.com.br",
@@ -111,13 +111,13 @@ var data = JSON.stringify({ "currency" : "BRL",
 "shippingAddressStreet" : "PagSeguro",
 "shippingAddressNumber" : "9999",
 "shippingAddressComplemento" :  "andar",
-"shippingAddressDistrict:Jardim" :  "Internet",
+"shippingAddressDistrict" : "Internet",
 "shippingAddressPostalCode" : "99999999",
 "shippingAddressCity" :  "Cidade Exemplo",
 "shippingAddressState" : "SP",
 "shippingAddressCountry" : "BRA",
 "timeout" : "25",
-"enableRecover" : "false" });
+"enableRecover" : "false"});
 
 	xhr.send(data);
 	});
