@@ -4,7 +4,7 @@ execute();
 function execute() {
 	console.log("entrou");
 	//testIntegracao("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?email=leandrofdx@gmail.com&token=91C7F554E27F4F0C972E66E1652ACFDD")
-	testIntegracao("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?91C7F554E27F4F0C972E66E1652ACFDD")
+	testIntegracao("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout")
 	.then(function (datums) {
 		console.log(datums);
 		console.log("entrou aqui no sucesso");
@@ -18,10 +18,11 @@ function execute() {
 function xtestIntegracao(method, url) {
 	
 	var formData = new FormData();
-
+	formData.append("email", "leandrofdx@gmail.com");
+	formData.append("token", "91C7F554E27F4F0C972E66E1652ACFDD");
 	formData.append("currency", "BRL");
 	formData.append("itemId1", "0001");
-	formData.append("itemDescription1=Produto", "PagSeguroI");
+	formData.append("itemDescription1", "PagSeguroI");
 	formData.append("itemAmount1", "9999999");
 	formData.append("itemQuantity1", "1");
 	formData.append("itemWeight1", "1000");
@@ -47,8 +48,8 @@ function xtestIntegracao(method, url) {
 		
 		var xhr = new XMLHttpRequest();
 		xhr.open(method, url);
-		xhr.setRequestHeader("Content-Type", "application/*");
-		xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=ISO-8859-1");
+		//xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 
 		xhr.onload = function() {
 
@@ -72,56 +73,3 @@ function xtestIntegracao(method, url) {
 		xhr.send(formData);
 	});
 }
-
-function testIntegracao(method, url) {
-
-	return new Promise(function (resolve, reject) {
-
-var xhr = new XMLHttpRequest();
-var url = url;
-xhr.open("POST", url);
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=ISO-8859-1");
-xhr.setRequestHeader("Access-Control-Allow-Origin", "https://idleandro.github.io");
-xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        var json = JSON.parse(xhr.responseText);
-        console.log("ok");
-        resolve(xhr.response);	
-    }
-};
-
-var data = JSON.stringify({
-"currency":"BRL",
-"itemId1":"0001",
-"itemDescription1":"Produto PagSeguroI",
-"itemAmount1":"99999.99",
-"itemQuantity1":"1",
-"itemWeight1":"1000",
-"itemId2":"0002",
-"itemDescription2":"Produto PagSeguroII",
-"itemAmount2":"99999.98",
-"itemQuantity2":"2",
-"itemWeight2":"750",
-"reference":"REF1234",
-"senderName":"Jose Comprador",
-"senderAreaCode":"99",
-"senderPhone":"999999999",
-"senderEmail":"comprador@uol.com.br",
-"shippingType":"1",
-"shippingAddressRequired":"true",
-"shippingAddressStreet":"Av. PagSeguro",
-"shippingAddressNumber":"9999",
-"shippingAddressComplement":"99o andar",
-"shippingAddressDistrict":"Jardim Internet",
-"shippingAddressPostalCode":"99999999",
-"shippingAddressCity":"Cidade Exemplo",
-"shippingAddressState":"SP",
-"shippingAddressCountry":"BRA",
-"timeout":"25",
-"enableRecover":"false"
-});
-
-	xhr.send(data);
-	});
-}
-
