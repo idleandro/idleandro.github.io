@@ -49,7 +49,7 @@ function testIntegracao(method, url) {
 		var xhr = new XMLHttpRequest();
 		xhr.open(method, url);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=ISO-8859-1");
-		//xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+		xhr.setRequestHeader("Access-Control-Allow-Origin", "https://idleandro.github.io");
 
 		xhr.onload = function() {
 
