@@ -104,11 +104,10 @@
 $.ajax({
     url: "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout",
     beforeSend: function(xhr) { 
-       xhr.setRequestHeader("Authorization", "91C7F554E27F4F0C972E66E1652ACFDD"); 
        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     },
     type: 'POST',
-    dataType: 'x-www-form-urlencoded',
+    dataType: 'x-www-form-urlencoded; charset=ISO-8859-1',
     contentType: 'application/x-www-form-urlencoded; charset=ISO-8859-1',
     processData: false,
     data: formData,
