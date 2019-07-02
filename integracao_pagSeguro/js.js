@@ -52,7 +52,7 @@ function testIntegracao(method, url) {
 		var xhr = new XMLHttpRequest();
 		xhr.open(method, url);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xhr.setRequestHeader("Access-Control-Allow-Origin", "https://idleandro.github.io");
+		xhr.setRequestHeader("Access-Control-Allow-Origin", "https://dev.pagseguro.uol.com.br/");
 		//xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
 
 		xhr.onload = function() {
