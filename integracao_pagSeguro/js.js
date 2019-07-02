@@ -3,6 +3,7 @@ execute();
 
 function execute() {
 	console.log("entrou");
+	//testIntegracao("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?email=leandrofdx@gmail.com&token=91C7F554E27F4F0C972E66E1652ACFDD")
 	testIntegracao("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?91C7F554E27F4F0C972E66E1652ACFDD")
 	.then(function (datums) {
 		console.log(datums);
@@ -14,34 +15,29 @@ function execute() {
 	});
 }
 
-function testIntegracao(method, url) {
+function xtestIntegracao(method, url) {
 	
 	var formData = new FormData();
 
 	formData.append("currency", "BRL");
 	formData.append("itemId1", "0001");
 	formData.append("itemDescription1=Produto", "PagSeguroI");
-	formData.append("itemAmount1=99999", "99");
+	formData.append("itemAmount1", "9999999");
 	formData.append("itemQuantity1", "1");
 	formData.append("itemWeight1", "1000");
-	formData.append("itemId2", "0002");
-	formData.append("itemDescription2=Produto", "PagSeguroII");
-	formData.append("itemAmount2=99999", "98");
-	formData.append("itemQuantity2", "2");
-	formData.append("itemWeight2", "750");
 	formData.append("reference", "REF1234");
-	formData.append("senderName=Jose", "Comprador");
+	formData.append("senderName", "Comprador");
 	formData.append("senderAreaCode", "99");
 	formData.append("senderPhone", "999999999");
-	formData.append("senderEmail=comprador@uol.com", "br");
+	formData.append("senderEmail", "comprador@uol.com");
 	formData.append("shippingType", "1");
 	formData.append("shippingAddressRequired", "true");
-	formData.append("shippingAddressStreet=Av",  "PagSeguro");
+	formData.append("shippingAddressStreet",  "PagSeguro");
 	formData.append("shippingAddressNumber", "9999");
-	formData.append("shippingAddressComplement=99o", "andar");
-	formData.append("shippingAddressDistrict=Jardim", "Internet");
+	formData.append("shippingAddressComplement", "andar");
+	formData.append("shippingAddressDistrict", "Internet");
 	formData.append("shippingAddressPostalCode", "99999999");
-	formData.append("shippingAddressCity=Cidade", "Exemplo");
+	formData.append("shippingAddressCity", "Exemplo");
 	formData.append("shippingAddressState", "SP");
 	formData.append("shippingAddressCountry", "BRA");
 	formData.append("timeout", "25");
@@ -51,9 +47,8 @@ function testIntegracao(method, url) {
 		
 		var xhr = new XMLHttpRequest();
 		xhr.open(method, url);
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xhr.setRequestHeader("Access-Control-Allow-Origin", "https://dev.pagseguro.uol.com.br/");
-		//xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+		xhr.setRequestHeader("Content-Type", "application/*");
+		xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 
 		xhr.onload = function() {
 
@@ -77,3 +72,54 @@ function testIntegracao(method, url) {
 		xhr.send(formData);
 	});
 }
+
+function testIntegracao(method, url) {
+
+	return new Promise(function (resolve, reject) {
+
+var xhr = new XMLHttpRequest();
+var url = url;
+xhr.open(method, url, true);
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.setRequestHeader("Access-Control-Allow-Origin", "https://idleandro.github.io");
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        var json = JSON.parse(xhr.responseText);
+        console.log("ok");
+        resolve(xhr.response);	
+    }
+};
+
+var data = JSON.stringify({ "currency" : "BRL",
+"itemId1" : "0001",
+"itemDescription1" : "Produto PagSeguroI",
+"itemAmount1:99999" : "99",
+"itemQuantity1" : "1",
+"itemWeight1" : "1000",
+"itemId2" : "0002",
+"itemDescription2" : "Produto PagSeguroII",
+"itemAmount2:99999" : "98",
+"itemQuantity2" : "2",
+"itemWeight2" : "750",
+"reference" : "REF1234",
+"senderName" :  "Comprador",
+"senderAreaCode" : "99",
+"senderPhone" : "999999999",
+"senderEmail" : "comprador@uol.com.br",
+"shippingType" : "1",
+"shippingAddressRequired" : "true",
+"shippingAddressStreet" : "PagSeguro",
+"shippingAddressNumber" : "9999",
+"shippingAddressComplemento" :  "andar",
+"shippingAddressDistrict:Jardim" :  "Internet",
+"shippingAddressPostalCode" : "99999999",
+"shippingAddressCity" :  "Cidade Exemplo",
+"shippingAddressState" : "SP",
+"shippingAddressCountry" : "BRA",
+"timeout" : "25",
+"enableRecover" : "false" });
+
+	xhr.send(data);
+	});
+}
+
