@@ -113,9 +113,9 @@ $.ajax({
     processData: false,
     data: formData,
     success: function (data) {
-      alert(JSON.stringify(data));
+      console.log(JSON.stringify(data));
     },
     error: function(){
-      alert("Cannot get data");
+      console.log("Cannot get data");
     }
 });
