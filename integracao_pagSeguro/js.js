@@ -81,7 +81,7 @@ var xhr = new XMLHttpRequest();
 var url = url;
 xhr.open(method, url);
 xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Access-Control-Allow-Origin", "https://idleandro.github.io/integracao_pagSeguro/");
+xhr.setRequestHeader("Access-Control-Allow-Origin", "https://idleandro.github.io");
 xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
         var json = JSON.parse(xhr.responseText);
