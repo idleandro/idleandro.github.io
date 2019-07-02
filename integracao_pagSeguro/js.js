@@ -15,7 +15,7 @@ function execute() {
 	});
 }
 
-function xtestIntegracao(method, url) {
+function testIntegracao(method, url) {
 	
 	var formData = new FormData();
 	formData.append("email", "leandrofdx@gmail.com");
