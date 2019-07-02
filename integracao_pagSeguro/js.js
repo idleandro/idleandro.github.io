@@ -112,6 +112,7 @@ $.ajax({
     contentType: 'application/x-www-form-urlencoded; charset=ISO-8859-1',
     processData: false,
     data: formData,
+    crossDomain: true,
     success: function (data) {
       console.log(JSON.stringify(data));
     },
