@@ -80,7 +80,7 @@ function testIntegracao(method, url) {
 var xhr = new XMLHttpRequest();
 var url = url;
 xhr.open("POST", url);
-xhr.setRequestHeader("Content-Type", "application/json");
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=ISO-8859-1");
 xhr.setRequestHeader("Access-Control-Allow-Origin", "https://idleandro.github.io");
 xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
