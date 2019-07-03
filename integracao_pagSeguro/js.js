@@ -129,8 +129,8 @@ ajax.open("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?91C7F554E
 ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=ISO-8859-1");
 					   
 var formData = new FormData();
-formData.append("email", "leandrofdx@gmail.com");
-formData.append("token", "91C7F554E27F4F0C972E66E1652ACFDD");
+// formData.append("email", "leandrofdx@gmail.com");
+// formData.append("token", "91C7F554E27F4F0C972E66E1652ACFDD");
 formData.append("currency", "BRL");
 formData.append("itemId1", "0001");
 formData.append("itemDescription1", "Produto PagSeguroI");
