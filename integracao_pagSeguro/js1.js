@@ -127,6 +127,7 @@ var ajax = new XMLHttpRequest();
 // Seta tipo de requisição: Post e a URL da API
 ajax.open("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?91C7F554E27F4F0C972E66E1652ACFDD", true);
 ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=ISO-8859-1");
+ajax.setRequestHeader("Access-Control-Allow-Origin", "https://idleandro.github.io");
 					   
 var formData = new FormData();
 // formData.append("email", "leandrofdx@gmail.com");
