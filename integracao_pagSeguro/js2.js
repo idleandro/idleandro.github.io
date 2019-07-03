@@ -37,7 +37,6 @@ JSON.stringify({"email": "leandrofdx@gmail.com",
 "shippingAddressCountry": "BRA",
 "timeout": "25",
 "enableRecover": "false"}));
-}
 
 // Cria um evento para receber o retorno.
 ajax.onreadystatechange = function() {
@@ -52,5 +51,8 @@ ajax.onreadystatechange = function() {
 		console.log(data);
 	}
 }
+}
+
+
 
 
