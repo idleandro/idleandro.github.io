@@ -6,7 +6,7 @@ var ajax = new XMLHttpRequest();
 ajax.open("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout", true);
 ajax.setRequestHeader("Content-type", "application/json;charset=ISO-8859-1");
 ajax.setRequestHeader('Accept', 'Content-type: application/json;charset=ISO-8859-1'); 
-ajax.setRequestHeader("Access-Control-Allow-Origin", "https://ws.sandbox.pagseguro.uol.com.br");
+ajax.setRequestHeader("Access-Control-Allow-Origin", "https://dev.pagseguro.uol.com.br");
 //header("access-control-allow-origin: https://sandbox.pagseguro.uol.com.br");
 					   
 ajax.send(JSON.stringify([{"email": "leandrofdx@gmail.com",
