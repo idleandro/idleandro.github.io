@@ -3,8 +3,8 @@ function execute(){
 	var ajax = new XMLHttpRequest();
 ajax.open("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?", true);
 ajax.setRequestHeader("Content-type", "application/json;charset=ISO-8859-1");
-ajax.setRequestHeader('Accept', 'application/json'); 
-ajax.setRequestHeader("Access-Control-Allow-Origin", "https://sandbox.pagseguro.uol.com.br");
+ajax.setRequestHeader('Accept', 'Content-type: application/json;charset=ISO-8859-1'); 
+ajax.setRequestHeader("Access-Control-Allow-Origin", "https://ws.sandbox.pagseguro.uol.com.br");
 //header("access-control-allow-origin: https://sandbox.pagseguro.uol.com.br");
 					   
 ajax.send(
