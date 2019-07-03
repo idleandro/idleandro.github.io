@@ -1,14 +1,15 @@
 execute();
 function execute(){
-	var ajax = new XMLHttpRequest();
-ajax.open("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?", true);
+
+
+var ajax = new XMLHttpRequest();
+ajax.open("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout", true);
 ajax.setRequestHeader("Content-type", "application/json;charset=ISO-8859-1");
 ajax.setRequestHeader('Accept', 'Content-type: application/json;charset=ISO-8859-1'); 
 ajax.setRequestHeader("Access-Control-Allow-Origin", "https://ws.sandbox.pagseguro.uol.com.br");
 //header("access-control-allow-origin: https://sandbox.pagseguro.uol.com.br");
 					   
-ajax.send(
-JSON.stringify({"email": "leandrofdx@gmail.com",
+ajax.send(JSON.stringify([{"email": "leandrofdx@gmail.com",
 "token": "91C7F554E27F4F0C972E66E1652ACFDD",
 "currency": "BRL",
 "itemId1": "0001",
@@ -37,7 +38,7 @@ JSON.stringify({"email": "leandrofdx@gmail.com",
 "shippingAddressState": "SP",
 "shippingAddressCountry": "BRA",
 "timeout": "25",
-"enableRecover": "false"}));
+"enableRecover": "false"}]));
 
 // Cria um evento para receber o retorno.
 ajax.onreadystatechange = function() {
