@@ -123,48 +123,44 @@
 //     }
 // });
 
+
 var ajax = new XMLHttpRequest();
-// Seta tipo de requisição: Post e a URL da API
 ajax.open("POST", "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout", true);
-ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=ISO-8859-1");
+ajax.setRequestHeader("Content-type", "application/json;charset=ISO-8859-1");
 ajax.setRequestHeader("Access-Control-Allow-Origin", "https://idleandro.github.io");
 					   
-var formData = new FormData();
-formData.append("email", "leandrofdx@gmail.com");
-formData.append("token", "91C7F554E27F4F0C972E66E1652ACFDD");
-formData.append("currency", "BRL");
-formData.append("itemId1", "0001");
-formData.append("itemDescription1", "Produto PagSeguroI");
-formData.append("itemAmount1", "99999.99");
-formData.append("itemQuantity1", "1");
-formData.append("itemWeight1", "1000");
-formData.append("itemId2", "0002");
-formData.append("itemDescription2", "Produto PagSeguroII");
-formData.append("itemAmount2", "99999.98");
-formData.append("itemQuantity2", "2");
-formData.append("itemWeight2", "750");
-formData.append("reference", "REF1234");
-formData.append("senderName", "Jose Comprador");
-formData.append("senderAreaCode", "99");
-formData.append("senderPhone", "999999999");
-formData.append("senderEmail", "comprador@uol.com.br");
-formData.append("shippingType", "1");
-formData.append("shippingAddressRequired", "true");
-formData.append("shippingAddressStreet", "Av. PagSeguro");
-formData.append("shippingAddressNumber", "9999");
-formData.append("shippingAddressComplement", "99o andar");
-formData.append("shippingAddressDistrict", "Jardim Internet");
-formData.append("shippingAddressPostalCode", "99999999");
-formData.append("shippingAddressCity", "Cidade Exemplo");
-formData.append("shippingAddressState", "SP");
-formData.append("shippingAddressCountry", "BRA");
-formData.append("timeout", "25");
-formData.append("enableRecover", "false");
-
-console.log(formData);
-
-// Seta paramêtros da requisição e envia a requisição
-ajax.send(formData);
+ajax.send(JSON.stringify({
+"email": "leandrofdx@gmail.com",
+"token": "91C7F554E27F4F0C972E66E1652ACFDD",
+"currency": "BRL",
+"itemId1": "0001",
+"itemDescription1": "Produto PagSeguroI",
+"itemAmount1": "99999.99",
+"itemQuantity1": "1",
+"itemWeight1": "1000",
+"itemId2": "0002",
+"itemDescription2": "Produto PagSeguroII",
+"itemAmount2": "99999.98",
+"itemQuantity2": "2",
+"itemWeight2": "750",
+"reference": "REF1234",
+"senderName": "Jose Comprador",
+"senderAreaCode": "99",
+"senderPhone": "999999999",
+"senderEmail": "comprador@uol.com.br",
+"shippingType": "1",
+"shippingAddressRequired": "true",
+"shippingAddressStreet": "Av. PagSeguro",
+"shippingAddressNumber": "9999",
+"shippingAddressComplement": "99o andar",
+"shippingAddressDistrict": "Jardim Internet",
+"shippingAddressPostalCode": "99999999",
+"shippingAddressCity": "Cidade Exemplo",
+"shippingAddressState": "SP",
+"shippingAddressCountry": "BRA",
+"timeout": "25",
+"enableRecover": "false"
+}));
 
 // Cria um evento para receber o retorno.
 ajax.onreadystatechange = function() {
