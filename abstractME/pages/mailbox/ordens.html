@@ -14,8 +14,8 @@
 	<link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-	  <!-- Select2 -->
-  <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
+	<!-- Select2 -->
+	<link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
 	<!-- DataTables -->
 	<link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 	<!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -222,7 +222,7 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					Ordens
+					<span>Ordens</span>
 					<small>13 new messages</small>
 				</h1>
 				<ol class="breadcrumb">
@@ -244,7 +244,6 @@
 							</div>
 							<!-- /.box-header -->
 							<div class="box-body table-responsive">
-								
 								<table id="tableOrders" class="table table table-hover table-bordered table-striped">
 									<thead>
 										<tr>
@@ -256,7 +255,7 @@
 											<th>Serviço</th>
 											<th>Valor</th>
 											<th>Pagamento</th>
-											<th>request-status</th>
+											<th>Status</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -301,343 +300,337 @@
 											<td>20-7-2014</td>
 											<td>Tradução Livre</td>
 											<td>R$ 360,50</td>
-											<td><span class="label label-warning">Aguardando<span></td>
-												<td><span class="label label-warning">Aguardando</span></td>
-											</tr>
+											<td><span class="label label-warning">Aguardando</span></td>
+											<td><span class="label label-warning">Aguardando</span></td>
+										</tr>
+										<tr>
+											<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
+											<td>email@gmail.com</td>
+											<td><a href="read-mail.html">000.000.000-00</a></td>
+											<td>11-7-2014</td>
+											<td>20-7-2014</td>
+											<td>Legendagem</td>
+											<td>R$ 360,50</td>
+											<td><span class="label label-success">Aprovado</span></td>
+											<td><span class="label label-warning">Andamento</span></td>
+										</tr>
+										<tr>
+											<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
+											<td>email@gmail.com</td>
+											<td><a href="read-mail.html">000.000.000-00</a></td>
+											<td>11-7-2014</td>
+											<td>20-7-2014</td>
+											<td>Legendagem</td>
+											<td>R$ 360,50</td>
+											<td><span class="label label-success">Aprovado</span></td>
+											<td><span class="label label-success">Finalizado</span></td>
+										</tr>
+										<tr>
+											<td><a href="#this" data-toggle="modal" data-target="#modal-default">65756615</a></td>
+											<td>email@gmail.com</td>
+											<td><a href="read-mail.html">000.000.000-00</a></td>
+											<td>11-7-2014</td>
+											<td>20-7-2014</td>
+											<td>Legendagem de vídeo</td>
+											<td>R$ 360,50</td>
+											<td><span class="label label-success">Aprovado</span></td>
+											<td><span class="label label-success">Finalizado</span></td>
+										</tr>
+										<tr>
+											<td><a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a></td>
+											<td>email@gmail.com</td>
+											<td><a href="read-mail.html">000.000.000-00</a></td>
+											<td>11-7-2014</td>
+											<td>20-7-2014</td>
+											<td>Tradução Livre</td>
+											<td>R$ 360,50</td>
+											<td><span class="label label-danger">Negado</span></td>
+											<td><span class="label label-success">Finalizado</span></td>
+										</tr>
+										<tr>
+											<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
+											<td>email@gmail.com</td>
+											<td><a href="read-mail.html">000.000.000-00</a></td>
+											<td>11-7-2014</td>
+											<td>20-7-2014</td>
+											<td>Legendagem</td>
+											<td>R$ 360,50</td>
+											<td><span class="label label-success">Aprovado</span></td>
+											<td><span class="label label-warning">Finalizado</span></td>
+										</tr>
+										<tr>
+											<td><a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a></td>
+											<td>email@gmail.com</td>
+											<td><a href="read-mail.html">000.000.000-00</a></td>
+											<td>11-7-2014</td>
+											<td>20-7-2014</td>
+											<td>Tradução Livre</td>
+											<td>R$ 360,50</td>
+											<td><span class="label label-warning">Aguardando</span></td>
+											<td><span class="label label-success">Finalizado</span></td>
+										</tr>
+										<tr>
+											<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
+											<td>email@gmail.com</td>
+											<td><a href="read-mail.html">000.000.000-00</a></td>
+											<td>11-7-2014</td>
+											<td>20-7-2014</td>
+											<td>Legendagem</td>
+											<td>R$ 360,50</td>
+											<td><span class="label label-success">Aprovado</span></td>
+											<td><span class="label label-success">Finalizado</span></td>
+										</tr>
+										<tr>
+											<td><a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a></td>
+											<td>email@gmail.com</td>
+											<td><a href="read-mail.html">000.000.000-00</a></td>
+											<td>11-7-2014</td>
+											<td>20-7-2014</td>
+											<td>Tradução Livre</td>
+											<td>R$ 360,50</td>
+											<td><span class="label label-success">Aprovado</span></td>
+											<td><span class="label label-warning">Andamento</span></td>
+										</tr>
+										<tr>
+											<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
+											<td>email@gmail.com</td>
+											<td><a href="read-mail.html">000.000.000-00</a></td>
+											<td>11-7-2014</td>
+											<td>20-7-2014</td>
+											<td>Legendagem</td>
+											<td>R$ 360,50</td>
+											<td><span class="label label-success">Aprovado</span></td>
+											<td><span class="label label-success">Finalizado</span></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- /.content -->
+
+			<div class="modal fade order-modal" id="modal-default">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<img src="../../dist/img/logo.png" class="pull-left" alt="Logo abstractme">
+							<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Fechar</button>
+						</div>
+						<div class="modal-body">
+							<div class="row invoice-info">
+								<div class="col-sm-4 invoice-col">
+									<div class="name-client"><strong>Nome: </strong><span> LEANDRO LIMA DA SILVA</span></div>
+									<div class="CPF-client"><strong>CPF: </strong><span> 037.050.781-94</span></div>
+									<div class="email-client"><strong>E-mail: </strong>email@gmail.com</div>
+									<div class="fone-client"><strong>Telefone: </strong>(61) 0000-0000</div>
+									<div class="address-client"><strong>Endereço: </strong><span> SCC TERMINAL RODOVIARIO</span></div>
+									<div class="district-client"><strong>Bairro: </strong><span> SETOR CENTRAL (GAMA)</span></div>
+									<div class="city-client"><strong>Cidade: </strong> <span>BRASíLIA - DF</span></div>
+									<div class="CEP-client"><strong>CEP: </strong><span>72425-100</span></div>
+									<br>
+								</div>
+								<!-- /.col -->
+								<div class="col-sm-4 invoice-col">
+									<div class="request-code"><strong>Código do Pedido: </strong><span> 56878454</span></div>
+									<div class="request-date"><strong>Data do Pedido: </strong><span> 21-7-2017</span></div>
+									<div class="Payment-date"><strong>Data do Pgto: </strong><span> 21-7-2017</span></div>
+									<div class="request-status"><strong>Status: </strong><span>Pagamento confirmado</span></div>
+									<br>
+								</div>
+								<div class="col-sm-4 invoice-col">
+									<div class="name-company"><strong>ABSTRACTME COSULTORIA ME</strong></div>
+									<div class="CNPJ"><strong>CNPJ: </strong>00.000.000/0000-00</div>
+									<div class="email-company"><strong>E-mail: </strong>contato@abstractme.tr</div>
+									<div class="fone-company"><strong>Fone: </strong>(00) 0000-0000</div>
+									<div class="state-registration"><strong>Inscrição Estadual: </strong>Isento</div>
+									<div class="municipal-registration"><strong> Inscrição Municipal: </strong>0.000</div>
+									<div class="address-company"><strong>Endereço: </strong>Conj D, APT 936. ASA NORTE - DF</div>
+									<div class="cep-company"><strong>CEP: </strong>000000-000</div>
+									<br>
+								</div>
+								<!-- /.col -->
+							</div>
+							<!-- title row -->
+							<div class="row">
+								<div class="col-xs-12">
+									<h4 class="page-header">
+										Detalhamento
+									</h4>
+								</div>
+								<!-- /.col -->
+							</div>
+							<!-- info row -->
+
+							<!-- Table row -->
+							<div class="row">
+								<div class="col-xs-12 table-responsive">
+									<table class="table table-striped">
+										<thead>
 											<tr>
-												<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
-												<td>email@gmail.com</td>
-												<td><a href="read-mail.html">000.000.000-00</a></td>
-												<td>11-7-2014</td>
-												<td>20-7-2014</td>
+												<th>Pedido</th>
+												<th>Serviço</th>
+												<th>Língua</th>
+												<th>Arquivo(s)</th>
+												<th>Qtd Caract.</th>
+												<th>Przo de Entr.</th>
+												<th>Subtotal</th>
+												<th>Status</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>21354</td>
 												<td>Legendagem</td>
-												<td>R$ 360,50</td>
-												<td><span class="label label-success">Aprovado</span></td>
-												<td><span class="label label-warning">Andamento</span></td>
+												<td>De <span class="from">Inglês</span> para <span class="for">Português</span></td>
+												<td>
+													<ul class="list-unstyled">
+														<li><a href="#this">Link de acesso</a></li>
+														<li><a href="#this">Link de acesso</a></li>
+													</ul>
+												</td>
+												<td>3600</td>
+												<td class="">10-10-2020</td>
+												<td>R$ 660,50</td>
+												<td>
+													<select class="form-control form-control-sm">
+														<option>Aguardando</option>
+														<option>Finalizado</option>
+														<option>Andamento</option>
+														<option>Pendente</option>
+														<option>Cancelado</option>
+													</select>
+												</td>
 											</tr>
 											<tr>
-												<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
-												<td>email@gmail.com</td>
-												<td><a href="read-mail.html">000.000.000-00</a></td>
-												<td>11-7-2014</td>
-												<td>20-7-2014</td>
-												<td>Legendagem</td>
-												<td>R$ 360,50</td>
-												<td><span class="label label-success">Aprovado</span></td>
-												<td><span class="label label-success">Finalizado</span></td>
-											</tr>
-											<tr>
-												<td><a href="#this" data-toggle="modal" data-target="#modal-default">65756615</a></td>
-												<td>email@gmail.com</td>
-												<td><a href="read-mail.html">000.000.000-00</a></td>
-												<td>11-7-2014</td>
-												<td>20-7-2014</td>
-												<td>Legendagem de vídeo</td>
-												<td>R$ 360,50</td>
-												<td><span class="label label-success">Aprovado</span></td>
-												<td><span class="label label-success">Finalizado</span></td>
-											</tr>
-											<tr>
-												<td><a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a></td>
-												<td>email@gmail.com</td>
-												<td><a href="read-mail.html">000.000.000-00</a></td>
-												<td>11-7-2014</td>
-												<td>20-7-2014</td>
+												<td>21354</td>
 												<td>Tradução Livre</td>
-												<td>R$ 360,50</td>
-												<td><span class="label label-danger">Negado</td>
-													<td><span class="label label-success">Finalizado</span></td>
-												</tr>
-												<tr>
-													<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
-													<td>email@gmail.com</td>
-													<td><a href="read-mail.html">000.000.000-00</a></td>
-													<td>11-7-2014</td>
-													<td>20-7-2014</td>
-													<td>Legendagem</td>
-													<td>R$ 360,50</td>
-													<td><span class="label label-success">Aprovado</span></td>
-													<td><span class="label label-warning">Finalizado</span></td>
-												</tr>
-												<tr>
-													<td><a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a></td>
-													<td>email@gmail.com</td>
-													<td><a href="read-mail.html">000.000.000-00</a></td>
-													<td>11-7-2014</td>
-													<td>20-7-2014</td>
-													<td>Tradução Livre</td>
-													<td>R$ 360,50</td>
-													<td><span class="label label-warning">Aguardando</span></td>
-													<td><span class="label label-success">Finalizado</span></td>
-												</tr>
-												<tr>
-													<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
-													<td>email@gmail.com</td>
-													<td><a href="read-mail.html">000.000.000-00</a></td>
-													<td>11-7-2014</td>
-													<td>20-7-2014</td>
-													<td>Legendagem</td>
-													<td>R$ 360,50</td>
-													<td><span class="label label-success">Aprovado</span></td>
-													<td><span class="label label-success">Finalizado</span></td>
-												</tr>
-												<tr>
-													<td><a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a></td>
-													<td>email@gmail.com</td>
-													<td><a href="read-mail.html">000.000.000-00</a></td>
-													<td>11-7-2014</td>
-													<td>20-7-2014</td>
-													<td>Tradução Livre</td>
-													<td>R$ 360,50</td>
-													<td><span class="label label-success">Aprovado</span></td>
-													<td><span class="label label-warning">Andamento</span></td>
-												</tr>
-												<tr>
-													<td><a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a></td>
-													<td>email@gmail.com</td>
-													<td><a href="read-mail.html">000.000.000-00</a></td>
-													<td>11-7-2014</td>
-													<td>20-7-2014</td>
-													<td>Legendagem</td>
-													<td>R$ 360,50</td>
-													<td><span class="label label-success">Aprovado</span></td>
-													<td><span class="label label-success">Finalizado</span></td>
-												</tr>
-											</tbody>
+												<td>De <span class="from">Português</span> para <span class="for">Inglês</span></td>
+												<td>
+													<ul class="list-unstyled">
+														<li><a href="#this">Link de acesso</a></li>
+													</ul>
+												</td>
+												<td>6234</td>
+												<td class="bg-danger">10-10-2001</td>
+												<td>R$ 260,50</td>
+												<td>
+													<select class="form-control form-control-sm">
+														<option>Aguardando</option>
+														<option>Finalizado</option>
+														<option>Andamento</option>
+														<option>Pendente</option>
+														<option>Cancelado</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="form-group">
+										<label class="pull-right">
+											<a href="#this" class="btn-send-text-user alert alert-dark" role="alert" >Enviar texto para usuário</a>
+										</label>
+										<div class="send-text-user" style="display: none">
+											<textarea class="form-control" rows="3" placeholder="texto ..."></textarea>
+											<button type="button" class="btn btn-primary pull-right" style="margin-top: 5px;">
+												Enviar
+											</button>
+										</div>
+									</div>
+								</div>
+								<!-- /.col -->
+							</div>
+							<!-- /.row -->
+
+							<div class="row">
+								<!-- accepted payments column -->
+								<div class="col-xs-6">
+									<p class="lead">Forma de Pagamento: <span class="payment-methods">Cartão de Crédito</span></p>
+
+									<p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+										Observação: este comprovante não tem valor fiscal, serve apenas para seu controle. Caso não tenha
+										informado seus dados para nota fiscal no momento do pagamento, entre em contato conosco pelo e-mail
+										contato@abstractme.tr para solicitar sua nota fiscal eletrônica.
+									</p>
+								</div>
+								<!-- /.col -->
+								<div class="col-xs-6">
+									<p class="lead">Descrição dos Valores</p>
+
+									<div class="table-responsive">
+										<table class="table">
+											<tr>
+												<th style="width:50%">Subtotal:</th>
+												<td class="subtotal">R$ 921,30</td>
+											</tr>
+											<tr>
+												<th>Tax de Emergência (9.3%)</th>
+												<td class="emergency-charge">R$ 92,13</td>
+											</tr>
+											<tr>
+												<th>Total:</th>
+												<td class="total">R$ 265,24</td>
+											</tr>
 										</table>
 									</div>
-									<!-- /.box-body -->
 								</div>
-								<!-- /.box -->
+								<!-- /.col -->
 							</div>
-							<!-- /.col -->
+							<!-- /.row -->
+
+							<!-- this row will not appear when printing -->
+							<div class="row no-print">
+								<div class="col-xs-12">
+<!-- 									<button type="button" class="btn btn-primary pull-right" id="pdf" style="margin-right: 5px;">
+										<i class="fa fa-download"></i> Gerar PDF
+									</button> -->
+								</div>
+							</div>
 						</div>
-						<!-- /.row -->
-					</section>
-					<!-- /.content -->
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
 
-					<div class="modal fade " id="modal-default">
-						<div class="modal-dialog modal-lg">
-							<div class="modal-content">
-								<div class="modal-header">
-									<img src="../../dist/img/logo.png" class="pull-left" alt="Logo abstractme">
-										<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Fechar</button>
-									</div>
-									<div class="modal-body">
-										<div class="row invoice-info">
-											<div class="col-sm-4 invoice-col">
-												<div class="name-client"><strong>Nome: </strong><span> LEANDRO LIMA DA SILVA</span></div>
-												<div class="CPF-client"><strong>CPF: </strong><span> 037.050.781-94</span></div>
-												<div class="email-client"><strong>E-mail: </strong>email@gmail.com</div>
-												<div class="fone-client"><strong>Telefone: </strong>(61) 0000-0000</div>
-												<div class="address-client"><strong>Endereço: </strong><span> SCC TERMINAL RODOVIARIO</span></div>
-												<div class="district-client"><strong>Bairro: </strong><span> SETOR CENTRAL (GAMA)</span></div>
-												<div class="city-client"><strong>Cidade: </strong> <span>BRASíLIA - DF</span></div>
-												<div class="CEP-client"><strong>CEP: </strong><span>72425-100</span></div>
-												<br>
-											</div>
-											<!-- /.col -->
-											<div class="col-sm-4 invoice-col">
-												<div class="request-code"><strong>Código do Pedido: </strong><span> 56878454</span></div>
-												<div class="request-date"><strong>Data do Pedido: </strong><span> 21-7-2017</span></div>
-												<div class="Payment-date"><strong>Data do Pgto: </strong><span> 21-7-2017</span></div>
-												<div class="request-status"><strong>Status: </strong><span>Pagamento confirmado</span></div>
-												<br>
-											</div>
-											<div class="col-sm-4 invoice-col">
-												<div class="name-company"><strong>ABSTRACTME COSULTORIA ME</strong></div>
-												<div class="CNPJ"><strong>CNPJ: </strong>00.000.000/0000-00</div>
-												<div class="email-company"><strong>E-mail: </strong>contato@abstractme.tr</div>
-												<div class="fone-company"><strong>Fone: </strong>(00) 0000-0000</div>
-												<div class="state-registration"><strong>Inscrição Estadual: </strong>Isento</div>
-												<div class="municipal-registration"><strong> Inscrição Municipal: </strong>0.000</div>
-												<div class="address-company"><strong>Endereço: </strong>Conj D, APT 936. ASA NORTE - DF</div>
-												<div class="cep-company"><strong>CEP: </strong>000000-000</div>
-												<br>
-											</div>
-											<!-- /.col -->
-										</div>
-										<!-- title row -->
-										<div class="row">
-											<div class="col-xs-12">
-												<h4 class="page-header">
-													Detalhamento
-												</h4>
-											</div>
-											<!-- /.col -->
-										</div>
-										<!-- info row -->
+			<!-- Control Sidebar -->
+			<aside class="main-sidebar">
 
-										<!-- /.row -->
+				<!-- sidebar: style can be found in sidebar.less -->
+				<section class="sidebar" style="height: auto;">
 
-										<!-- Table row -->
-										<div class="row">
-											<div class="col-xs-12 table-responsive">
-												<table class="table table-striped">
-													<thead>
-														<tr>
-															<th>Pedido</th>
-															<th>Serviço</th>
-															<th>Língua</th>
-															<th>Arquivo(s)</th>
-															<th>Qtd Caract.</th>
-															<th>Przo de Entr.</th>
-															<th>Subtotal</th>
-															<th>Status</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>21354</td>
-															<td>Legendagem</td>
-															<td>De <span class="from">Inglês</span> para <span class="for">Português</span></td>
-															<td>
-																<ul class="list-unstyled">
-																	<li><a href="#this">Link de acesso</a></li>
-																	<li><a href="#this">Link de acesso</a></li>
-																</ul>
-															</td>
-															<td>3600</td>
-															<td class="">10-10-2020</td>
-															<td>R$ 660,50</td>
-															<td>
-																<select class="form-control form-control-sm">
-															  <option>Aguardando</option>
-															  <option>Finalizado</option>
-															  <option>Andamento</option>
-															  <option>Pendente</option>
-															  <option>Cancelado</option>
-															</select>
-															</td>
-														</tr>
-														<tr>
-															<td>21354</td>
-															<td>Tradução Livre</td>
-															<td>De <span class="from">Português</span> para <span class="for">Inglês</span></td>
-															<td>
-																<ul class="list-unstyled">
-																	<li><a href="#this">Link de acesso</a></li>
-																</ul>
-															</td>
-															<td>6234</td>
-															<td class="bg-danger">10-10-2001</td>
-															<td>R$ 260,50</td>
-															<td>
-																<select class="form-control form-control-sm">
-																  <option>Aguardando</option>
-																  <option>Finalizado</option>
-																  <option>Andamento</option>
-															  	<option>Pendente</option>
-															  	<option>Cancelado</option>
-																</select>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-												<div class="form-group">
-													<label>Enviar texto para usuário</label>
-													<textarea class="form-control" rows="3" placeholder="texto ..."></textarea>
-												</div>
-											<div class="row no-print">
-												<div class="col-xs-12">
-													<button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
-														Enviar
-													</button>
-												</div>
-											</div>
-											</div>
-											<!-- /.col -->
-										</div>
-										<!-- /.row -->
-
-										<div class="row">
-											<!-- accepted payments column -->
-											<div class="col-xs-6">
-												<p class="lead">Forma de Pagamento: <span class="payment-methods">Cartão de Crédito</span></p>
-
-												<p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-													Observação: este comprovante não tem valor fiscal, serve apenas para seu controle. Caso não tenha
-													informado seus dados para nota fiscal no momento do pagamento, entre em contato conosco pelo e-mail
-													contato@abstractme.tr para solicitar sua nota fiscal eletrônica.
-												</p>
-											</div>
-											<!-- /.col -->
-											<div class="col-xs-6">
-												<p class="lead">Descrição dos Valores</p>
-
-												<div class="table-responsive">
-													<table class="table">
-														<tr>
-															<th style="width:50%">Subtotal:</th>
-															<td class="subtotal">R$ 921,30</td>
-														</tr>
-														<tr>
-															<th>Tax de Emergência (9.3%)</th>
-															<td class="emergency-charge">R$ 92,13</td>
-														</tr>
-														<tr>
-															<th>Total:</th>
-															<td class="total">R$ 265,24</td>
-														</tr>
-													</table>
-												</div>
-											</div>
-											<!-- /.col -->
-										</div>
-										<!-- /.row -->
-
-										<!-- this row will not appear when printing -->
-										<div class="row no-print">
-											<div class="col-xs-12">
-												<button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
-													<i class="fa fa-download"></i> Gerar PDF
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /.modal-content -->
-							</div>
-							<!-- /.modal-dialog -->
+					<!-- Sidebar user panel (optional) -->
+					<div class="user-panel">
+						<div class="pull-left image">
+							<img src="../../dist/img/avatar2.png" class="img-circle" alt="User Image">
 						</div>
-
-						<!-- /.content-wrapper -->
-						<footer class="main-footer">
-							<!-- To the right -->
-							<div class="pull-right hidden-xs">
-								abstracMe
-							</div>
-							<!-- Default to the left -->
-							<strong>Copyright © 2020 <a href="#">abstractME</a>.</strong> All rights reserved.
-						</footer>
-
-						<!-- Control Sidebar -->
-						<aside class="main-sidebar">
-
-							<!-- sidebar: style can be found in sidebar.less -->
-							<section class="sidebar" style="height: auto;">
-
-								<!-- Sidebar user panel (optional) -->
-								<div class="user-panel">
-									<div class="pull-left image">
-										<img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-									</div>
-									<div class="pull-left info">
-										<p>Leandro Lima</p>
-									</div>
-								</div>
-								<!-- Sidebar Menu -->
-								<ul class="sidebar-menu tree" data-widget="tree">
-									<li class="header">HEADER</li>
-									<!-- Optionally, you can add icons to the links -->
-									<li><a href="ordens.html"><i class="fa fa-opencart"></i> <span>Ordens de Serviço</span></a></li>
-									<li class="active"><a href="admin-usuarios.html"><i class="fa fa-users"></i> <span>Gestão de Usuários</span></a></li>
-								</ul>
-								<!-- /.sidebar-menu -->
-							</section>
-							<!-- /.sidebar -->
-						</aside>
-						<!-- /.control-sidebar -->
+						<div class="pull-left info">
+							<p>Maria da Penha</p>
+						</div>
+					</div>
+					<!-- Sidebar Menu -->
+					<ul class="sidebar-menu tree" data-widget="tree">
+						<li class="header">HEADER</li>
+						<!-- Optionally, you can add icons to the links -->
+						<li><a href="ordens.html"><i class="fa fa-opencart"></i> <span>Ordens de Serviço</span></a></li>
+						<li class="active"><a href="admin-usuarios.html"><i class="fa fa-users"></i> <span>Gestão de Usuários</span></a></li>
+					</ul>
+					<!-- /.sidebar-menu -->
+				</section>
+				<!-- /.sidebar -->
+			</aside>
+			<!-- /.control-sidebar -->
+		</div>
+					<!-- /.content-wrapper -->
+			<footer class="main-footer">
+			    <!-- To the right -->
+			    <div class="pull-right hidden-xs">
+			      abstracMe
+			    </div>
+			    <!-- Default to the left -->
+			    <strong>Copyright © 2020 <a href="#">abstractME</a>.</strong> All rights reserved.
+			  </footer>
 	</div>
 	<!-- ./wrapper -->
 
@@ -656,12 +649,13 @@
 	<script src="../../dist/js/adminlte.min.js"></script>
 	<!-- Select2 -->
 	<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
-
+	<!-- JsPdf -->
+	<script src="../../dist/js/jspdf.min.js"></script>
 	<!-- Page Script -->
 	<script>
 		$(function () {
-			  
-    $('.select2').select2()
+
+			$('.select2').select2()
 
 			$('#tableOrders').DataTable({
 				'paging'      : true,
@@ -671,7 +665,27 @@
 				'info'        : true,
 				'autoWidth'   : true
 			});
+
+			$( ".btn-send-text-user" ).click(function() {
+				$( ".send-text-user" ).toggle();
+			});
 		});
+
+		var doc = new jsPDF();
+		var specialElementHandlers = {
+			'#editor': function (element, renderer) {
+				return true;
+			}
+		};
+
+		$('#pdf').click(function () {   
+			doc.fromHTML($('#modal-default').html(), 15, 15, {
+				'width': 170,
+				'elementHandlers': specialElementHandlers
+			});
+			doc.save('sample-file.pdf');
+		});
+
 	</script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="../../dist/js/demo.js"></script>
