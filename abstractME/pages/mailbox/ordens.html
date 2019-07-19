@@ -142,7 +142,7 @@
 						<li class="dropdown user user-menu">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-								<span class="hidden-xs">Leandro Lima</span>
+								<span class="hidden-xs">Maria da Penha</span>
 							</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
@@ -150,7 +150,7 @@
 									<img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
 									<p>
-										Leandro Lima - Web Developer
+										Maria da Penha - Web Developer
 										<small>Member since Nov. 2012</small>
 									</p>
 								</li>
@@ -198,7 +198,7 @@
 						<img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 					</div>
 					<div class="pull-left info">
-						<p>Leandro Lima</p>
+						<p>Maria da Penha</p>
 						<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
 					</div>
 				</div>
@@ -413,7 +413,7 @@
 
 			<div class="modal fade order-modal" id="modal-default">
 				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
+					<div class="modal-content" id="renderPDF">
 						<div class="modal-header">
 							<img src="../../dist/img/logo.png" class="pull-left" alt="Logo abstractme">
 							<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Fechar</button>
@@ -421,7 +421,7 @@
 						<div class="modal-body">
 							<div class="row invoice-info">
 								<div class="col-sm-4 invoice-col">
-									<div class="name-client"><strong>Nome: </strong><span> LEANDRO LIMA DA SILVA</span></div>
+									<div class="name-client"><strong>Nome: </strong><span> Maria da Penha DA SILVA</span></div>
 									<div class="CPF-client"><strong>CPF: </strong><span> 037.050.781-94</span></div>
 									<div class="email-client"><strong>E-mail: </strong>email@gmail.com</div>
 									<div class="fone-client"><strong>Telefone: </strong>(61) 0000-0000</div>
@@ -582,9 +582,9 @@
 							<!-- this row will not appear when printing -->
 							<div class="row no-print">
 								<div class="col-xs-12">
-<!-- 									<button type="button" class="btn btn-primary pull-right" id="pdf" style="margin-right: 5px;">
+									<button type="button" class="btn btn-primary pull-right" id="pdf" onclick="createPDF();" style="margin-right: 5px;">
 										<i class="fa fa-download"></i> Gerar PDF
-									</button> -->
+									</button>
 								</div>
 							</div>
 						</div>
@@ -622,15 +622,15 @@
 			</aside>
 			<!-- /.control-sidebar -->
 		</div>
-					<!-- /.content-wrapper -->
-			<footer class="main-footer">
-			    <!-- To the right -->
-			    <div class="pull-right hidden-xs">
-			      abstracMe
-			    </div>
-			    <!-- Default to the left -->
-			    <strong>Copyright © 2020 <a href="#">abstractME</a>.</strong> All rights reserved.
-			  </footer>
+		<!-- /.content-wrapper -->
+		<footer class="main-footer">
+			<!-- To the right -->
+			<div class="pull-right hidden-xs">
+				abstracMe
+			</div>
+			<!-- Default to the left -->
+			<strong>Copyright © 2020 <a href="#">abstractME</a>.</strong> All rights reserved.
+		</footer>
 	</div>
 	<!-- ./wrapper -->
 
@@ -650,7 +650,9 @@
 	<!-- Select2 -->
 	<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
 	<!-- JsPdf -->
-	<script src="../../dist/js/jspdf.min.js"></script>
+	<script src="../../plugins/pdf/jspdf.min.js"></script>
+	<!-- Canvas -->
+	<script src="../../plugins/canvas/canvas2image.min.js"></script>
 	<!-- Page Script -->
 	<script>
 		$(function () {
@@ -678,14 +680,55 @@
 			}
 		};
 
-		$('#pdf').click(function () {   
-			doc.fromHTML($('#modal-default').html(), 15, 15, {
-				'width': 170,
-				'elementHandlers': specialElementHandlers
-			});
-			doc.save('sample-file.pdf');
-		});
+		(function($){
+			$.fn.createPdf = function(parametros) {
 
+				var config = {              
+					'fileName':'html-to-pdf'
+				};
+
+				if (parametros){
+					$.extend(config, parametros);
+				}                            
+				var quotes = document.getElementById($(this).attr('id'));
+				html2canvas(quotes, {
+					onrendered: function(canvas) {
+						var pdf = new jsPDF('p', 'pt', 'letter');
+						for (var i = 0; i <= quotes.clientHeight/980; i++) {
+							var srcImg  = canvas;
+							var sX      = 0;
+							var sY      = 980*i;
+							var sWidth  = 900;
+							var sHeight = 980;
+							var dX      = 0;
+							var dY      = 0;
+							var dWidth  = 900;
+							var dHeight = 980;
+							window.onePageCanvas = document.createElement("canvas");
+							onePageCanvas.setAttribute('width', 1000);
+							onePageCanvas.setAttribute('height', 2000);
+							var ctx = onePageCanvas.getContext('2d');
+							ctx.drawImage(srcImg,sX,sY,sWidth,sHeight,dX,dY,dWidth,dHeight);
+							var canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
+							var width         = onePageCanvas.width;
+							var height        = onePageCanvas.clientHeight;
+							if (i > 0) {
+								pdf.addPage(612, 791);
+							}
+							pdf.setPage(i+1);
+							pdf.addImage(canvasDataURL, 'PNG', 20, 40, (width*.62), (height*.62));
+						}
+						pdf.save(config.fileName);
+					}
+				});
+			};
+		})(jQuery);
+
+		function createPDF() {
+			$('#renderPDF').createPdf({
+				'fileName' : 'detalhamento'
+			});
+		}
 	</script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="../../dist/js/demo.js"></script>
