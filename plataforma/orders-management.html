@@ -4,49 +4,31 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Admin | Ordens</title>
-	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<!-- Bootstrap 3.3.7 -->
-	<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
-	<!-- Ionicons -->
-	<link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
-	<!-- Theme style -->
-	<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-	<!-- Select2 -->
-	<link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
-	<!-- DataTables -->
-	<link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-	<!-- AdminLTE Skins. Choose a skin from the css/skins
-		folder instead of downloading all of them to reduce the load. -->
-		<link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
-		<!-- iCheck -->
-		<link rel="stylesheet" href="../../plugins/iCheck/flat/blue.css">
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 
-<!-- Google Font -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link rel="stylesheet" href="styles/bootstrap/bootstrap.min.css">	<!-- Bootstrap 3.3.7 -->
+	<link rel="stylesheet" href="styles/font-awesome/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/Ionicons/ionicons.min.css">
+	<link rel="stylesheet" href="styles/base/AdminLTE.min.css">
+	<link rel="stylesheet" href="styles/select2/select2.min.css">
+	<link rel="stylesheet" href="styles/datatables.net-bs/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="styles/base/skins/skin-black.css">
+	<link rel="stylesheet" href="styles/iCheck/blue.css">
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
 	<div class="wrapper">
 
 		<header class="main-header">
-			<!-- Logo -->
 			<a href="../../index2.html" class="logo">
-				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>A</b>ME</span>
-				<!-- logo for regular state and mobile devices -->
 				<span class="logo-lg"><b>abstract</b>ME</span>
 			</a>
-			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top">
-				<!-- Sidebar toggle button-->
 				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
@@ -56,42 +38,21 @@
 
 			</nav>
 		</header>
-		<!-- Left side column. contains the logo and sidebar -->
 		<aside class="main-sidebar">
-			<!-- sidebar: style can be found in sidebar.less -->
-			<section class="sidebar">
-				<!-- Sidebar user panel -->
-				<div class="user-panel">
-					<div class="pull-left image">
-						<img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-					</div>
-					<div class="pull-left info">
-						<p>Maria da Penha</p>
-						<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-					</div>
-				</div>
-				<!-- search form -->
-				<form action="#" method="get" class="sidebar-form">
-					<div class="input-group">
-						<input type="text" name="q" class="form-control" placeholder="Search...">
-						<span class="input-group-btn">
-							<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-							</button>
-						</span>
-					</div>
-				</form>
+			<section class="sidebar" style="height: auto;">
 
+				<ul class="sidebar-menu tree" data-widget="tree">
+					<li class="header">Olá, Maria Joana</li>
+					<li class="active"><a href="orders-management.html"><i class="fa fa-opencart"></i> <span>Gestão de Ordens</span></a></li>
+					<li><a href="user-management.html"><i class="fa fa-users"></i> <span>Gestão de Usuários</span></a></li>
+				</ul>
 			</section>
-			<!-- /.sidebar -->
 		</aside>
 
-		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
 					<span>Ordens</span>
-					<small>13 new messages</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -99,18 +60,14 @@
 				</ol>
 			</section>
 
-			<!-- Main content -->
 			<section class="content">
 				<div class="row">
-					<!-- /.col -->
 					<div class="col-xs-12">
-						<!-- /. box -->
 
-						<div class="box box-primary">
+						<div class="box">
 							<div class="box-header">
 								<h3 class="box-title">Caixa de entrada de ordens</h3>
 							</div>
-							<!-- /.box-header -->
 							<div class="box-body table-responsive">
 								<table id="tableOrders" class="table table table-hover table-bordered table-striped">
 									<thead>
@@ -277,13 +234,12 @@
 					</div>
 				</div>
 			</section>
-			<!-- /.content -->
 
 			<div class="modal fade order-modal" id="modal-default">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content" id="renderPDF">
 						<div class="modal-header">
-							<img src="../../dist/img/logo.png" class="pull-left" alt="Logo abstractme">
+							<img src="images/logo/logo.png" class="pull-left" alt="Logo abstractme">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
 						</div>
 						<div class="modal-body">
@@ -299,7 +255,6 @@
 									<div class="CEP-client"><strong>CEP: </strong><span>72425-100</span></div>
 									<br>
 								</div>
-								<!-- /.col -->
 								<div class="col-sm-4 invoice-col">
 									<div class="request-code"><strong>Código do Pedido: </strong><span> 56878454</span></div>
 									<div class="request-date"><strong>Data do Pedido: </strong><span> 21-7-2017</span></div>
@@ -318,20 +273,15 @@
 									<div class="cep-company"><strong>CEP: </strong>000000-000</div>
 									<br>
 								</div>
-								<!-- /.col -->
 							</div>
-							<!-- title row -->
 							<div class="row">
 								<div class="col-xs-12">
 									<h4 class="page-header">
 										Detalhamento
 									</h4>
 								</div>
-								<!-- /.col -->
 							</div>
-							<!-- info row -->
 
-							<!-- Table row -->
 							<div class="row">
 								<div class="col-xs-12 table-responsive">
 									<table class="table table-striped">
@@ -407,12 +357,9 @@
 										</div>
 									</div>
 								</div>
-								<!-- /.col -->
 							</div>
-							<!-- /.row -->
 
 							<div class="row">
-								<!-- accepted payments column -->
 								<div class="col-xs-6">
 									<p class="lead">Forma de Pagamento: <span class="payment-methods">Cartão de Crédito</span></p>
 
@@ -422,7 +369,6 @@
 										contato@abstractme.tr para solicitar sua nota fiscal eletrônica.
 									</p>
 								</div>
-								<!-- /.col -->
 								<div class="col-xs-6">
 									<p class="lead">Descrição dos Valores</p>
 
@@ -443,11 +389,8 @@
 										</table>
 									</div>
 								</div>
-								<!-- /.col -->
 							</div>
-							<!-- /.row -->
 
-							<!-- this row will not appear when printing -->
 							<div class="row no-print">
 								<div class="col-xs-12">
 									<button type="button" class="btn btn-primary pull-right" id="pdf" onclick="createPDF();" style="margin-right: 5px;">
@@ -457,149 +400,38 @@
 							</div>
 						</div>
 					</div>
-					<!-- /.modal-content -->
 				</div>
-				<!-- /.modal-dialog -->
 			</div>
 
-			<!-- Control Sidebar -->
-			<aside class="main-sidebar">
-
-				<!-- sidebar: style can be found in sidebar.less -->
-				<section class="sidebar" style="height: auto;">
-
-					<!-- Sidebar user panel (optional) -->
-					<div class="user-panel">
-						<div class="pull-left image">
-							<img src="../../dist/img/avatar2.png" class="img-circle" alt="User Image">
-						</div>
-						<div class="pull-left info">
-							<p>Maria da Penha</p>
-						</div>
-					</div>
-					<!-- Sidebar Menu -->
-					<ul class="sidebar-menu tree" data-widget="tree">
-						<li class="header">HEADER</li>
-						<!-- Optionally, you can add icons to the links -->[
-						<!-- class="active" -->
-						<li><a href="orders-management.html"><i class="fa fa-opencart"></i> <span>Gestão de Ordens</span></a></li>
-						<li><a href="user-management.html"><i class="fa fa-users"></i> <span>Gestão de Usuários</span></a></li>
-					</ul>
-					<!-- /.sidebar-menu -->
-				</section>
-				<!-- /.sidebar -->
-			</aside>
-			<!-- /.control-sidebar -->
 		</div>
-		<!-- /.content-wrapper -->
 		<footer class="main-footer">
-			<!-- To the right -->
 			<div class="pull-right hidden-xs">
 				abstracMe
 			</div>
-			<!-- Default to the left -->
 			<strong>Copyright © 2020 <a href="#">abstractME</a>.</strong> All rights reserved.
 		</footer>
 	</div>
-	<!-- ./wrapper -->
-
-	<!-- jQuery 3 -->
-	<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="javascript/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap 3.3.7 -->
-	<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="javascript/plugins/bootstrap/bootstrap.min.js"></script>
 	<!-- DataTables -->
-	<script src="../../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-	<script src="../../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<script src="javascript/plugins/jquery/jquery.dataTables.min.js"></script>
+	<script src="javascript/plugins/bootstrap/dataTables.bootstrap.min.js"></script>
 	<!-- Slimscroll -->
-	<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="javascript/plugins/jquery/jquery.slimscroll.min.js"></script>
 	<!-- FastClick -->
-	<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+	<script src="javascript/plugins/fastclick/fastclick.js"></script>
 	<!-- AdminLTE App -->
-	<script src="../../dist/js/adminlte.min.js"></script>
+	<script src="javascript/base/adminlte.min.js"></script>
 	<!-- Select2 -->
-	<script src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+	<script src="javascript/plugins/select2/select2.full.min.js"></script>
 	<!-- JsPdf -->
-	<script src="../../plugins/pdf/jspdf.min.js"></script>
+	<script src="javascript/plugins/pdf/jspdf.min.js"></script>
 	<!-- Canvas -->
-	<script src="../../plugins/canvas/canvas2image.min.js"></script>
+	<script src="javascript/plugins/canvas/canvas2image.min.js"></script>
 	<!-- Page Script -->
-	<script>
-		$(function () {
-
-			$('.select2').select2()
-
-			$('#tableOrders').DataTable({
-				'paging'      : true,
-				'lengthChange': true,
-				'searching'   : true,
-				'ordering'    : true,
-				'info'        : true,
-				'autoWidth'   : true
-			});
-
-			$( ".btn-send-text-user" ).click(function() {
-				$( ".send-text-user" ).toggle();
-			});
-		});
-
-		var doc = new jsPDF();
-		var specialElementHandlers = {
-			'#editor': function (element, renderer) {
-				return true;
-			}
-		};
-
-		(function($){
-			$.fn.createPdf = function(parametros) {
-
-				var config = {              
-					'fileName':'html-to-pdf'
-				};
-
-				if (parametros){
-					$.extend(config, parametros);
-				}                            
-				var quotes = document.getElementById($(this).attr('id'));
-				html2canvas(quotes, {
-					onrendered: function(canvas) {
-						var pdf = new jsPDF('p', 'pt', 'letter');
-						for (var i = 0; i <= quotes.clientHeight/980; i++) {
-							var srcImg  = canvas;
-							var sX      = 0;
-							var sY      = 980*i;
-							var sWidth  = 900;
-							var sHeight = 980;
-							var dX      = 0;
-							var dY      = 0;
-							var dWidth  = 900;
-							var dHeight = 980;
-							window.onePageCanvas = document.createElement("canvas");
-							onePageCanvas.setAttribute('width', 1000);
-							onePageCanvas.setAttribute('height', 2000);
-							var ctx = onePageCanvas.getContext('2d');
-							ctx.drawImage(srcImg,sX,sY,sWidth,sHeight,dX,dY,dWidth,dHeight);
-							var canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
-							var width         = onePageCanvas.width;
-							var height        = onePageCanvas.clientHeight;
-							if (i > 0) {
-								pdf.addPage(612, 791);
-							}
-							pdf.setPage(i+1);
-							pdf.addImage(canvasDataURL, 'PNG', 20, 40, (width*.62), (height*.62));
-						}
-						pdf.save(config.fileName);
-					}
-				});
-			};
-		})(jQuery);
-
-		function createPDF() {
-			$('#renderPDF').createPdf({
-				'fileName' : 'detalhamento'
-			});
-		}
-	</script>
+	<script src="javascript/base/base.js" type="text/javascript" charset="utf-8" async defer></script>
 	<!-- AdminLTE for demo purposes -->
-	<script src="../../dist/js/demo.js"></script>
+	<script src="javascript/base/demo.js"></script>
 </body>
 </html>
