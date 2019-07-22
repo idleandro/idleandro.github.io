@@ -45,6 +45,7 @@
 					<li class="header">Olá, Maria Joana</li>
 					<li><a href="orders-management.html"><i class="fa fa-opencart"></i> <span>Gestão de Ordens</span></a></li>
 					<li class="active"><a href="users-management.html"><i class="fa fa-users"></i> <span>Gestão de Usuários</span></a></li>
+					<li><a href="config-management.html"><i class="fa fa-wrench"></i> <span>Meu Perfil</span></a></li>
 				</ul>
 			</section>
 		</aside>
@@ -52,50 +53,208 @@
 		<div class="content-wrapper">
 			<section class="content-header">
 				<h1>
-					<span>Ordens</span>
+					<span>Gestão de Usuários</span>
 				</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-					<li class="active">Ordens</li>
+					<li class="active">Usuários</li>
 				</ol>
 			</section>
 
 			<section class="content">
 				<div class="row">
 					<div class="col-xs-12">
+						<div class="nav-tabs-custom">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#password" data-toggle="tab">Usuários</a></li>
+								<li><a href="#datas" data-toggle="tab">Cadastrar Usuários</a></li>
+							</ul>
+							<div class="tab-content">
+								<div class="active tab-pane" id="password">
+									<div class="box-header">
+										<h3 class="box-title">Caixa de entrada de ordens</h3>
+									</div>
+									<div class="box-body table-responsive">
+										<table id="tableOrders" class="table table table-hover table-bordered table-striped">
+											<thead>
+												<tr>
+													<th>Nome</th>
+													<th>E-mail</th>
+													<th>CPF</th>
+													<th>Perfil</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">Maria da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-success">Usuário</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">João da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-warning">Parceiro</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">Maria da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-success">Usuário</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">João da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-warning">Parceiro</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">Maria da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-success">Usuário</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">João da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-warning">Parceiro</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">Maria da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-success">Usuário</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">João da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-warning">Parceiro</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">Maria da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-success">Usuário</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">João da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>010.000.000-00</td>
+													<td><span class="label label-warning">Parceiro</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">Maria da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-54</td>
+													<td><span class="label label-success">Usuário</span></td>
+												</tr>
+												<tr>
+													<td><a href="#this" data-toggle="modal" data-target="#modal-default">João da Penha</a></td>
+													<td>email@gmail.com</td>
+													<td>000.000.000-00</td>
+													<td><span class="label label-warning">Parceiro</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="tab-pane" id="datas">
+									<div class="content">
+										<form class="form-horizontal">
+											<div class="form-group">
+												<label for="inputName" class="col-sm-2 control-label">Name</label>
 
-						<div class="box">
-							<div class="box-header">
-								<h3 class="box-title">Caixa de entrada de ordens</h3>
-							</div>
-							<div class="box-body table-responsive">
-								<table id="tableOrders" class="table table table-hover table-bordered table-striped">
-									<thead>
-										<tr>
-											<th>Nome</th>
-											<th>E-mail</th>
-											<th>CPF</th>
-											<th>Perfil</th>
-											<th>Editar</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Maria da Penha</td>
-											<td>email@gmail.com</td>
-											<td>000.000.000-00</td>
-											<td><span class="label label-success">Usuário</span></td>
-											<td><a href="#this" data-toggle="modal" data-target="#modal-default">Editar</td>
-										</tr>
-										<tr>
-											<td>João da Penha</td>
-											<td>email@gmail.com</td>
-											<td>000.000.000-00</td>
-											<td><span class="label label-warning">Parceiro</span></td>
-											<td><a href="#this" data-toggle="modal" data-target="#modal-default">Editar</td>
-										</tr>
-									</tbody>
-								</table>
+												<div class="col-sm-10">
+													<input type="email" class="form-control" id="inputName" placeholder="Name">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+												<div class="col-sm-10">
+													<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputSex" class="col-sm-2 control-label">Perfil</label>
+												<div class="col-sm-10">
+													<select class="form-control form-control-sm">
+														<option></option>
+														<option>Colaborador</option>
+														<option>Cliente</option>
+														<option>Administrador</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputCpf" class="col-sm-2 control-label">CPF</label>
+
+												<div class="col-sm-10">
+													<input type="text" class="form-control" id="inputCpf" placeholder="CPF">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputFone" class="col-sm-2 control-label">Telefone</label>
+
+												<div class="col-sm-10">
+													<input type="text" class="form-control" id="inputFone" placeholder="Telefone">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputBirthdate" class="col-sm-2 control-label">Data de Nascimento</label>
+
+												<div class="col-sm-10">
+													<input class="form-control datemask" id="inputBirthdate" placeholder="Data de Nascimento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputSex" class="col-sm-2 control-label">Sexo</label>
+												<div class="col-sm-10">
+													<select class="form-control form-control-sm">
+														<option>Masculino</option>
+														<option>Feminino</option>
+														<option>Outros</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputCEP" class="col-sm-2 control-label datemask" data-inputmask='"mask": "00000-000"'  data-mask>CEP</label>
+
+												<div class="col-sm-10">
+													<input class="form-control" id="inputCEP" placeholder="CEP">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputAddress" class="col-sm-2 control-label">Endereço</label>
+
+												<div class="col-sm-10">
+													<input class="form-control" id="inputAddress" placeholder="Endereço">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputCity" class="col-sm-2 control-label">Cidade</label>
+
+												<div class="col-sm-10">
+													<input class="form-control" id="inputCity" placeholder="Cidade">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="inputState" class="col-sm-2 control-label">Estado</label>
+
+												<div class="col-sm-10">
+													<input class="form-control" id="inputState" placeholder="Estado">
+												</div>
+											</div>
+											<div class="form-group pull-right">
+												<button type="submit" class="btn btn-primary">Cadastrar Usuário</button>
+											</div>
+										</form>
+										<br>
+									</div>	
+								</div>
 							</div>
 						</div>
 					</div>
@@ -111,89 +270,105 @@
 						<div class="modal-body">
 							<div class="content">
 								<form class="form-horizontal">
-								  <div class="form-group">
-									<label for="inputName" class="col-sm-2 control-label">Name</label>
+									<div class="form-group">
+										<label for="inputName" class="col-sm-2 control-label">Name</label>
 
-									<div class="col-sm-10">
-									  <input type="email" class="form-control" id="inputName" placeholder="Name">
+										<div class="col-sm-10">
+											<input type="email" class="form-control" id="inputName" placeholder="Name">
+										</div>
 									</div>
-								  </div>
-								  <div class="form-group">
-									<label for="inputEmail" class="col-sm-2 control-label">Email</label>
+									<div class="form-group">
+										<label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
-									<div class="col-sm-10">
-									  <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+										<div class="col-sm-10">
+											<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+										</div>
 									</div>
-								  </div>
-								  <div class="form-group">
-									<label for="inputCpf" class="col-sm-2 control-label">CPF</label>
+									<div class="form-group">
+										<label for="inputSex" class="col-sm-2 control-label">Perfil</label>
+										<div class="col-sm-10">
+											<select class="form-control form-control-sm">
+												<option></option>
+												<option>Colaborador</option>
+												<option>Cliente</option>
+												<option>Administrador</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputCpf" class="col-sm-2 control-label">CPF</label>
 
-									<div class="col-sm-10">
-									  <input type="text" class="form-control" id="inputCpf" placeholder="CPF">
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="inputCpf" placeholder="CPF">
+										</div>
 									</div>
-								  </div>
 									<div class="form-group">
 										<label for="inputFone" class="col-sm-2 control-label">Telefone</label>
 
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="inputFone" placeholder="Telefone">
-									  </div>
+										</div>
 									</div>
-								  <div class="form-group">
-									<label for="inputBirthdate" class="col-sm-2 control-label">Data de Nascimento</label>
+									<div class="form-group">
+										<label for="inputBirthdate" class="col-sm-2 control-label">Data de Nascimento</label>
 
-									<div class="col-sm-10">
-									  <input class="form-control datemask" id="inputBirthdate" placeholder="Data de Nascimento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+										<div class="col-sm-10">
+											<input class="form-control datemask" id="inputBirthdate" placeholder="Data de Nascimento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+										</div>
 									</div>
-								  </div>
-								  <div class="form-group">
-									<label for="inputSex" class="col-sm-2 control-label">Sexo</label>
-									<div class="col-sm-10">
-									  <select class="form-control form-control-sm">
-										<option>Masculino</option>
-										<option>Feminino</option>
-										<option>Outros</option>
-									</select>
+									<div class="form-group">
+										<label for="inputSex" class="col-sm-2 control-label">Sexo</label>
+										<div class="col-sm-10">
+											<select class="form-control form-control-sm">
+												<option>Masculino</option>
+												<option>Feminino</option>
+												<option>Outros</option>
+											</select>
+										</div>
 									</div>
-								  </div>
-								  <div class="form-group">
-									<label for="inputCEP" class="col-sm-2 control-label datemask" data-inputmask='"mask": "00000-000"'  data-mask>CEP</label>
+									<div class="form-group">
+										<label for="inputCEP" class="col-sm-2 control-label datemask" data-inputmask='"mask": "00000-000"'  data-mask>CEP</label>
 
-									<div class="col-sm-10">
-									  <input class="form-control" id="inputCEP" placeholder="CEP">
+										<div class="col-sm-10">
+											<input class="form-control" id="inputCEP" placeholder="CEP">
+										</div>
 									</div>
-								  </div>
-								  <div class="form-group">
-									<label for="inputAddress" class="col-sm-2 control-label">Endereço</label>
+									<div class="form-group">
+										<label for="inputAddress" class="col-sm-2 control-label">Endereço</label>
 
-									<div class="col-sm-10">
-									  <input class="form-control" id="inputAddress" placeholder="Endereço">
+										<div class="col-sm-10">
+											<input class="form-control" id="inputAddress" placeholder="Endereço">
+										</div>
 									</div>
-								  </div>
-								  <div class="form-group">
-									<label for="inputCity" class="col-sm-2 control-label">Cidade</label>
+									<div class="form-group">
+										<label for="inputCity" class="col-sm-2 control-label">Cidade</label>
 
-									<div class="col-sm-10">
-									  <input class="form-control" id="inputCity" placeholder="Cidade">
+										<div class="col-sm-10">
+											<input class="form-control" id="inputCity" placeholder="Cidade">
+										</div>
 									</div>
-								  </div>
-								  <div class="form-group">
-									<label for="inputState" class="col-sm-2 control-label">Estado</label>
+									<div class="form-group">
+										<label for="inputState" class="col-sm-2 control-label">Estado</label>
 
-									<div class="col-sm-10">
-									  <input class="form-control" id="inputState" placeholder="Estado">
+										<div class="col-sm-10">
+											<input class="form-control" id="inputState" placeholder="Estado">
+										</div>
 									</div>
-								  </div>
-								  <div class="form-group pull-right">
-									<div class="col-sm-offset-2 col-sm-10">
-									  <button type="submit" class="btn btn-danger">Excluir</button>
+									<div class="form-group pull-right">
+										<div class="col-sm-offset-2 col-sm-6">
+											<button type="submit" class="btn btn-danger"> Excluir </button> 
+										</div>
 									</div>
-								  </div>
+									<div class="form-group pull-right">
+										<div class="col-sm-offset-2 col-sm-6">
+											 <button type="submit" class="btn btn-primary"> Alterar </button>
+										</div>
+									</div>
 								</form>
 								<br>
 							</div>	
 							<!-- /.row -->
-	
+
 						</div>
 					</div>
 					<!-- /.modal-content -->
