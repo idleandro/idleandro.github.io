@@ -46,8 +46,8 @@
 					<li class="header">Olá, Maria Joana</li>
 					<li><a href="orders-management.html"><i class="fa fa-opencart"></i> <span>Gestão de Ordens</span></a></li>
 					<li><a href="users-management.html"><i class="fa fa-users"></i> <span>Gestão de Usuários</span></a></li>
-					<li><a href="services-management.html"><i class="fa fa-list-ol"></i> <span>Gestão de Serviços</span></a></li>
-					<li class="active"><a href="config-profile.html"><i class="fa fa-wrench"></i> <span>Meu Perfil</span></a></li>
+					<li class="active"><a href="services-management.html"><i class="fa fa-list-ol"></i> <span>Gestão de Serviços</span></a></li>
+					<li><a href="config-profile.html"><i class="fa fa-wrench"></i> <span>Meu Perfil</span></a></li>
 					<li><a href="../login.html"><i class="fa  fa-close"></i> <span>Sair</span></a></li>
 				</ul>
 			</section>
@@ -69,36 +69,40 @@
 					<div class="col-xs-12">
 						<div class="nav-tabs-custom">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#password" data-toggle="tab">Alterar Senha</a></li>
-								<li><a href="#datas" data-toggle="tab">Alterar dados</a></li>
+								<li class="active"><a href="#password" data-toggle="tab">Tradução Livre</a></li>
+								<li><a href="#datas" data-toggle="tab">Legenda</a></li>
 							</ul>
 							<div class="tab-content">
 								<div class="active tab-pane" id="password">
 									<form class="form-horizontal">
 										<div class="form-group">
-											<label for="inputPassword" class="col-sm-2 control-label">Senha atual</label>
+											<label for="service" class="col-sm-2 control-label">Serviço</label>
 
 											<div class="col-sm-10">
-												<input type="text" class="form-control password" id="inputPassword" placeholder="Senha">
+												<input type="text" class="form-control free translation" id="service" placeholder="" value="Tradução Livre" disabled="">
 											</div>
 										</div>
 										<div class="form-group">
-											<label for="newInputPassword" class="col-sm-2 control-label">Nova senha</label>
+											<label for="dateRange" class="col-sm-2 control-label">Selecione data</label>
 
-											<div class="col-sm-10">
-												<input type="text" class="form-control new-password" id="newInputPassword" placeholder="Nova Senha">
+											<div class="col-sm-6">
+								                <div class="input-group">
+									                  <div class="input-group-addon">
+									                    <i class="fa fa-calendar"></i>
+									                  </div>
+									                  <input type="text" class="form-control pull-right" id="reservation">
+									              </div>
 											</div>
-										</div>
-										<div class="form-group">
-											<label for="confirmNewInputPassword" class="col-sm-2 control-label">Confirme nova senha</label>
+											<div class="col-sm-4">
+										<p class="alert alert-warning" role="alert" style="padding: 5px 4px">
+											Este serviço ficará <strong>indisponível</strong> durante o período selecionado. 
+										</p>
+											</div>
 
-											<div class="col-sm-10">
-												<input type="text" class="form-control confirm-new-password" id="confirmNewInputPassword" placeholder="Nova Senha">
-											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
-												<button type="submit" class="btn btn-danger">Alterar Senha</button>
+												<button type="submit" class="btn btn-primary">Salvar</button>
 											</div>
 										</div>
 									</form>
