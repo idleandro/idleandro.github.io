@@ -182,98 +182,130 @@
 								</div>
 								<div class="tab-pane" id="datas">
 									<div class="content">
-										<form class="form-horizontal">
-											<div class="form-group">
-												<label for="inputName" class="col-sm-2 control-label">Name</label>
+								<form class="form-horizontal">
+									<div class="form-group">
+										<label for="inputName" class="col-sm-2 control-label">Name</label>
 
-												<div class="col-sm-10">
-													<input type="text" class="form-control name" id="inputName" placeholder="Name">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputEmail" class="col-sm-2 control-label">Email</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control name" id="inputName" placeholder="Name">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
-												<div class="col-sm-10">
-													<input type="email" class="form-control email" id="inputEmail" placeholder="Email">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputSex" class="col-sm-2 control-label">Perfil</label>
-												<div class="col-sm-10">
-													<select class="form-control form-control-sm profile">
-														<option></option>
-														<option>Colaborador</option>
-														<option>Cliente</option>
-														<option>Administrador</option>
-													</select>
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputCpf" class="col-sm-2 control-label">CPF</label>
+										<div class="col-sm-10">
+											<input type="email" class="form-control email" id="inputEmail" placeholder="Email">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputSex" class="col-sm-2 control-label">Perfil</label>
+										<div class="col-sm-10">
+											<select class="form-control form-control-sm profile">
+												<option></option>
+												<option>Colaborador</option>
+												<option>Cliente</option>
+												<option>Administrador</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputSex" class="col-sm-2 control-label">Status</label>
+										<div class="col-sm-10">
+											<select class="form-control form-control-sm profile">
+												<option></option>
+												<option>Ativo</option>
+												<option>Inativo</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputSex" class="col-sm-2 control-label">Perfil de Tradução</label>
+										<div class="col-sm-10">
+											<ul class="list-inline" class="category">
+											  <li class="list-inline-item">
+												<input type="checkbox" class="custom-control-input" id="tj">
+												<label for="tj">Tradução Juramentadas</label>
+											  </li>
+											  <li class="list-inline-item">
+												<input type="checkbox" class="custom-control-input" id="tl">
+												<label for="tl">Tradução Livre</label>
+											  </li>
+											  <li class="list-inline-item">
+												<input type="checkbox" class="custom-control-input" id="l">
+												<label for="l">Legendagem</label>
+											  </li>
+											  <li class="list-inline-item">
+												<input type="checkbox" class="custom-control-input" id="o">
+												<label for="o">Outro</label>
+											  </li>
+											</ul>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputCpf" class="col-sm-2 control-label">CPF</label>
 
-												<div class="col-sm-10">
-													<input type="text" class="form-control cpf" id="inputCpf" placeholder="CPF">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputFone" class="col-sm-2 control-label">Telefone</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control cpf" id="inputCpf" placeholder="CPF">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputFone" class="col-sm-2 control-label">Telefone</label>
 
-												<div class="col-sm-10">
-													<input type="text" class="form-control fone" id="inputFone" placeholder="Telefone">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputBirthdate" class="col-sm-2 control-label">Data de Nascimento</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control fone" id="inputFone" placeholder="Telefone">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputBirthdate" class="col-sm-2 control-label">Data de Nascimento</label>
 
-												<div class="col-sm-10">
-													<input class="form-control datemask date-birth" id="inputBirthdate" placeholder="Data de Nascimento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputSex" class="col-sm-2 control-label">Sexo</label>
-												<div class="col-sm-10">
-													<select class="form-control form-control-sm sex">
-														<option>Masculino</option>
-														<option>Feminino</option>
-														<option>Outros</option>
-													</select>
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputCEP" class="col-sm-2 control-label datemask" data-inputmask='"mask": "00000-000"'  data-mask>CEP</label>
+										<div class="col-sm-10">
+											<input class="form-control datemask date-birth" id="inputBirthdate" placeholder="Data de Nascimento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputSex" class="col-sm-2 control-label">Sexo</label>
+										<div class="col-sm-10">
+											<select class="form-control form-control-sm sex">
+												<option>Masculino</option>
+												<option>Feminino</option>
+												<option>Outros</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputCEP" class="col-sm-2 control-label datemask" data-inputmask='"mask": "00000-000"'  data-mask>CEP</label>
 
-												<div class="col-sm-10">
-													<input class="form-control cep" id="inputCEP" placeholder="CEP">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputAddress" class="col-sm-2 control-label">Endereço</label>
+										<div class="col-sm-10">
+											<input class="form-control cep" id="inputCEP" placeholder="CEP">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputAddress" class="col-sm-2 control-label">Endereço</label>
 
-												<div class="col-sm-10">
-													<input class="form-control address" id="inputAddress" placeholder="Endereço">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputCity" class="col-sm-2 control-label">Cidade</label>
+										<div class="col-sm-10">
+											<input class="form-control address" id="inputAddress" placeholder="Endereço">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputCity" class="col-sm-2 control-label">Cidade</label>
 
-												<div class="col-sm-10">
-													<input class="form-control city" id="inputCity" placeholder="Cidade">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="inputState" class="col-sm-2 control-label">Estado</label>
+										<div class="col-sm-10">
+											<input class="form-control city" id="inputCity" placeholder="Cidade">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="inputState" class="col-sm-2 control-label">Estado</label>
 
-												<div class="col-sm-10">
-													<input class="form-control state" id="inputState" placeholder="Estado">
-												</div>
-											</div>
-											<div class="form-group pull-right">
+										<div class="col-sm-10">
+											<input class="form-control state" id="inputState" placeholder="Estado">
+										</div>
+									</div>
+									<div class="form-group pull-right">
 
-												<div class="col-sm-10">
-													<button type="submit" class="btn btn-primary">Cadastrar Usuário</button>
-												</div>
-											</div>
-										</form>
+										<button type="submit" class="btn btn-primary">Alterar Usuário</button>
+										<button type="submit" class="btn btn-danger">Excluir Usuário</button>
+									</div>
+								</form>
 										<br>
 									</div>	
 								</div>
@@ -327,14 +359,27 @@
 											</select>
 										</div>
 									</div>
-									<div class="form-group category">
-										<label class="col-sm-2 control-label">Tradução Livre</label>
+									<div class="form-group">
+										<label for="inputSex" class="col-sm-2 control-label">Perfil de Tradução</label>
 										<div class="col-sm-10">
-											<input type="checkbox" class="minimal" checked>
-										</div>
-										<label class="col-sm-2 control-label">Legenda</label>
-										<div class="col-sm-10">
-											<input type="checkbox" class="minimal">
+											<ul class="list-inline" class="category">
+											  <li class="list-inline-item">
+												<input type="checkbox" class="custom-control-input" id="tj">
+												<label for="tj">Tradução Juramentadas</label>
+											  </li>
+											  <li class="list-inline-item">
+												<input type="checkbox" class="custom-control-input" id="tl">
+												<label for="tl">Tradução Livre</label>
+											  </li>
+											  <li class="list-inline-item">
+												<input type="checkbox" class="custom-control-input" id="l">
+												<label for="l">Legendagem</label>
+											  </li>
+											  <li class="list-inline-item">
+												<input type="checkbox" class="custom-control-input" id="o">
+												<label for="o">Outro</label>
+											  </li>
+											</ul>
 										</div>
 									</div>
 									<div class="form-group">
