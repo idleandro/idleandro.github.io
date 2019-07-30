@@ -274,7 +274,7 @@
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
 						</div>
 						<div class="modal-body">
-							<div class="row invoice-info">
+<!-- 							<div class="row invoice-info">
 								<div class="col-sm-4 invoice-col">
 									<div class="name-client"><strong>Nome: </strong><span class="user-name"> Maria da Penha DA SILVA</span></div>
 									<div class="CPF-client"><strong>CPF: </strong><span class="user-cpf"> 037.050.781-94</span></div>
@@ -306,7 +306,7 @@
 									<div class="cep-company"><strong>CEP: </strong>000000-000</div>
 									<br>
 								</div>
-							</div>
+							</div> -->
 							<div class="row">
 								<div class="col-xs-12">
 									<h4 class="page-header">
@@ -392,20 +392,41 @@
 											</tr>
 										</tbody>
 									</table>
-									<div class="form-group">
-										<label class="pull-right">
-											<a href="#this" class="btn-send-text-user alert alert-dark" role="alert" >Enviar texto para usuário</a>
-										</label>
-										<div class="send-text-user" style="display: none">
-											<textarea class="form-control" id="sendTextUser" rows="3" placeholder="texto ..."></textarea>
-											<button type="button" class="btn btn-primary pull-right" style="margin-top: 5px;">
-												Enviar
-											</button>
-										</div>
-									</div>
 								</div>
 							</div>
 
+							<div class="row">
+								<div class="col-xs-6">
+									<p class="lead">Assinantes</p>
+									<form>
+										<div class="form-group">
+											<select multiple class="form-control" id="exampleFormControlSelect2">
+												<option>Maria Braga</option>
+												<option>Ana Beatriz</option>
+												<option>Bruna Maria</option>
+												<option>Pedro Bento</option>
+												<option>Juliana Alves</option>
+										</select>
+										</div>
+										<div class="form-group pull-right">
+											<button type="submit" class="btn btn-primary">Salvar</button>
+										</div>
+									</form>
+								</div>
+								<div class="col-xs-6">
+									<p class="lead">Envie um texto para o cliente</p>
+									<form>
+										<div class="form-group">
+											<div class="send-text-user">
+												<textarea class="form-control" id="sendTextUser" rows="4" placeholder="texto ..."></textarea>
+											</div>
+										</div>
+										<div class="form-group pull-right">
+											<button type="submit" class="btn btn-primary">Enviar</button>
+										</div>
+									</form>
+								</div>
+							</div>
 							<div class="row">
 								<div class="col-xs-6">
 									<p class="lead">Forma de Pagamento: <span class="payment-methods">Cartão de Crédito</span></p>
@@ -437,49 +458,42 @@
 									</div>
 								</div>
 							</div>
-
-							<div class="row no-print">
-								<div class="col-xs-12">
-									<button type="button" class="btn btn-primary pull-right" id="pdf" onclick="createPDF();" style="margin-right: 5px;">
-										<i class="fa fa-download"></i> Gerar PDF
-									</button>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
-		<footer class="main-footer">
-			<div class="pull-right hidden-xs">
-				abstracMe
-			</div>
-			<strong>Copyright © 2020 <a href="#">abstractME</a>.</strong> All rights reserved.
-		</footer>
+
 	</div>
-	<script src="../javascript/plugins/jquery/jquery.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
-	<script src="../javascript/plugins/bootstrap/bootstrap.min.js"></script>
-	<!-- DataTables -->
-	<script src="../javascript/plugins/jquery/jquery.dataTables.min.js"></script>
-	<script src="../javascript/plugins/bootstrap/dataTables.bootstrap.min.js"></script>
-	<!-- Slimscroll -->
-	<script src="../javascript/plugins/jquery/jquery.slimscroll.min.js"></script>
-	<!-- FastClick -->
-	<script src="../javascript/plugins/fastclick/fastclick.js"></script>
-	<!-- AdminLTE App -->
-	<script src="../javascript/base/adminlte.min.js"></script>
-	<!-- Select2 -->
-	<script src="../javascript/plugins/select2/select2.full.min.js"></script>
-	<!-- date-range-picker -->
-	<script src="../javascript/plugins/moment/moment.js"></script>
-	<script src="../javascript/plugins/daterangepicker/daterangepicker.js"></script>
-	<!-- JsPdf -->
-	<script src="../javascript/plugins/pdf/jspdf.min.js"></script>
-	<!-- Canvas -->
-	<script src="../javascript/plugins/canvas/canvas2image.min.js"></script>
-	<!-- Page Script -->
-	<script src="../javascript/base/base.js" type="text/javascript" charset="utf-8" async defer></script>
+	<footer class="main-footer">
+		<div class="pull-right hidden-xs">
+			abstracMe
+		</div>
+		<strong>Copyright © 2020 <a href="#">abstractME</a>.</strong> All rights reserved.
+	</footer>
+</div>
+<script src="../javascript/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../javascript/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../javascript/plugins/jquery/jquery.dataTables.min.js"></script>
+<script src="../javascript/plugins/bootstrap/dataTables.bootstrap.min.js"></script>
+<!-- Slimscroll -->
+<script src="../javascript/plugins/jquery/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../javascript/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../javascript/base/adminlte.min.js"></script>
+<!-- Select2 -->
+<script src="../javascript/plugins/select2/select2.full.min.js"></script>
+<!-- date-range-picker -->
+<script src="../javascript/plugins/moment/moment.js"></script>
+<script src="../javascript/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- JsPdf -->
+<script src="../javascript/plugins/pdf/jspdf.min.js"></script>
+<!-- Canvas -->
+<script src="../javascript/plugins/canvas/canvas2image.min.js"></script>
+<!-- Page Script -->
+<script src="../javascript/base/base.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>

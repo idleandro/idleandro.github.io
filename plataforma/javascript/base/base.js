@@ -11,9 +11,9 @@ $(function () {
 		'autoWidth'   : true
 	});
 
-	$( ".btn-send-text-user" ).click(function() {
-		$( ".send-text-user" ).toggle();
-	});
+	// $( ".btn-send-text-user" ).click(function() {
+	// 	$( ".send-text-user" ).toggle();
+	// });
 });
 
 var doc = new jsPDF();
@@ -48,8 +48,8 @@ var specialElementHandlers = {
 					var dWidth  = 900;
 					var dHeight = 980;
 					window.onePageCanvas = document.createElement("canvas");
-					onePageCanvas.setAttribute('width', 1000);
-					onePageCanvas.setAttribute('height', 2000);
+					onePageCanvas.setAttribute('width', 2000);
+					onePageCanvas.setAttribute('height', 4000);
 					var ctx = onePageCanvas.getContext('2d');
 					ctx.drawImage(srcImg,sX,sY,sWidth,sHeight,dX,dY,dWidth,dHeight);
 					var canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
