@@ -4996,6 +4996,10 @@ hr {
 .modal.in .modal-dialog {
   width: 85%;
 }
+
+input.uploadFilestranslated {
+  width: 170px;
+}
 /*
  * Misc: print
  * -----------
