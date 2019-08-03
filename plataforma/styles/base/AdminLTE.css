@@ -5051,3 +5051,7 @@ input.uploadFilestranslated {
     white-space: normal !important;
   }
 }
+
+.form-control-feedback{
+  top: 0!important;
+}

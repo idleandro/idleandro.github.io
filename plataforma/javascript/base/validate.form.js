@@ -37,8 +37,8 @@ $(function () {
                 required: true,
                 messages: false
             }
-    	},
-    	messages :{
+        },
+        messages :{
             name: {
                 required: "Campo obrigatório",
             },
@@ -63,10 +63,10 @@ $(function () {
             sex: {
                 required: "Campo obrigatório",
             }
-    	}
+        }
     });
 
-       $('.password').validate({
+    $('.reset-password').validate({
         rules: {
             password: {
                 required: true,
@@ -87,6 +87,44 @@ $(function () {
             },
             RepeatNewPassword: {
                 required: "Campo obrigatório",
+            }
+        }
+    });
+
+    $('.login').validate({
+        rules: {
+            name: {
+                required: true,
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            token: {
+                required: true,
+            },
+            password: {
+                required: true,
+            },
+            RepeatNewPassword: {
+                required: true,
+            }
+        },
+        messages :{
+            name: {
+                required: "Nome obrigatório",
+            },
+            email: {
+                 required: "E-mail obrigatório",
+            },
+            token: {
+                 required: "Token obrigatório",
+            },
+            password: {
+                 required: "Senha obrigatória",
+            },
+            RepeatNewPassword: { 
+                required: "Senha obrigatória",
             }
         }
     });
