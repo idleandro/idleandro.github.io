@@ -9,7 +9,7 @@ $(function () {
 		'autoWidth'   : true
 	});
 
-    $('.valid-form').validate({
+    $('.user').validate({
     	rules: {
     		name: {
     			required: true,
@@ -65,18 +65,32 @@ $(function () {
             }
     	}
     });
-  $('.type-form').validate({
+
+       $('.password').validate({
         rules: {
-            name: {
+            password: {
+                required: true,
+            },
+            newPassword: {
+                required: true,
+            },
+            RepeatNewPassword: {
                 required: true,
             }
         },
         messages :{
-            name: {
+            password: {
+                required: "Campo obrigatório",
+            },
+            newPassword: {
+                required: "Campo obrigatório",
+            },
+            RepeatNewPassword: {
                 required: "Campo obrigatório",
             }
         }
     });
+
     $('.cpf').mask('000.000.000-00');
     $('.fone').mask('(00) 0000-00009');
     $('.date-birth').mask('00/00/00');

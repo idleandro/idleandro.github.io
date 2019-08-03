@@ -111,18 +111,18 @@
 								</div>
 								<div class="tab-pane" id="addType">
 									<div class="content">
-										<form class="form-horizontal">
+										<form class="form-horizontal user">
 											<div class="form-group">
-												<label for="inputName" class="col-sm-2 control-label">Name do serviço</label>
+												<label for="inputName" class="col-sm-2 control-label">Name do idioma</label>
 
 												<div class="col-sm-10">
-													<input type="text" class="form-control name" class="inputNameType" placeholder="Name do idioma">
+													<input type="text" class="form-control name" name="name" placeholder="Name">
 												</div>
 											</div>
 											<div class="form-group">
 												<label for="inputSex" class="col-sm-2 control-label">Status</label>
 												<div class="col-sm-10">
-													<select class="form-control form-control-sm profile">
+													<select class="form-control form-control-sm profile" name="status">
 														<option></option>
 														<option>Ativo</option>
 														<option>Inativo</option>
@@ -131,7 +131,7 @@
 											</div>
 											<div class="form-group pull-right">
 
-												<button type="submit" class="btn btn-primary">Cadastrar Tipo</button>
+												<button type="submit" class="btn btn-primary">Cadastrar serviço</button>
 											</div>
 										</form>
 										<br>
@@ -151,18 +151,18 @@
 						</div>
 						<div class="modal-body">
 							<div class="content">
-								<form class="form-horizontal">
+								<form class="form-horizontal user">
 									<div class="form-group">
-										<label for="inputName" class="col-sm-2 control-label">Nome do idioma</label>
+										<label for="inputName" class="col-sm-2 control-label">Name do serviço</label>
 
 										<div class="col-sm-10">
-											<input type="text" class="form-control name" class="inputNameType" placeholder="Name do idioma">
+											<input type="text" class="form-control name" name="name" placeholder="Name">
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputSex" class="col-sm-2 control-label">Status</label>
 										<div class="col-sm-10">
-											<select class="form-control form-control-sm profile">
+											<select class="form-control form-control-sm profile" name="status">
 												<option></option>
 												<option>Ativo</option>
 												<option>Inativo</option>
@@ -171,8 +171,7 @@
 									</div>
 									<div class="form-group pull-right">
 
-										<button type="submit" class="btn btn-primary">Alterar Idioma</button>
-										<button type="submit" class="btn btn-danger">Excluir Idioma</button>
+										<button type="submit" class="btn btn-primary">Cadastrar serviço</button>
 									</div>
 								</form>
 								<br><br>
@@ -215,9 +214,11 @@
 	<script src="../javascript/plugins/pdf/jspdf.min.js"></script>
 	<!-- Canvas -->
 	<script src="../javascript/plugins/canvas/canvas2image.min.js"></script>
+	<!-- jquery.validate.min.js -->
+	<script src="../javascript/plugins/jquery.validate/jquery.validate.min.js"></script>
+	<!-- jquery.mask -->
+	<script src="../javascript/plugins/mask/jquery.mask.js"></script>
 	<!-- Page Script -->
-	<script src="../javascript/base/base.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="../javascript/base/demo.js"></script>
+	<script src="../javascript/base/validate.form.js"></script>
 </body>
 </html>

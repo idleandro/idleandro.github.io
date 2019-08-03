@@ -75,26 +75,26 @@
 							</ul>
 							<div class="tab-content">
 								<div class="active tab-pane" id="password">
-									<form class="form-horizontal">
+									<form class="form-horizontal password">
 										<div class="form-group">
 											<label for="inputPassword" class="col-sm-2 control-label">Senha atual</label>
 
 											<div class="col-sm-10">
-												<input type="text" class="form-control password" id="inputPassword" placeholder="Senha">
+												<input type="text" class="form-control password" name="password" id="inputPassword" placeholder="Senha">
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="newInputPassword" class="col-sm-2 control-label">Nova senha</label>
 
 											<div class="col-sm-10">
-												<input type="text" class="form-control new-password" id="newInputPassword" placeholder="Nova Senha">
+												<input type="text" class="form-control new-password" name="newPassword" id="newInputPassword" placeholder="Nova Senha">
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="confirmNewInputPassword" class="col-sm-2 control-label">Confirme nova senha</label>
 
 											<div class="col-sm-10">
-												<input type="text" class="form-control confirm-new-password" id="confirmNewInputPassword" placeholder="Nova Senha">
+												<input type="text" class="form-control confirm-new-password" name="RepeatNewPassword" id="confirmNewInputPassword" placeholder="Nova Senha">
 											</div>
 										</div>
 										<div class="form-group">
@@ -105,107 +105,97 @@
 									</form>
 								</div>
 								<div class="tab-pane" id="datas">
-									<form class="form-horizontal">
-										<div class="form-group">
-											<label for="inputName" class="col-sm-2 control-label">Name</label>
+								<form class="form-horizontal user">
+									<div class="form-group">
+										<label for="inputName" class="col-sm-2 control-label">Name</label>
 
-											<div class="col-sm-10">
-												<input type="text" class="form-control name" id="inputName" placeholder="Name">
-											</div>
+										<div class="col-sm-10">
+											<input type="text" class="form-control name" name="name" placeholder="Name">
 										</div>
-										<div class="form-group">
-											<label for="inputEmail" class="col-sm-2 control-label">Email</label>
+									</div>
+									<div class="form-group">
+										<label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
-											<div class="col-sm-10">
-												<input type="email" class="form-control email" id="inputEmail" placeholder="Email">
-											</div>
+										<div class="col-sm-10">
+											<input type="email" class="form-control email" name="email" placeholder="Email">
 										</div>
-										<div class="form-group">
-											<label for="inputSex" class="col-sm-2 control-label">Perfil</label>
-											<div class="col-sm-10">
-												<select class="form-control form-control-sm profile">
-													<option></option>
-													<option>Colaborador</option>
-													<option>Cliente</option>
-													<option>Administrador</option>
-												</select>
-											</div>
+									</div>
+									<div class="form-group">
+										<label for="inputSex" class="col-sm-2 control-label">Perfil</label>
+										<div class="col-sm-10">
+											<select class="form-control form-control-sm profile" name="profile">
+												<option></option>
+												<option>Colaborador</option>
+												<option>Cliente</option>
+												<option>Administrador</option>
+											</select>
 										</div>
-										<div class="form-group">
-											<label for="inputSex" class="col-sm-2 control-label">Status</label>
-											<div class="col-sm-10">
-												<select class="form-control form-control-sm profile">
-													<option></option>
-													<option>Ativo</option>
-													<option>Inativo</option>
-												</select>
-											</div>
+									</div>
+									<div class="form-group">
+										<label for="inputSex" class="col-sm-2 control-label">Status</label>
+										<div class="col-sm-10">
+											<select class="form-control form-control-sm profile" name="status">
+												<option></option>
+												<option>Ativo</option>
+												<option>Inativo</option>
+											</select>
 										</div>
-										<div class="form-group">
-											<label for="inputCpf" class="col-sm-2 control-label">CPF</label>
+									</div>
 
-											<div class="col-sm-10">
-												<input type="text" class="form-control cpf" id="inputCpf" placeholder="CPF">
-											</div>
-										</div>
-										<div class="form-group">
-											<label for="inputFone" class="col-sm-2 control-label">Telefone</label>
+									<div class="form-group">
+										<label for="inputCpf" class="col-sm-2 control-label">CPF</label>
 
-											<div class="col-sm-10">
-												<input type="text" class="form-control fone" id="inputFone" placeholder="Telefone">
-											</div>
+										<div class="col-sm-10">
+											<input type="text" class="form-control cpf" name="cpf" placeholder="CPF">
 										</div>
-										<div class="form-group">
-											<label for="inputBirthdate" class="col-sm-2 control-label">Data de Nascimento</label>
+									</div>
+									<div class="form-group">
+										<label for="inputFone" class="col-sm-2 control-label">Telefone</label>
 
-											<div class="col-sm-10">
-												<input class="form-control datemask date-birth" id="inputBirthdate" placeholder="Data de Nascimento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
-											</div>
+										<div class="col-sm-10">
+											<input type="text" class="form-control fone" name="phone" placeholder="Telefone">
 										</div>
-										<div class="form-group">
-											<label for="inputSex" class="col-sm-2 control-label">Sexo</label>
-											<div class="col-sm-10">
-												<select class="form-control form-control-sm sex">
-													<option>Masculino</option>
-													<option>Feminino</option>
-													<option>Outros</option>
-												</select>
-											</div>
-										</div>
-										<div class="form-group">
-											<label for="inputCEP" class="col-sm-2 control-label datemask" data-inputmask='"mask": "00000-000"'  data-mask>CEP</label>
+									</div>
+									<div class="form-group">
+										<label for="inputBirthdate" class="col-sm-2 control-label">Data de Nascimento</label>
 
-											<div class="col-sm-10">
-												<input class="form-control cep" id="inputCEP" placeholder="CEP">
-											</div>
+										<div class="col-sm-10">
+											<input class="form-control datemask date-birth" name="birthdate" placeholder="Data de Nascimento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
 										</div>
-										<div class="form-group">
-											<label for="inputAddress" class="col-sm-2 control-label">Endereço</label>
+									</div>
+									<div class="form-group">
+										<label for="inputCEP" class="col-sm-2 control-label datemask" data-inputmask='"mask": "00000-000"'  data-mask>CEP</label>
 
-											<div class="col-sm-10">
-												<input class="form-control address" id="inputAddress" placeholder="Endereço">
-											</div>
+										<div class="col-sm-10">
+											<input class="form-control cep" placeholder="CEP">
 										</div>
-										<div class="form-group">
-											<label for="inputCity" class="col-sm-2 control-label">Cidade</label>
+									</div>
+									<div class="form-group">
+										<label for="inputAddress" class="col-sm-2 control-label">Endereço</label>
 
-											<div class="col-sm-10">
-												<input class="form-control city" id="inputCity" placeholder="Cidade">
-											</div>
+										<div class="col-sm-10">
+											<input class="form-control address" placeholder="Endereço">
 										</div>
-										<div class="form-group">
-											<label for="inputState" class="col-sm-2 control-label">Estado</label>
+									</div>
+									<div class="form-group">
+										<label for="inputCity" class="col-sm-2 control-label">Cidade</label>
 
-											<div class="col-sm-10">
-												<input class="form-control state" id="inputState" placeholder="Estado">
-											</div>
+										<div class="col-sm-10">
+											<input class="form-control city" placeholder="Cidade">
 										</div>
-										<div class="form-group pull-right">
+									</div>
+									<div class="form-group">
+										<label for="inputState" class="col-sm-2 control-label">Estado</label>
 
-											<button type="submit" class="btn btn-primary">Alterar Usuário</button>
-											<button type="submit" class="btn btn-danger">Excluir Usuário</button>
+										<div class="col-sm-10">
+											<input class="form-control state" placeholder="Estado">
 										</div>
-									</form>
+									</div>
+									<div class="form-group pull-right">
+
+										<button type="submit" class="btn btn-primary">Cadastrar Usuário</button>
+									</div>
+								</form>
 								</div>
 								<br><br>
 							</div>
@@ -342,9 +332,11 @@
 	<script src="../javascript/plugins/pdf/jspdf.min.js"></script>
 	<!-- Canvas -->
 	<script src="../javascript/plugins/canvas/canvas2image.min.js"></script>
+	<!-- jquery.validate.min.js -->
+	<script src="../javascript/plugins/jquery.validate/jquery.validate.min.js"></script>
+	<!-- jquery.mask -->
+	<script src="../javascript/plugins/mask/jquery.mask.js"></script>
 	<!-- Page Script -->
-	<script src="../javascript/base/base.js" type="text/javascript" charset="utf-8" async defer></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="../javascript/base/demo.js"></script>
+	<script src="../javascript/base/validate.form.js"></script>
 </body>
 </html>
