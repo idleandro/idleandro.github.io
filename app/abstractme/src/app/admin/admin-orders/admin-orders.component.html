@@ -1,0 +1,395 @@
+<section class="content-header">
+    <h1>
+        <span>Gestão de Ordens</span>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Ordens</li>
+    </ol>
+</section>
+
+<section class="content">
+
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Caixa de entrada de ordens</h3>
+                </div>
+                <div class="box-body table-responsive">
+                    <table id="tableOrders" class="table table table-hover table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Pedido</th>
+                                <th>E-mail</th>
+                                <th>CPF</th>
+                                <th>Dt pedido</th>
+                                <th>Dt Pgto</th>
+                                <th>Serviço</th>
+                                <th>Valor</th>
+                                <th>Pgto</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="text-danger fa fa-exclamation-triangle">!</i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">56878454</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment"> - </td>
+                                <td class="type-service">Legendagem</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-danger">Negado</span></td>
+                                <td><span class="status-demand label label-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-calendar"></i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">21656615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Outro</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-success">Aprovado</span></td>
+                                <td><span class="status-demand label label-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-calendar"></i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">65756615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Legendagem de vídeo</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-success">Aprovado</span></td>
+                                <td><span class="status-demand label label-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-calendar"></i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Tradução Livre</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-warning">Aguardando</span></td>
+                                <td><span class="status-demand label label-warning">Aguardando</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-calendar"></i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Legendagem</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-success">Aprovado</span></td>
+                                <td><span class="status-demand label label-warning">Andamento</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-calendar"></i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Legendagem</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-success">Aprovado</span></td>
+                                <td><span class="status-demand label label-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="text-danger fa fa-exclamation-triangle">!</i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">65756615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Legendagem de vídeo</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-success">Aprovado</span></td>
+                                <td><span class="status-demand label label-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-calendar"></i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Tradução Livre</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-danger">Negado</span></td>
+                                <td><span class="status-demand label label-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-calendar"></i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Legendagem</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-success">Aprovado</span></td>
+                                <td><span class="status-demand label label-warning">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="text-danger fa fa-exclamation-triangle">!</i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Tradução Livre</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-warning">Aguardando</span></td>
+                                <td><span class="status-demand label label-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-calendar"></i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Legendagem</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-success">Aprovado</span></td>
+                                <td><span class="status-demand label label-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-calendar"></i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">17556615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Tradução Livre</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-success">Aprovado</span></td>
+                                <td><span class="status-demand label label-warning">Andamento</span></td>
+                            </tr>
+                            <tr>
+                                <td><i class="text-danger fa fa-exclamation-triangle">!</i></td>
+                                <td class="number-demand">
+                                    <a href="#this" data-toggle="modal" data-target="#modal-default">21696615</a>
+                                </td>
+                                <td class="user-email">email@gmail.com</td>
+                                <td class="user-cpf">000.000.000-00</td>
+                                <td class="date-request">11-7-2014</td>
+                                <td class="date-payment">20-7-2014</td>
+                                <td class="type-service">Legendagem</td>
+                                <td class="value-service">R$ 360,50</td>
+                                <td><span class="status-payment label label-success">Aprovado</span></td>
+                                <td><span class="status-demand label label-success">Finalizado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade order-modal" id="modal-default">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="renderPDF">
+            <div class="modal-header">
+                <img src="../assets/images/logo/logo.png" class="pull-left" alt="Logo abstractme">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4 class="page-header">
+                            Detalhamento
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Ped.</th>
+                                    <th>Serv.</th>
+                                    <th>Líng.</th>
+                                    <th>Arq.(s) Orig.</th>
+                                    <th>Arq.(s) Trad.</th>
+                                    <th>Qtd Caract.</th>
+                                    <th>Przo de Entr.</th>
+                                    <th>Resp.</th>
+                                    <th>Subtotal</th>
+                                    <th>Status</th>
+                                    <th>Salvar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="request-code">21354</td>
+                                    <td class="type-service">Legendas</td>
+                                    <td>De <span class="from">Inglês</span> para <span class="for">Português</span></td>
+                                    <td>
+                                        <ul class="list-unstyled links-originals-documents">
+                                            <li><a href="#this">Link de acesso</a></li>
+                                            <li><a href="#this">Link de acesso</a></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <input type="file" class="form-control-file uploadFilestranslated" multiple>
+                                    </td>
+                                    <td class="number-character">3600</td>
+                                    <td class="date-demand">10-10-2020</td>
+                                    <td>
+                                        <select class="form-control form-control-sm status-demand">
+                                            <option>Maria </option>
+                                            <option>Joana</option>
+                                            <option>Flavio</option>
+                                            <option>Bete</option>
+                                            <option>Carla</option>
+                                        </select>
+                                    </td>
+                                    <td class="value-service">R$ 660,50</td>
+                                    <td>
+                                        <select class="form-control form-control-sm status-demand">
+                                            <option>Aguardando</option>
+                                            <option>Finalizado</option>
+                                            <option>Andamento</option>
+                                            <option>Pendente</option>
+                                            <option>Cancelado</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <a href="#this" class="salve"><i class="fa fa-save"
+                                                style="font-size: 2em;"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="request-code">21354</td>
+                                    <td class="type-service">Tradução Livre</td>
+                                    <td>De <span class="from">Inglês</span> para <span class="for">Português</span></td>
+                                    <td>
+                                        <ul class="list-unstyled links-documents">
+                                            <li><a href="#this">Link de acesso</a></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <input type="file" class="form-control-file uploadFilestranslated" multiple>
+                                    </td>
+                                    <td class="number-character">3600</td>
+                                    <td class="date-demand">10-10-2020</td>
+                                    <td>
+                                        <select class="form-control form-control-sm status-demand">
+                                            <option>Maria </option>
+                                            <option>Joana</option>
+                                            <option>Flavio</option>
+                                            <option>Bete</option>
+                                            <option>Carla</option>
+                                        </select>
+                                    </td>
+                                    <td class="value-service">R$ 660,50</td>
+                                    <td>
+                                        <select class="form-control form-control-sm status-demand">
+                                            <option>Aguardando</option>
+                                            <option>Finalizado</option>
+                                            <option>Andamento</option>
+                                            <option>Pendente</option>
+                                            <option>Cancelado</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <a href="#this" class="salve"><i class="fa fa-save"
+                                                style="font-size: 2em;"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p class="lead">Envie um texto para o cliente</p>
+                        <form>
+                            <div class="form-group">
+                                <div class="send-text-user">
+                                    <textarea class="form-control" id="sendTextUser" rows="4"
+                                        placeholder="texto ..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group pull-right">
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="lead">Forma de Pagamento: <span class="payment-methods">Cartão de Crédito</span></p>
+
+                        <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+                            Observação: este comprovante não tem valor fiscal, serve apenas para seu controle. Caso não
+                            tenha
+                            informado seus dados para nota fiscal no momento do pagamento, entre em contato conosco pelo
+                            e-mail
+                            contato@abstractme.tr para solicitar sua nota fiscal eletrônica.
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="lead">Descrição dos Valores</p>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th style="width:50%">Subtotal:</th>
+                                    <td class="subtotal">R$ 921,30</td>
+                                </tr>
+                                <tr>
+                                    <th>Tax de Emergência (9.3%)</th>
+                                    <td class="emergency-charge">R$ 92,13</td>
+                                </tr>
+                                <tr>
+                                    <th>Total:</th>
+                                    <td class="total">R$ 265,24</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
