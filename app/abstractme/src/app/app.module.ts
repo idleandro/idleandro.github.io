@@ -12,11 +12,21 @@ import { ROUTES } from './app.routes';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { SecurityComponent } from './security/security.component';
+import { LoginComponent } from './security/login/login.component';
+import { RegisterComponent } from './security/register/register.component';
+import { GenerateTokenComponent } from './security/generate-token/generate-token.component';
+import { ResetPasswordComponent } from './security/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    SecurityComponent,
+    LoginComponent,
+    RegisterComponent,
+    GenerateTokenComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

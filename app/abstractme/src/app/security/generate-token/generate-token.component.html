@@ -1,0 +1,24 @@
+<div class="login-box">
+  <div class="login-logo">
+    <a href="login.html"><strong>abstract<span>ME</span></strong></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Gerar token</p>
+
+    <form action="reset-password.html" method="post" class="login">
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Email" name="email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <!-- /.col -->
+        <div class="col-xs-12">
+          <button type="submit" [routerLink]="['/reset-password']" class="btn btn-primary btn-block btn-flat">Gerar token</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+  </div>
+  <!-- /.login-box-body -->
+</div>
