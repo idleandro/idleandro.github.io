@@ -9,6 +9,5 @@ export class User {
 }
 
 export const users: {[key:string]: User}  = {
-    "leandrofdx@gmail.com": new User('leandrofdx@gmail.com', 'Leandro', 'senha'),
-    "leandro@gmail.com": new User('leandro@gmail.com', 'Lima', 'senha')
+    "leandro@gmail.com": new User('leandro@gmail.com', 'senha', 'senha')
 }
