@@ -24,7 +24,7 @@
     "@angular/platform-server": "8.2.2",
     "@angular/router": "8.2.2",
     "admin-lte": "2.3.11",
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "ajv-keywords": "^3.4.1",
     "canvas": "^2.6.0",
     "core-js": "^3.2.1",
